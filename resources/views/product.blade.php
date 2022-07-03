@@ -421,7 +421,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="left-content">
-                                    <h2>Explore_Our_Products</h2>
+                                    <h2>Explore Our Products</h2>
                                     <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
                                     <div class="quote">
                                         <i class="fa fa-quote-left"></i><p>You are not allowed to redistribute this template ZIP file on any other website.</p>
