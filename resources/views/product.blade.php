@@ -273,9 +273,12 @@
                                                     <ul>
                                                         <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                                         <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                        <li><a><add-to-cart-button product-id="{{ $product->id }}"
-                                                            user-id="{{ auth()->user()->id ?? 0 }}"
-                                                        /></a></li>
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="add-to-cart-button" product-id="{{ $product->id }}"
+                                                               user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                <i class="fa-solid fa-cart-plus"></i>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="{{ $product->image_name }}" alt="Product" height="550px">
@@ -379,9 +382,12 @@
                                                         <ul>
                                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                            <li><a><add-to-cart-button product-id="{{ $product->id }}"
-                                                                user-id="{{ auth()->user()->id ?? 0 }}"
-                                                            /></a></li>
+                                                            <li>
+                                                                <a href="javascript:void(0)" class="add-to-cart-button" product-id="{{ $product->id }}"
+                                                                   user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                    <i class="fa-solid fa-cart-plus"></i>
+                                                                </a>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                     <img src="{{ $product->image_name }}" alt="Product" height="550px">
