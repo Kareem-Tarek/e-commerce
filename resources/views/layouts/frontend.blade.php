@@ -63,7 +63,7 @@ https://templatemo.com/tm-571-hexashop
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="https://e-commerce.dev/#top">Home</a></li>
+                                <li class="scroll-to-section"><a href="{{ route('products') }}">Home</a></li>
                                 <li class="scroll-to-section"><a href="https://e-commerce.dev/#men">Men's</a></li>
                                 <li class="scroll-to-section"><a href="https://e-commerce.dev/#women">Women's</a></li>
                                 <li class="scroll-to-section"><a href="https://e-commerce.dev/#kids">Kid's</a></li>
