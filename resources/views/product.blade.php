@@ -137,10 +137,10 @@
                                             <div class="thumb">
                                                 <div class="hover-content">
                                                     <ul>
-                                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
                                                         <li>
-                                                            <a href="javascript:void(0)" class="add-to-cart-button" product-id="{{ $product->id }}"
+                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
                                                                user-id="{{ auth()->user()->id ?? 0 }}">
                                                                 <i class="fa-solid fa-cart-plus"></i>
                                                             </a>
@@ -167,11 +167,14 @@
                                             <div class="thumb">
                                                 <div class="hover-content">
                                                     <ul>
-                                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                        <li><a><add-to-cart-button product-id="{{ $product->id }}"
-                                                            user-id="{{ auth()->user()->id ?? 0 }}"
-                                                        /></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                               user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                <i class="fa-solid fa-cart-plus"></i>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="{{ $product->image_name }}" alt="Product" height="550px">
@@ -192,11 +195,14 @@
                                             <div class="thumb">
                                                 <div class="hover-content">
                                                     <ul>
-                                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                        <li><a><add-to-cart-button product-id="{{ $product->id }}"
-                                                            user-id="{{ auth()->user()->id ?? 0 }}"
-                                                        /></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                               user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                <i class="fa-solid fa-cart-plus"></i>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="{{ $product->image_name }}" alt="Product" height="550px">
@@ -217,11 +223,14 @@
                                             <div class="thumb">
                                                 <div class="hover-content">
                                                     <ul>
-                                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                        <li><a><add-to-cart-button product-id="{{ $product->id }}"
-                                                            user-id="{{ auth()->user()->id ?? 0 }}"
-                                                        /></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                               user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                <i class="fa-solid fa-cart-plus"></i>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="{{ $product->image_name }}" alt="Product" height="550px">
@@ -271,10 +280,10 @@
                                             <div class="thumb">
                                                 <div class="hover-content">
                                                     <ul>
-                                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
                                                         <li>
-                                                            <a href="javascript:void(0)" class="add-to-cart-button" product-id="{{ $product->id }}"
+                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
                                                                user-id="{{ auth()->user()->id ?? 0 }}">
                                                                 <i class="fa-solid fa-cart-plus"></i>
                                                             </a>
@@ -301,15 +310,28 @@
                                             <div class="thumb">
                                                 <div class="hover-content">
                                                     <ul>
-                                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                        <li><a><add-to-cart-button product-id="{{ $product->id }}"
-                                                            user-id="{{ auth()->user()->id ?? 0 }}"
-                                                        /></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                               user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                <i class="fa-solid fa-cart-plus"></i>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="{{ $product->image_name }}" alt="Product" height="550px">
                                             </div>
+                                            <style>
+                                                .hover-content{
+                                                    background-color: rgb(204, 204, 202);
+                                                    padding: 3%;
+                                                }
+
+                                                .hover-content ul li{
+                                                    padding: 3%
+                                                }
+                                            </style>
                                             <div class="down-content">
                                                 <h4>{{ $product->name }}</h4>
                                                 <span>{{ $product->price }}</span>
@@ -326,11 +348,14 @@
                                             <div class="thumb">
                                                 <div class="hover-content">
                                                     <ul>
-                                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                        <li><a><add-to-cart-button product-id="{{ $product->id }}"
-                                                            user-id="{{ auth()->user()->id ?? 0 }}"
-                                                        /></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                        <li>
+                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                               user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                <i class="fa-solid fa-cart-plus"></i>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="assets/images/women-03.jpg" alt="">
@@ -380,11 +405,11 @@
                                                 <div class="thumb">
                                                     <div class="hover-content">
                                                         <ul>
-                                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                            <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
                                                             <li>
-                                                                <a href="javascript:void(0)" class="add-to-cart-button" product-id="{{ $product->id }}"
-                                                                   user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                                user-id="{{ auth()->user()->id ?? 0 }}">
                                                                     <i class="fa-solid fa-cart-plus"></i>
                                                                 </a>
                                                             </li>
