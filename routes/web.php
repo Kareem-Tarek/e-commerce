@@ -16,7 +16,8 @@ use App\Http\Controllers\CartsController;
 |
 */
 
-Route::get('/', [ProductsController::class, 'index'])->name('products');  //products landing page
+// Route::get('/', [ProductsController::class, 'index'])->name('products');  //products landing page
+Route::get('/products', [ProductsController::class, 'index'])->name('products');  //products landing page
 
 Auth::routes();
 
