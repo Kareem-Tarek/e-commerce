@@ -322,16 +322,7 @@
                                                 </div>
                                                 <img src="{{ $product->image_name }}" alt="Product" height="550px">
                                             </div>
-                                            <style>
-                                                .hover-content{
-                                                    background-color: rgb(204, 204, 202);
-                                                    padding: 3%;
-                                                }
 
-                                                .hover-content ul li{
-                                                    padding: 3%
-                                                }
-                                            </style>
                                             <div class="down-content">
                                                 <h4>{{ $product->name }}</h4>
                                                 <span>{{ $product->price }}</span>

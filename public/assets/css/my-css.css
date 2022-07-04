@@ -1,0 +1,8 @@
+.hover-content{
+    background-color: rgb(220, 220, 220);
+    padding: 3%;
+}
+
+.hover-content ul li{
+    padding: 3%
+}

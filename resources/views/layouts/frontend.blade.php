@@ -23,6 +23,8 @@
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
+    <link rel="stylesheet" href="assets/css/my-css.css">
+
     @yield('styles')
 <!--
 
