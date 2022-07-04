@@ -57,15 +57,16 @@ https://templatemo.com/tm-571-hexashop
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
                             <a href="index.html" class="logo">
-                                <img src="assets/images/logo.png">
+                                {{-- <img src="assets/images/logo.png"> --}}
+                                HADHOOD!! <i class="fas fa-heart-broken"></i><i class="fa-solid fa-face-grin-tongue-wink"></i>
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                                <li class="scroll-to-section"><a href="#men">Men's</a></li>
-                                <li class="scroll-to-section"><a href="#women">Women's</a></li>
-                                <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+                                <li class="scroll-to-section"><a href="https://e-commerce.dev/#top">Home</a></li>
+                                <li class="scroll-to-section"><a href="https://e-commerce.dev/#men">Men's</a></li>
+                                <li class="scroll-to-section"><a href="https://e-commerce.dev/#women">Women's</a></li>
+                                <li class="scroll-to-section"><a href="https://e-commerce.dev/#kids">Kid's</a></li>
                                 <li class="submenu">
                                     <a href="javascript:;">Pages</a>
                                     <ul>
