@@ -56,7 +56,7 @@ https://templatemo.com/tm-571-hexashop
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
                             <a href="index.html" class="logo">
-                                <img src="assets/images/logo.png">
+                                {{-- <img src="assets/images/logo.png"> --}}
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
@@ -85,19 +85,18 @@ https://templatemo.com/tm-571-hexashop
                                 </li>
                                 <li class="scroll-to-section"><a href="#explore">Explore</a></li>
                                 @if (Route::has('login'))
-                                            @auth
-                                            <cart />
-                                            @else
-                                                <li class="nav-item">
-                                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-                                                </li>
-                                                    @if (Route::has('register'))
-                                                    <li class="nav-item">
-                                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                                    </li>
-                                                    @endif
-                                                @endauth
+                                    @auth
+                                    @else
+                                        <li class="nav-item">
+                                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                                        </li>
+                                        @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                                        </li>
                                         @endif
+                                    @endauth
+                                @endif
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>

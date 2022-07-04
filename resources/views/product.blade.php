@@ -13,7 +13,7 @@
                                 <h4>We Are Hexashop</h4>
                                 <span>Awesome, clean &amp; creative HTML5 Template</span>
                                 <div class="main-border-button">
-                                    <a href="#">Purchase Now!</a>
+                                    <a href="javascript:void(0)">Purchase Now!</a>
                                 </div>
                             </div>
                             <img src="assets/images/left-banner-image.jpg" alt="">
@@ -35,11 +35,11 @@
                                                 <h4>Women</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="#women">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="assets/images/baner-right-image-01.jpg">
+                                        <a href="#women"><img src="assets/images/baner-right-image-01.jpg"></a>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                                 <h4>Men</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="#men">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@
                                                 <h4>Kids</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="#kids">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@
                                                 <h4>Accessories</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="javascript:void(0)">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
