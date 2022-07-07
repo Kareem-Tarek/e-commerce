@@ -1,32 +1,13 @@
-/************************************** Product page Start **************************************/
-.hover-content{
-    /* background-color: rgb(220, 220, 220); */
-    padding: 3%;
-}
-
-.hover-content ul li{
-    padding: 3%
-}
-/************************************** Product page End **************************************/
-
-
 /************************************** Header Start **************************************/
-.login-header{
-    background-color: rgb(87, 87, 87);
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 8px;
-}
 
-.register-header{
-    background-color: rgb(87, 87, 87);
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 8px;
-}
-
-.login-header:hover , 
-.register-header:hover{
-    background-color: black;
-}
 /************************************** Header End **************************************/
+
+
+/************************************** Product (content page) Start **************************************/
+
+/************************************** Product (content page) End **************************************/
+
+
+/************************************** Footer Start **************************************/
+
+/************************************** Footer End **************************************/

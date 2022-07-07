@@ -26,9 +26,10 @@
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
+    @yield('styles')
+    
     <link rel="stylesheet" href="assets/css/my-css.css">    <!--My Custom CSS file (Kareem & Nada)-->
 
-    @yield('styles')
 <!--
 
 TemplateMo 571 Hexashop
