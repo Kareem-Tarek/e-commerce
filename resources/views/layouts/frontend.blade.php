@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
     @yield('styles')
-    
+
     <link rel="stylesheet" href="assets/css/my-css.css">    <!--My Custom CSS file (Kareem & Nada)-->
 
 <!--
@@ -59,6 +59,10 @@ https://templatemo.com/tm-571-hexashop
         <!-- ***** Header End ***** -->
 
         @yield('content')
+
+        <!-- ***** Header Start ***** -->
+        @include('layouts.footer')
+        <!-- ***** Header End ***** -->
     </div>
 
 
