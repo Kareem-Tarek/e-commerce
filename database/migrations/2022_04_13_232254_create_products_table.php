@@ -21,7 +21,9 @@ class CreateProductsTable extends Migration
             $table->string('image_name');
             $table->string('price');
             $table->string('sale_price');
+            $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

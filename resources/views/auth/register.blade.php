@@ -61,6 +61,17 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3" style="margin-bottom:1%; width: 100%; margin-left:auto; margin-right: auto;">
+                            <label>User Type</label>
+                            <div class="col-lg-6" style="margin-left: 21.4%;">
+                                <select name="user_type" class="form-control" required>
+                                    <option value="null">Please choose a user type</option>
+                                    <option value="supplier">Supplier</option>
+                                    <option value="customer">Customer</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-secondary">
