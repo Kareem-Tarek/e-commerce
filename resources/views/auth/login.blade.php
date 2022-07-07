@@ -70,8 +70,4 @@
         </div>
     </div>
 </div>
-
-<!-- ***** Footer Start ***** -->
-@include('layouts.footer')
-<!-- ***** Footer End ***** -->
 @endsection
