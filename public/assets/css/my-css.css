@@ -12,11 +12,21 @@
 
 /************************************** Header Start **************************************/
 .login-header{
-    color: rgb(255, 255, 255);
-    
+    background-color: rgb(87, 87, 87);
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
 }
 
 .register-header{
-    color: rgb(255, 255, 255);
+    background-color: rgb(87, 87, 87);
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
+}
+
+.login-header:hover , 
+.register-header:hover{
+    background-color: black;
 }
 /************************************** Header End **************************************/

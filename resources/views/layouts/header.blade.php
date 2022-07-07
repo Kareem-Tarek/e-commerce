@@ -41,20 +41,41 @@
                             </ul>
                         </li>
                         <li class="scroll-to-section"><a href="http://127.0.0.1:8000/products#explore">Explore</a></li>
-                    </ul>
-                    @if (Route::has('login'))
+                        {{-- @if (Route::has('login'))
                             @auth
                             @else
                                 <li class="nav-item">
-                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline login-header">Log in</a>
+                                    <a href="{{ route('login') }}" class="login-header" style="color:snow;">Log in</a>
                                 </li>
                                 @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline register-header">Register</a>
+                                    <a href="{{ route('register') }}" class="register-header" style="color:snow;">Register</a>
                                 </li>
                                 @endif
                             @endauth
+                        @endif --}}
+                        @if(!auth()->user()) <!---------- = unregistered user (which means "guest") ---------->
+                        <li class="submenu">
+                            <a href="javascript:void(0);">Account</a>
+                            <ul>
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                                <li><a href="{{ route('login') }}">Login</a></li>
+                            </ul>
+                        </li>
+                        @else <!---------- = registered user (any user type in the system) ---------->
+                            <li class="submenu">
+                                <a href="javascript:void(0);" style="color: #0083FF;" onMouseOver="this.style.color='#151414'" onMouseOut="this.style.color='#0083FF'">{{auth()->user()->name ?? ''}}</a>
+                                <ul>
+                                    <li><a href="javascript:void(0);">Profile Management</a></li>
+                                    {{-- <li><a href="{{ route('logout') }}">Logout</a></li> --}}   <!--gives error because it's not a GET method!-->
+                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.querySelector('#logout-form').submit();">Logout</a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </ul>
+                            </li>
                         @endif
+                    </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>

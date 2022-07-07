@@ -15,11 +15,9 @@ use App\Http\Controllers\CartsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', [ProductsController::class, 'index'])->name('products');  //products landing page
-Route::get('/products', [ProductsController::class, 'index'])->name('products');  //products landing page
-
 Auth::routes();
+
+Route::get('/products', [ProductsController::class, 'index'])->name('products');  //products landing page
 
 Route::post('/cart', [CartsController::class, 'store'])->name('cart');
 
