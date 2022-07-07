@@ -4,11 +4,11 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        {{-- <img src="assets/images/logo.png"> --}}
-                        <i class="fas fa-heart"></i>
+                    <a href="javascript:void(0);" class="logo">
+                        <img src="assets/images/e-commerce_logo.png">
+                        {{-- <i class="fas fa-heart"></i>
                             <i class="fa-solid fa-m"></i><i class="fa-solid fa-i"></i>k</i><i class="fa-solid fa-a"></i>n</i><i class="fa-solid fa-o"></i>
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i> --}}
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
@@ -41,19 +41,6 @@
                             </ul>
                         </li>
                         <li class="scroll-to-section"><a href="http://127.0.0.1:8000/products#explore">Explore</a></li>
-                        {{-- @if (Route::has('login'))
-                            @auth
-                            @else
-                                <li class="nav-item">
-                                    <a href="{{ route('login') }}" class="login-header" style="color:snow;">Log in</a>
-                                </li>
-                                @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a href="{{ route('register') }}" class="register-header" style="color:snow;">Register</a>
-                                </li>
-                                @endif
-                            @endauth
-                        @endif --}}
                         @if(!auth()->user()) <!---------- = unregistered user (which means "guest") ---------->
                         <li class="submenu">
                             <a href="javascript:void(0);">Account</a>
