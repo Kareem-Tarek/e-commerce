@@ -621,10 +621,9 @@
     </div>
     <!-- ***** Subscribe Area Ends ***** -->
 
-    <!-- ***** Footer Start ***** -->
-    @include('layouts.footer')
-    <!-- ***** Footer End ***** -->
+
 @endsection
+
 
 @section('scripts')
 
