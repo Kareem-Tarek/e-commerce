@@ -9,7 +9,10 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Hexashop Ecommerce HTML CSS Template</title>
+    <title>
+        {{-- Hexashop Ecommerce HTML CSS Template --}}
+        Products
+    </title>
 
     <script src="{{ asset('css/app.css') }}" defer></script>
     <!-- Additional CSS Files -->
@@ -60,7 +63,9 @@ https://templatemo.com/tm-571-hexashop
                             <!-- ***** Logo Start ***** -->
                             <a href="index.html" class="logo">
                                 {{-- <img src="assets/images/logo.png"> --}}
-                                HADHOOD!! <i class="fas fa-heart-broken"></i><i class="fa-solid fa-face-grin-tongue-wink"></i>
+                                <i class="fas fa-heart"></i>
+                                    <i class="fa-solid fa-m"></i><i class="fa-solid fa-i"></i>k</i><i class="fa-solid fa-a"></i>n</i><i class="fa-solid fa-o"></i>
+                                <i class="fas fa-heart"></i>
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
