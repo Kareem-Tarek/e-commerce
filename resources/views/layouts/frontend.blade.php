@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>
-        {{-- Hexashop Ecommerce HTML CSS Template --}}
-        Products
+        @yield('title')
     </title>
 
     <script src="{{ asset('css/app.css') }}" defer></script>
@@ -66,10 +65,9 @@ https://templatemo.com/tm-571-hexashop
         <!-- ***** Header End ***** -->
     </div>
 
-
-    <!-- jQuery -->
+    <!-- js & jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
-    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/app.js') }}" ></script>    <!--My Custom JS file (Kareem & Nada)-->
 
     <!-- Bootstrap -->
     <script src="assets/js/popper.js"></script>
