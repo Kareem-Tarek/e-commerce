@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('gender', ['Male', 'Female'])->nullable();
             $table->date('dob')->nullable();
-            $table->enum('user_type',['admin','supplier','customer']);
+            $table->enum('user_type',['admin','moderator','supplier','customer']);
             $table->string('address')->nullable();
             $table->integer('country_id')->nullable();
             $table->integer('governorate_id')->nullable();
