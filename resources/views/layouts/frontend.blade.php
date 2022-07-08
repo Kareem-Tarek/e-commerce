@@ -58,7 +58,8 @@ https://templatemo.com/tm-571-hexashop
         @include('layouts.header')
         <!-- ***** Header End ***** -->
 
-        @yield('content')
+        @yield('content')       <!--All the pages of the website are in a sections within a blade.php files 
+                                    (in the views) that called "content" which acts as a variable for each page-->
 
         <!-- ***** Header Start ***** -->
         @include('layouts.footer')
