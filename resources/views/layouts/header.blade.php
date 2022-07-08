@@ -52,12 +52,14 @@
                         @else <!---------- = registered user (any user type in the system) ---------->
                             <li class="submenu">
                                 <a href="javascript:void(0);" style="color: #0083FF;" onMouseOver="this.style.color='#151414'" onMouseOut="this.style.color='#0083FF'">{{auth()->user()->name ?? ''}}</a>
-                                {{-- @if(auth()->user()->user_type == 'admin') <!---------- admin ---------->
+                                @if(auth()->user()->user_type == 'admin') <!---------- admin ---------->
                                     <label style="color:rgb(125, 125, 125);">Admin</label>
+                                @elseif(auth()->user()->user_type == 'moderator') <!---------- moderator ---------->
+                                    <label style="color:rgb(125, 125, 125);">Moderator</label>
                                 @elseif(auth()->user()->user_type == 'customer') <!---------- customer ---------->
                                     <label style="color:rgb(125, 125, 125);">Customer</label>
                                 @else <!---------- supplier ---------->
-                                    <label style="color:rgb(125, 125, 125);">Supplier</label> --}}
+                                    <label style="color:rgb(125, 125, 125);">Supplier</label>
                                 <ul>
                                     <li><a href="javascript:void(0);">Profile Management</a></li>
                                     {{-- <li><a href="{{ route('logout') }}">Logout</a></li> --}}   <!--gives error because it's not a GET method!-->
