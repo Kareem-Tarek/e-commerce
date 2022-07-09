@@ -22,11 +22,11 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products');
 
 Route::post('/cart', [CartsController::class, 'store'])->name('cart');
 
+Route::get('/checkout/get/items', [CartsController::class, 'getCartItemsForCheckout']);
+
+Route::post('/process/user/payment', [CartsController::class, 'processPayment']);
+
 // Route::prefix('facebook')->name('facebook.')->group( function(){
 //     Route::get('auth' , FacebookController::class, 'LoginUsingFacebook')->name('login');
 //     Route::get('callback' , FacebookController::class, 'callbackFromFacebook')->name('callback');
 // });
-
-Route::get('/checkout/get/items', [CartsController::class, 'getCartItemsForCheckout']);
-
-Route::post('/process/user/payment', [CartsController::class, 'processPayment']);
