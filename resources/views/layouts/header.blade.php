@@ -5,10 +5,10 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="javascript:void(0);" class="logo">
-                        <img src="assets/images/e-commerce_logo.png">
-                        {{-- <i class="fas fa-heart"></i>
-                            <i class="fa-solid fa-m"></i><i class="fa-solid fa-i"></i>k</i><i class="fa-solid fa-a"></i>n</i><i class="fa-solid fa-o"></i>
-                        <i class="fas fa-heart"></i> --}}
+                        {{-- <img src="assets/images/e-commerce_logo.png"> --}}
+                        <i class="fas fa-heart"></i>
+                            <i class="fa-solid fa-k"></i>a</i></i><i class="fa-solid fa-r"></i></i>ee</i><i class="fa-solid fa-m"></i>
+                        <i class="fas fa-heart"></i>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->

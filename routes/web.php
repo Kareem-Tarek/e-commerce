@@ -20,6 +20,8 @@ Auth::routes();
 
 Route::get('/products', [ProductsController::class, 'index'])->name('products');  //products landing page
 
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
+
 Route::post('/cart', [CartsController::class, 'store'])->name('cart');
 
 Route::get('/checkout/get/items', [CartsController::class, 'getCartItemsForCheckout']);
