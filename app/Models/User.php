@@ -32,7 +32,8 @@ class User extends Authenticatable
         'country_id', 
         'governorate_id', 
         'city_id', 
-        'whatsApp'
+        'whatsApp',
+        'facebook_id',
     ];
 
     /**
