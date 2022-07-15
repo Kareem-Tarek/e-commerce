@@ -40,7 +40,7 @@
 
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="javascript:void(0)">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li class="submenu">
                             <a href="{{ route('products') }}">Products</a>
                             <ul>
