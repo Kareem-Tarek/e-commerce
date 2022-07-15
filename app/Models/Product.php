@@ -11,7 +11,6 @@ class Product extends Model
 {
     use HasApiTokens , HasFactory , SoftDeletes;
 
-
     protected $fillable = [
         'name',
         'slug',
