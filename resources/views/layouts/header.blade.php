@@ -3,14 +3,41 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
+                    <!-- ***** Clock Start ***** -->
+                    <div class="contact-item">
+                        <div class="contact-item" id="clock">
+                            {{Carbon\Carbon::now()->translatedFormat('D Y')}} &nbsp;
+                            <span id="time" style="color: black;"></span>
+                            <script >
+                                function showTime() {
+                                    var date = new Date(),
+                                        utc = new Date(Date.UTC(
+                                            date.getFullYear(),
+                                            date.getMonth(),
+                                            date.getDate(),
+                                            date.getHours() - 2,  //modified on the Egyptian (Cairo UTC) time
+                                            date.getMinutes(),
+                                            date.getSeconds()
+                                        ));
+    
+                                    document.getElementById('time').innerHTML = utc.toLocaleTimeString();
+                                }
+    
+                                setInterval(showTime, 1000);
+                            </script>
+                        </div>
+                    </div>
+                    <!-- ***** Clock End ***** -->
+
                     <!-- ***** Logo Start ***** -->
                     <a href="javascript:void(0);" class="logo">
-                        <img src="assets/images/e-commerce_logo.png">
                         {{-- <i class="fas fa-heart"></i>
-                            <i class="fa-solid fa-m"></i><i class="fa-solid fa-i"></i>k</i><i class="fa-solid fa-a"></i>n</i><i class="fa-solid fa-o"></i>
+                            <i class="fa-solid fa-k"></i>a</i></i><i class="fa-solid fa-r"></i></i>ee</i><i class="fa-solid fa-m"></i>
                         <i class="fas fa-heart"></i> --}}
+                        <img src="assets/images/e-commerce_logo.png" style="width: 200px;">
                     </a>
                     <!-- ***** Logo End ***** -->
+                    
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="javascript:void(0)">Home</a></li>
@@ -52,11 +79,13 @@
                         @else <!---------- = registered user (any user type in the system) ---------->
                             <li class="submenu">
                                 <a href="javascript:void(0);" style="color: #0083FF;" onMouseOver="this.style.color='#151414'" onMouseOut="this.style.color='#0083FF'">{{auth()->user()->name ?? ''}}</a>
-                                {{-- @if(auth()->user()->user_type == 'admin') <!---------- dashboard (admin) ---------->
-                                     <label style="color:rgb(125, 125, 125);">Admin</label>
-                                 @elseif(auth()->user()->user_type == 'customer') <!---------- customer ---------->
-                                     <label style="color:rgb(125, 125, 125);">Customer</label>
-                                 @else <!---------- supplier ---------->
+                                {{-- @if(auth()->user()->user_type == 'admin') <!---------- admin ---------->
+                                    <label style="color:rgb(125, 125, 125);">Admin</label>
+                                @elseif(auth()->user()->user_type == 'moderator') <!---------- moderator ---------->
+                                    <label style="color:rgb(125, 125, 125);">Moderator</label>
+                                @elseif(auth()->user()->user_type == 'customer') <!---------- customer ---------->
+                                    <label style="color:rgb(125, 125, 125);">Customer</label>
+                                @else <!---------- supplier ---------->
                                     <label style="color:rgb(125, 125, 125);">Supplier</label> --}}
                                 <ul>
                                     <li><a href="javascript:void(0);">Profile Management</a></li>

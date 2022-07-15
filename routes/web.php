@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartsController;
+use App\Http\Controllers\FacebookController;
 
 
 /*
@@ -19,8 +20,15 @@ Auth::routes();
 
 Route::get('/products', [ProductsController::class, 'index'])->name('products');  //products landing page
 
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
+
 Route::post('/cart', [CartsController::class, 'store'])->name('cart');
 
-// Route::get('/checkout/get/items', [CartsController::class, 'getCartItemsForCheckout']);
+Route::get('/checkout/get/items', [CartsController::class, 'getCartItemsForCheckout']);
 
-// Route::post('/process/user/payment', [CartsController::class, 'processPayment']);
+Route::post('/process/user/payment', [CartsController::class, 'processPayment']);
+
+// Route::prefix('facebook')->name('facebook.')->group( function(){
+//     Route::get('auth' , FacebookController::class, 'LoginUsingFacebook')->name('login');
+//     Route::get('callback' , FacebookController::class, 'callbackFromFacebook')->name('callback');
+// });

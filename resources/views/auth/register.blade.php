@@ -79,14 +79,21 @@
                                 </button><a class="btn btn-link" href="{{ route('login') }}">Already have an account?</a>
                             </div>
                         </div>
+
+                        <div style="margin-top: 7%;">
+                            <label>or Login with Your Social Media Account:</label>
+                            <a href="javascript:void(0);" class="btn btn-facebook btn-user btn-block" style="background-color: #2A426F; color: snow; width: 65%; margin-right: auto; margin-left: auto;">
+                                <i class="fab fa-facebook-f fa-fw"></i>&nbsp;&nbsp;Login with Facebook
+                            </a>
+
+                            <a href="javascript:void(0);" class="btn btn-google btn-user btn-block" style="background-color: #DC4A38; color: snow; width: 65%; margin-right: auto; margin-left: auto;">
+                                <i class="fa-brands fa-google"></i>&nbsp;&nbsp;Login with Google Account
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- ***** Footer Start ***** -->
-@include('layouts.footer')
-<!-- ***** Footer End ***** -->
 @endsection

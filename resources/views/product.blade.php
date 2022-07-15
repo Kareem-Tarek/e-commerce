@@ -1,6 +1,12 @@
 @extends('layouts.frontend')
+
 @section('styles')
 @endsection
+
+@section('title')
+    Products
+@endsection
+
 @section('content')
     <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner" id="top">
@@ -620,13 +626,10 @@
         </div>
     </div>
     <!-- ***** Subscribe Area Ends ***** -->
-
-
 @endsection
 
 
 @section('scripts')
-
 @endsection
 
 

@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>
-        {{-- Hexashop Ecommerce HTML CSS Template --}}
-        Products
+        @yield('title')
     </title>
 
     <script src="{{ asset('css/app.css') }}" defer></script>
@@ -58,17 +57,17 @@ https://templatemo.com/tm-571-hexashop
         @include('layouts.header')
         <!-- ***** Header End ***** -->
 
-        @yield('content')
+        @yield('content')       <!--All the pages of the website are in a sections within a blade.php files
+                                    (in the views) that called "content" which acts as a variable for each page-->
 
-        <!-- ***** Footer Start ***** -->
+        <!-- ***** Header Start ***** -->
         @include('layouts.footer')
-        <!-- ***** Footer End ***** -->
+        <!-- ***** Header End ***** -->
     </div>
 
-
-    <!-- jQuery -->
+    <!-- js & jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
-    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/app.js') }}" ></script>    <!--My Custom JS file (Kareem & Nada)-->
 
     <!-- Bootstrap -->
     <script src="assets/js/popper.js"></script>

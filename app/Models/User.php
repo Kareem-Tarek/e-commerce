@@ -32,7 +32,8 @@ class User extends Authenticatable
         'country_id', 
         'governorate_id', 
         'city_id', 
-        'whatsApp'
+        'whatsApp',
+        'facebook_id',
     ];
 
     /**
@@ -53,4 +54,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeType($query,$arg)
+    {
+        return $query->where('user_type',$arg);
+    }
 }
