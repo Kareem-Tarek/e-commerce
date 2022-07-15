@@ -3,32 +3,6 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Clock Start ***** -->
-                    <div class="contact-item">
-                        <div class="contact-item" id="clock">
-                            {{Carbon\Carbon::now()->translatedFormat('D Y')}} &nbsp;
-                            <span id="time" style="color: black;"></span>
-                            <script >
-                                function showTime() {
-                                    var date = new Date(),
-                                        utc = new Date(Date.UTC(
-                                            date.getFullYear(),
-                                            date.getMonth(),
-                                            date.getDate(),
-                                            date.getHours() - 2,  //modified on the Egyptian (Cairo UTC) time
-                                            date.getMinutes(),
-                                            date.getSeconds()
-                                        ));
-
-                                    document.querySelector('#time').innerHTML = utc.toLocaleTimeString();
-                                }
-
-                                setInterval(showTime, 1000);
-                            </script>
-                        </div>
-                    </div>
-                    <!-- ***** Clock End ***** -->
-
                     <!-- ***** Logo Start ***** -->
                     <a href="javascript:void(0);" class="logo">
                         {{-- <i class="fas fa-heart"></i>
@@ -40,9 +14,32 @@
 
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
+                        <li style="padding-top: 1%;">
+                            <!-- ***** Clock Start ***** -->
+                                    <label style="color: rgb(20, 41, 136); font-weight: bold;">{{Carbon\Carbon::now()->translatedFormat('D Y')}}</label>
+                                    <span id="time" style="color: rgb(20, 41, 136); font-weight: bold;"></span>
+                                    <script >
+                                        function showTime() {
+                                            var date = new Date(),
+                                                utc = new Date(Date.UTC(
+                                                    date.getFullYear(),
+                                                    date.getMonth(),
+                                                    date.getDate(),
+                                                    date.getHours() - 2,  //modified on the Egyptian (Cairo UTC) time
+                                                    date.getMinutes(),
+                                                    date.getSeconds()
+                                                ));
+
+                                            document.querySelector('#time').innerHTML = utc.toLocaleTimeString();
+                                        }
+
+                                        setInterval(showTime, 1000);
+                                    </script>
+                            <!-- ***** Clock End ***** -->
+                        </li>
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li class="submenu">
-                            <a href="{{ route('products') }}">Products</a>
+                            <a href="{{ route('products') }}"><u>Our Products</u></a>
                             <ul>
                                 <li class="scroll-to-section"><a href="http://127.0.0.1:8000/products#men">Men's</a></li>
                                 <li class="scroll-to-section"><a href="http://127.0.0.1:8000/products#women">Women's</a></li>
@@ -50,11 +47,11 @@
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="javascript:void(0);">Company</a>
+                            <a href="javascript:void(0);">Our Company</a>
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="single-product.html">Single Product</a></li>
+                                <li><a href="{{ route('about') }}">About Us</a></li>
+                                <li><a href="javascript:void(0);">Mission Statement</a></li>
+                                <li><a href="javascript:void(0);">Single Product</a></li>
                                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
                             </ul>
                         </li>
