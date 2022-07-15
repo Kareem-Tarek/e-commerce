@@ -191,7 +191,7 @@ h1 {
 }
 
 .dropdown_faq{
-    color: rgb(27, 139, 170);
+    color: rgb(20, 41, 136);
     font-size: 20px;
 }
 
