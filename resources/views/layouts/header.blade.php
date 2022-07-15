@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
+                    <!-- ***** Clock Start ***** -->
                     <div class="contact-item">
                         <div class="contact-item" id="clock">
                             {{Carbon\Carbon::now()->translatedFormat('D Y')}} &nbsp;
@@ -26,6 +27,8 @@
                             </script>
                         </div>
                     </div>
+                    <!-- ***** Clock End ***** -->
+
                     <!-- ***** Logo Start ***** -->
                     <a href="javascript:void(0);" class="logo">
                         {{-- <i class="fas fa-heart"></i>
@@ -34,6 +37,7 @@
                         <img src="assets/images/e-commerce_logo.png" style="width: 200px;">
                     </a>
                     <!-- ***** Logo End ***** -->
+                    
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="javascript:void(0)">Home</a></li>
