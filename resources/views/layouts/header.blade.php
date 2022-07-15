@@ -15,14 +15,14 @@
                                             date.getFullYear(),
                                             date.getMonth(),
                                             date.getDate(),
-                                            date.getHours() - 2,  //modified on the Egyptian (Cairo UTC) time
+                                            date.getHours() - 3,  //modified on the Egyptian (Cairo UTC) time
                                             date.getMinutes(),
                                             date.getSeconds()
                                         ));
-    
+
                                     document.getElementById('time').innerHTML = utc.toLocaleTimeString();
                                 }
-    
+
                                 setInterval(showTime, 1000);
                             </script>
                         </div>
@@ -37,7 +37,7 @@
                         <img src="assets/images/e-commerce_logo.png" style="width: 200px;">
                     </a>
                     <!-- ***** Logo End ***** -->
-                    
+
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="javascript:void(0)">Home</a></li>
