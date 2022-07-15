@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/products', [ProductsController::class, 'index'])->name('products');  //products landing page
+Route::get('/products', [ProductsController::class, 'index'])->name('products');
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
 
