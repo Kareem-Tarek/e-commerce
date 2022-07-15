@@ -20,7 +20,7 @@
                                             date.getSeconds()
                                         ));
     
-                                    document.getElementById('time').innerHTML = utc.toLocaleTimeString();
+                                    document.querySelector('#time').innerHTML = utc.toLocaleTimeString();
                                 }
     
                                 setInterval(showTime, 1000);
