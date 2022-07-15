@@ -58,15 +58,7 @@
                                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
                             </ul>
                         </li>
-                        <li class="submenu">
-                            <a href="javascript:void(0);">Features</a>
-                            <ul>
-                                <li><a href="#">Features Page 1</a></li>
-                                <li><a href="#">Features Page 2</a></li>
-                                <li><a href="#">Features Page 3</a></li>
-                                <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                            </ul>
-                        </li>
+                        
                         <li class="scroll-to-section"><a href="http://127.0.0.1:8000/products#explore">Explore</a></li>
                         @if(!auth()->user()) <!---------- = unregistered user (which means "guest") ---------->
                         <li class="submenu">
