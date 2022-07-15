@@ -58,7 +58,7 @@
 </footer>
 
 <style>
-    .facebook-icon:hover{
+    .facebook-icon:hover {
         color: #3b5998;
         transition: 0.40s ease-in-out;
     }
