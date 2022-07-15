@@ -15,7 +15,7 @@
                                             date.getFullYear(),
                                             date.getMonth(),
                                             date.getDate(),
-                                            date.getHours() - 3,  //modified on the Egyptian (Cairo UTC) time
+                                            date.getHours() - 2,  //modified on the Egyptian (Cairo UTC) time
                                             date.getMinutes(),
                                             date.getSeconds()
                                         ));
