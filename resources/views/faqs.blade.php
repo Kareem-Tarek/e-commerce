@@ -18,7 +18,7 @@
   
         <div class="faq-container" style="margin-bottom: 3%;">
 
-            <div class="faq" style="border-radius: 35px;">
+            <div class="faq" style="border-radius: 25px;">
                 <h5 class="faq-title">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.</h5>
                 <p class="faq-text">
                     <ul class="faq-text" style="list-style-type: upper-roman; padding-left: 2%;">
@@ -41,7 +41,7 @@
                 </button>
             </div>
 
-            <div class="faq" style="border-radius: 35px;">
+            <div class="faq" style="border-radius: 25px;">
                 <h5 class="faq-title">xxxxxxxxxxxxxxxxxxxxxxxx?</h5>
                 <p class="faq-text">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque beatae sequi aut fugit voluptate dolor debitis reiciendis quas magni, enim maxime aliquam vel delectus quae asperiores distinctio, necessitatibus quidem totam.
@@ -52,7 +52,7 @@
                 </button>
             </div>
 
-            <div class="faq" style="border-radius: 35px;">
+            <div class="faq" style="border-radius: 25px;">
                 <h5 class="faq-title">
                     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?
                 </h5>
@@ -79,7 +79,7 @@
                 </button>
             </div>
     
-            <div class="faq" style="border-radius: 35px;">
+            <div class="faq" style="border-radius: 25px;">
                 <h5 class="faq-title">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?</h5>
                 <p class="faq-text">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, quibusdam optio! Dignissimos possimus minus, iure recusandae quasi beatae, nam architecto sunt magni cumque reprehenderit dolore atque maxime esse eius nesciunt?
