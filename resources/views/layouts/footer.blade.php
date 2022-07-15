@@ -27,7 +27,7 @@
                     <li><a href="#">Homepage</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Help</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-lg-3">
