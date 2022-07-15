@@ -3,12 +3,35 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
+                    <div class="contact-item">
+                        <div class="contact-item" id="clock">
+                            {{Carbon\Carbon::now()->translatedFormat('D Y')}} &nbsp;
+                            <span id="time" style="color: black;"></span>
+                            <script >
+                                function showTime() {
+                                    var date = new Date(),
+                                        utc = new Date(Date.UTC(
+                                            date.getFullYear(),
+                                            date.getMonth(),
+                                            date.getDate(),
+                                            date.getHours() - 2,  //modified on the Egyptian (Cairo UTC) time
+                                            date.getMinutes(),
+                                            date.getSeconds()
+                                        ));
+    
+                                    document.getElementById('time').innerHTML = utc.toLocaleTimeString();
+                                }
+    
+                                setInterval(showTime, 1000);
+                            </script>
+                        </div>
+                    </div>
                     <!-- ***** Logo Start ***** -->
                     <a href="javascript:void(0);" class="logo">
                         {{-- <i class="fas fa-heart"></i>
                             <i class="fa-solid fa-k"></i>a</i></i><i class="fa-solid fa-r"></i></i>ee</i><i class="fa-solid fa-m"></i>
                         <i class="fas fa-heart"></i> --}}
-                        <img src="assets/images/e-commerce_logo.png">
+                        <img src="assets/images/e-commerce_logo.png" style="width: 200px;">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
