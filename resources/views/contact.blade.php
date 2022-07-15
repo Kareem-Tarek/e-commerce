@@ -9,7 +9,7 @@
 
 <div style="margin-top: 10%;">
     @section('content')
-        <h1>Contact Us Page!!!!\</h1>
+        <h1>يا حبي Contact Us يالا</h1>
     @endsection
 </div>
 

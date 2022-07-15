@@ -19,6 +19,11 @@ use App\Http\Controllers\ContactController;
 */
 Auth::routes();
 
+// Route::prefix('home')->group( function(){
+//     Route::get('/', [HomeController::class, 'index'])->name('home');
+//     Route::get('/home', [HomeController::class, 'index'])->name('home');
+// });
+
 Route::get('/products', [ProductsController::class, 'index'])->name('products');  //products landing page
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
