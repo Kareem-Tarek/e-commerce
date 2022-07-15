@@ -53,6 +53,7 @@
                                 <li><a href="javascript:void(0);">Mission Statement</a></li>
                                 <li><a href="javascript:void(0);">Single Product</a></li>
                                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                <li><a href="{{ route('faqs') }}">FAQ's</a></li>
                             </ul>
                         </li>
                         

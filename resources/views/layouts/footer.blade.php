@@ -7,9 +7,9 @@
                         <img src="assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
                     </div>
                     <ul>
-                        <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
-                        <li><a href="#">hexashop@company.com</a></li>
-                        <li><a href="#">010-020-0340</a></li>
+                        <li><a href="javascript:void(0);">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
+                        <li><a href="javascript:void(0);">hexashop@company.com</a></li>
+                        <li><a href="javascript:void(0);">010-020-0340</a></li>
                     </ul>
                 </div>
             </div>
@@ -24,19 +24,19 @@
             <div class="col-lg-3">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="#">Homepage</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="{{ route('home') }}">Homepage</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="javascript:void(0);">Help</a></li>
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-lg-3">
                 <h4>Help &amp; Information</h4>
                 <ul>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Tracking ID</a></li>
+                    <li><a href="javascript:void(0);">Help</a></li>
+                    <li><a href="{{ route('faqs') }}">FAQ's</a></li>
+                    <li><a href="javascript:void(0);">Shipping</a></li>
+                    <li><a href="javascript:void(0);">Tracking ID</a></li>
                 </ul>
             </div>
             <div class="col-lg-12">
@@ -47,12 +47,29 @@
 
                     <br>Distributed By: <a href="https://themewagon.com" target="_blank" title="free & premium responsive templates">ThemeWagon</a></p>
                     <ul>
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="javascript:void(0);"><i class="facebook-icon fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="javascript:void(0);"><i class="twitter-icon fa-brands fa-twitter"></i></a></li>
+                        <li><a href="javascript:void(0);"><i class="linkedin-icon fa-brands fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
+<style>
+    .facebook-icon:hover{
+        color: #3b5998;
+        transition: 0.40s ease-in-out;
+    }
+
+    .twitter-icon:hover{
+        color: #1DA1F2;
+        transition: 0.40s ease-in-out;
+    }
+
+    .linkedin-icon:hover{
+        color: #0A66C2;
+        transition: 0.40s ease-in-out;
+    }
+</style>

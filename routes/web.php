@@ -7,6 +7,7 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FAQsController;
 
 
 /*
@@ -29,6 +30,8 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/about-us', [AboutController::class, 'index'])->name('about');
+
+Route::get('/faqs', [FAQsController::class, 'index'])->name('faqs');
 
 Route::post('/cart', [CartsController::class, 'store'])->name('cart');
 
