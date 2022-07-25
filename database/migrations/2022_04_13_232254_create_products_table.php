@@ -21,6 +21,11 @@ class CreateProductsTable extends Migration
             $table->string('image_name');
             $table->string('price');
             $table->string('sale_price');
+            $table->enum('product_category',['men','women','kids']);
+            // $table->unsignedBigInteger('cart_id');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('cart_id')->references('id')->on('carts');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

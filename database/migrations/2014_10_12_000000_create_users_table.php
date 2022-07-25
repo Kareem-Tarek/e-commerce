@@ -30,6 +30,10 @@ class CreateUsersTable extends Migration
             $table->integer('governorate_id')->nullable();
             $table->integer('city_id')->nullable();
             $table->string('whatsApp')->nullable();
+            // $table->unsignedBigInteger('cart_id');
+            // $table->unsignedBigInteger('product_id');
+            // $table->foreign('cart_id')->references('id')->on('carts');
+            // $table->foreign('product_id')->references('id')->on('products');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

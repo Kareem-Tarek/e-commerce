@@ -20,6 +20,7 @@ class LoginController extends Controller
     |
     */
 
+
     // use AuthenticatesUsers;
     use AuthenticatesUsers {
         logout as performLogout;
@@ -47,7 +48,7 @@ class LoginController extends Controller
     {
         $this->performLogout($request);
 
-        return redirect()->route('products');
+        return redirect()->route('home');
     }
 
 

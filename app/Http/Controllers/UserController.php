@@ -2,26 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Product;
 
-class ProductsController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $req)
     {
-        $products          = Product::all();
-        $products_men      = Product::all()->where('product_category', '=', 'men');
-        $products_women    = Product::all()->where('product_category', '=', 'women');
-        $products_kids     = Product::all()->where('product_category', '=', 'kids');
-
-        // dd($products);
-
-        return view('product', compact('products','products_men','products_women','products_kids'));
+        return $req->input();
     }
 
     /**

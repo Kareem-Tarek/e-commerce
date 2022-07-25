@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FAQsController;
+// use App\Http\Middleware\AuthMiddleware;
 
 
 /*
@@ -22,8 +23,10 @@ use App\Http\Controllers\FAQsController;
 */
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::group([], function () {   //group function for "home" route.
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
 
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
 
@@ -43,3 +46,21 @@ Route::post('/process/user/payment', [CartsController::class, 'processPayment'])
 //     Route::get('auth' , FacebookController::class, 'LoginUsingFacebook')->name('login');
 //     Route::get('callback' , FacebookController::class, 'callbackFromFacebook')->name('callback');
 // });
+
+
+//*****-------------------- start social media (facebook). --------------------*****//
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
+//*****-------------------- end social media (facebook). --------------------*****//
+
+
+//*****-------------------- start admin & moderator route. --------------------*****//
+Route::group([
+    'middleware' => ['auth', 'admin' , 'moderator']
+], function () {
+
+    Route::prefix('dashboard')->group(function () {
+        //
+    });
+});
+//*****-------------------- end admin & moderator route. --------------------*****//

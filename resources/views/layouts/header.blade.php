@@ -4,11 +4,11 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="javascript:void(0);" class="logo">
+                    <a href="{{ route('home') }}" class="logo">
                         {{-- <i class="fas fa-heart"></i>
                             <i class="fa-solid fa-k"></i>a</i></i><i class="fa-solid fa-r"></i></i>ee</i><i class="fa-solid fa-m"></i>
                         <i class="fas fa-heart"></i> --}}
-                        <img src="assets/images/e-commerce_logo.png" style="width: 200px;">
+                        <img src="assets/images/Anywhere-Anytime(1).png" alt="AA.png" style="width: 100px; color: snow;">
                     </a>
                     <!-- ***** Logo End ***** -->
 
@@ -16,7 +16,7 @@
                     <ul class="nav">
                         <li style="padding-top: 1%;">
                             <!-- ***** Clock Start ***** -->
-                                    <label style="color: rgb(20, 41, 136); font-weight: bold;">{{Carbon\Carbon::now()->translatedFormat('D Y')}}</label>
+                                    {{-- <label style="color: rgb(20, 41, 136); font-weight: bold;">{{Carbon\Carbon::now()->translatedFormat('D Y')}}</label>
                                     <span id="time" style="color: rgb(20, 41, 136); font-weight: bold;"></span>
                                     <script >
                                         function showTime() {
@@ -34,7 +34,7 @@
                                         }
 
                                         setInterval(showTime, 1000);
-                                    </script>
+                                    </script> --}}
                             <!-- ***** Clock End ***** -->
                         </li>
                         <li><a href="{{ route('home') }}">Home</a></li>
@@ -59,13 +59,13 @@
                         
                         <li class="scroll-to-section"><a href="http://127.0.0.1:8000/products#explore">Explore</a></li>
                         @if(!auth()->user()) <!---------- = unregistered user (which means "guest") ---------->
-                        <li class="submenu">
-                            <a href="javascript:void(0);">Account</a>
-                            <ul>
-                                <li><a href="{{ route('register') }}">Register</a></li>
-                                <li><a href="{{ route('login') }}">Login</a></li>
-                            </ul>
-                        </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);">Account</a>
+                                <ul>
+                                    <li><a href="{{ route('register') }}">Register</a></li>
+                                    <li><a href="{{ route('login') }}">Login</a></li>
+                                </ul>
+                            </li>
                         @else <!---------- = registered user (any user type in the system) ---------->
                             <li class="submenu">
                                 <a href="javascript:void(0);" style="color: #0083FF;" onMouseOver="this.style.color='#151414'" onMouseOut="this.style.color='#0083FF'">{{auth()->user()->name ?? ''}}</a>
@@ -86,6 +86,11 @@
                                     </form>
                                 </ul>
                             </li>
+                        @endif
+                        
+                        @if(auth()->user())
+                        {{-- @if(auth()->user()->user_type == "customer") --}}
+                            <li style="padding-top: 0.25%;"><a href="javascript:void(0);"><i class="fa-solid fa-cart-shopping" style="font-size: 120%;"></i></a></li>
                         @endif
                     </ul>
                     <a class='menu-trigger'>

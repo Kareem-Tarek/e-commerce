@@ -8,6 +8,15 @@
 @endsection
 
 @section('content')
+    <!-- ***** Search bar Start ***** -->
+    <div class="search-container" style="margin-top: 10%; margin-bottom: -8%; text-align:center;">
+        <form action="">
+          <input type="text" placeholder="Search for a certain product?" name="search" style="width: 30%;">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <!-- ***** Search bar End ***** -->
+
     <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner" id="top">
         <div class="container-fluid">
@@ -16,8 +25,8 @@
                     <div class="left-content">
                         <div class="thumb">
                             <div class="inner-content">
-                                <h4>We Are Hexashop</h4>
-                                <span>Awesome, clean &amp; creative HTML5 Template</span>
+                                <h4>We Are AA</h4>
+                                {{-- <span>Awesome, clean &amp; creative HTML5 Template</span> --}}
                                 <div class="main-border-button">
                                     <a href="javascript:void(0)">Purchase Now!</a>
                                 </div>
@@ -127,7 +136,7 @@
                             <div class="col-lg-6">
                                 <div class="section-heading">
                                     <h2>Men's Latest</h2>
-                                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                                    <span>Details to details is what makes AA different from the other themes.</span>
                                 </div>
                             </div>
                         </div>
@@ -137,273 +146,14 @@
                             <div class="col-lg-12">
                                 <div class="men-item-carousel">
                                     <div class="owl-men-item owl-carousel">
-                                        @if(isset($products))
-                                        @foreach ( $products as $product )
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <div class="hover-content">
-                                                    <ul>
-                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
-                                                               user-id="{{ auth()->user()->id ?? 0 }}">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <img src="{{ $product->image_name }}" alt="Product" height="550px">
-                                            </div>
-                                            <div class="down-content">
-                                                <h4>{{ $product->name }}</h4>
-                                                <span>{{ $product->price }}</span>
-                                                <ul class="stars">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                        @endif
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <div class="hover-content">
-                                                    <ul>
-                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
-                                                               user-id="{{ auth()->user()->id ?? 0 }}">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <img src="{{ $product->image_name }}" alt="Product" height="550px">
-                                            </div>
-                                            <div class="down-content">
-                                                <h4>{{ $product->name }}</h4>
-                                                <span>{{ $product->price }}</span>
-                                                <ul class="stars">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <div class="hover-content">
-                                                    <ul>
-                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
-                                                               user-id="{{ auth()->user()->id ?? 0 }}">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <img src="{{ $product->image_name }}" alt="Product" height="550px">
-                                            </div>
-                                            <div class="down-content">
-                                                <h4>{{ $product->name }}</h4>
-                                                <span>{{ $product->price }}</span>
-                                                <ul class="stars">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <div class="hover-content">
-                                                    <ul>
-                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
-                                                               user-id="{{ auth()->user()->id ?? 0 }}">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <img src="{{ $product->image_name }}" alt="Product" height="550px">
-                                            </div>
-                                            <div class="down-content">
-                                                <h4>Classic Spring</h4>
-                                                <span>{{ $product->price }}</span>
-                                                <ul class="stars">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-        </section>
-
-                <!-- ***** Men Area Ends ***** -->
-
-                <!-- ***** Women Area Starts ***** -->
-                <section class="section" id="women">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="section-heading">
-                                    <h2>Women's Latest</h2>
-                                    <span>Details to details is what makes Hexashop different from the other themes.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="women-item-carousel">
-                                    <div class="owl-women-item owl-carousel">
-                                        @if(isset($products))
-                                        @foreach ( $products as $product )
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <div class="hover-content">
-                                                    <ul>
-                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
-                                                               user-id="{{ auth()->user()->id ?? 0 }}">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <img src="{{ $product->image_name }}" alt="Product" height="550px">
-                                            </div>
-                                            <div class="down-content">
-                                                <h4>{{ $product->name }}</h4>
-                                                <span>{{ $product->price }}</span>
-                                                <ul class="stars">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                        @endif
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <div class="hover-content">
-                                                    <ul>
-                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
-                                                               user-id="{{ auth()->user()->id ?? 0 }}">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <img src="{{ $product->image_name }}" alt="Product" height="550px">
-                                            </div>
-
-                                            <div class="down-content">
-                                                <h4>{{ $product->name }}</h4>
-                                                <span>{{ $product->price }}</span>
-                                                <ul class="stars">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="item">
-                                            <div class="thumb">
-                                                <div class="hover-content">
-                                                    <ul>
-                                                        <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
-                                                               user-id="{{ auth()->user()->id ?? 0 }}">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <img src="assets/images/women-03.jpg" alt="">
-                                            </div>
-                                            <div class="down-content">
-                                                <h4>Spring Collection</h4>
-                                                <span>$130.00</span>
-                                                <ul class="stars">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div> --}}
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ***** Women Area Ends ***** -->
-
-                <!-- ***** Kids Area Starts ***** -->
-                <section class="section" id="kids">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="section-heading">
-                                    <h2>Kid's Latest</h2>
-                                    <span>Details to details is what makes Hexashop different from the other themes.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="kid-item-carousel">
-                                    <div class="owl-kid-item owl-carousel">
-                                        @if(isset($products))
-                                        @foreach ( $products as $product )
+                                        @if(isset($products_men))
+                                            @foreach ( $products_men as $product )
                                             <div class="item">
                                                 <div class="thumb">
                                                     <div class="hover-content">
                                                         <ul>
-                                                            <li><a href="single-product.html" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
-                                                            <li><a href="single-product.html" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="javascript:void(0);" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                            <li><a href="javascript:void(0);" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
                                                             <li>
                                                                 <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
                                                                 user-id="{{ auth()->user()->id ?? 0 }}">
@@ -418,17 +168,133 @@
                                                     <h4>{{ $product->name }}</h4>
                                                     <span>{{ $product->price }}</span>
                                                     <ul class="stars">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
                                                         <li><i class="fa fa-star"></i></li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                        @endforeach
+                                            @endforeach
                                         @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
+                <!-- ***** Men Area Ends ***** -->
+
+                <!-- ***** Women Area Starts ***** -->
+                <section class="section" id="women">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="section-heading">
+                                    <h2>Women's Latest</h2>
+                                    <span>Details to details is what makes AA different from the other themes.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="women-item-carousel">
+                                    <div class="owl-women-item owl-carousel">
+                                        @if(isset($products_women))
+                                            @foreach ( $products_women as $product )
+                                            <div class="item">
+                                                <div class="thumb">
+                                                    <div class="hover-content">
+                                                        <ul>
+                                                            <li><a href="javascript:void(0);" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                            <li><a href="javascript:void(0);" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                            <li>
+                                                                <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                                user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                    <i class="fa-solid fa-cart-plus"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <img src="{{ $product->image_name }}" alt="Product" height="550px">
+                                                </div>
+                                                <div class="down-content">
+                                                    <h4>{{ $product->name }}</h4>
+                                                    <span>{{ $product->price }}</span>
+                                                    <ul class="stars">
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ***** Women Area Ends ***** -->
+
+                <!-- ***** Kids Area Starts ***** -->
+                <section class="section" id="kids">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="section-heading">
+                                    <h2>Kid's Latest</h2>
+                                    <span>Details to details is what makes AA different from the other themes.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="kid-item-carousel">
+                                    <div class="owl-kid-item owl-carousel">
+                                        @if(isset($products_kids))
+                                            @foreach ( $products_kids as $product )
+                                            <div class="item">
+                                                <div class="thumb">
+                                                    <div class="hover-content">
+                                                        <ul>
+                                                            <li><a href="javascript:void(0);" class="products-hover-icons eye-button"><i class="fa fa-eye"></i></a></li>
+                                                            <li><a href="javascript:void(0);" class="products-hover-icons star-button"><i class="fa fa-star"></i></a></li>
+                                                            <li>
+                                                                <a href="javascript:void(0)" class="products-hover-icons add-to-cart-button" product-id="{{ $product->id }}"
+                                                                user-id="{{ auth()->user()->id ?? 0 }}">
+                                                                    <i class="fa-solid fa-cart-plus"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <img src="{{ $product->image_name }}" alt="Product" height="550px">
+                                                </div>
+                                                <div class="down-content">
+                                                    <h4>{{ $product->name }}</h4>
+                                                    <span>{{ $product->price }}</span>
+                                                    <ul class="stars">
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star" style="color: orange"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -444,11 +310,11 @@
                             <div class="col-lg-6">
                                 <div class="left-content">
                                     <h2>Explore Our Products</h2>
-                                    <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
+                                    <span>You are allowed to use this AA HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
                                     <div class="quote">
                                         <i class="fa fa-quote-left"></i><p>You are not allowed to redistribute this template ZIP file on any other website.</p>
                                     </div>
-                                    <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
+                                    <p>There are 5 pages included in this AA Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
                                     <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
                                     <div class="main-border-button">
                                         <a href="{{ route('products') }}">Discover More</a>
@@ -497,7 +363,7 @@
                 <div class="col-lg-12">
                     <div class="section-heading">
                         <h2>Social Media</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <span>Details to details is what makes AA different from the other themes.</span>
                     </div>
                 </div>
             </div>
@@ -582,7 +448,7 @@
                 <div class="col-lg-8">
                     <div class="section-heading">
                         <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <span>Details to details is what makes AA different from the other themes.</span>
                     </div>
                     <form id="subscribe" action="" method="get">
                         <div class="row">

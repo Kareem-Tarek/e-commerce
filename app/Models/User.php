@@ -36,6 +36,16 @@ class User extends Authenticatable
         'facebook_id',
     ];
 
+    public function product(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->HasMany(Product::class);
+    }
+
+    public function cart(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->HasMany(Cart::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

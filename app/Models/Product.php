@@ -18,7 +18,18 @@ class Product extends Model
         'image_name',
         'price',
         'sale_price',
+        'product_category',
         'created_at',
         'updated_at',
     ];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\belongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function cart(): \Illuminate\Database\Eloquent\Relations\belongsTo
+    {
+        return $this->belongsTo(Cart::class);
+    }
 }

@@ -1,5 +1,12 @@
 @extends('layouts.frontend')
 
+@section('styles')
+@endsection
+
+@section('title')
+    Register
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -82,7 +89,7 @@
 
                         <div style="margin-top: 7%;">
                             <label>or Login with Your Social Media Account:</label>
-                            <a href="javascript:void(0);" class="btn btn-facebook btn-user btn-block" style="background-color: #2A426F; color: snow; width: 65%; margin-right: auto; margin-left: auto;">
+                            <a href="{{url('/redirect')}}" class="btn btn-facebook btn-user btn-block" style="background-color: #2A426F; color: snow; width: 65%; margin-right: auto; margin-left: auto;">
                                 <i class="fab fa-facebook-f fa-fw"></i>&nbsp;&nbsp;Login with Facebook
                             </a>
 
