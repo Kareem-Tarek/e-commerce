@@ -54,7 +54,7 @@ ________________________________________________________________________________
 ## Steps for installing the project:
 - In the project's directory type in the terminal..
     - Run `git clone https://github.com/Kareem-Tarek/e-commerce.git`.
-    - After thhe previous step is done, type in the terminal "cd e-commerce" to go access the project's folder directory.
+    - After thhe previous step is done, type in the terminal `cd e-commerce` to go access the project's folder directory.
     - Then in the terminal run `composer install` or `composer update`.
     - Run `cp .env.example .env`.
     - Run `php artisan key:generate`.
