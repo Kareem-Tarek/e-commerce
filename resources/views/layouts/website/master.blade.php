@@ -17,9 +17,9 @@
 
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
-    
+
     <!-- Additional CSS Files -->
-    
+
     {{-- <link rel="stylesheet" href="{{ mix('/css/app.css') }}"> --}}
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
@@ -72,7 +72,7 @@ https://templatemo.com/tm-571-hexashop
         <!-- ***** Container/Content End ***** -->
 
         <!-- ***** Footer Start ***** -->
-        @include('layouts.website.footer') 
+        @include('layouts.website.footer')
         <!-- ***** Footer End ***** -->
 
         <!-- ***** Sticky Clock Start ***** -->
@@ -80,7 +80,7 @@ https://templatemo.com/tm-571-hexashop
         <!-- ***** Sticky Clock End ***** -->
 
         <!-- ***** Register Now Start (for guests ONLY!) ***** -->
-        @include('layouts.website.register-now')
+        {{-- @include('layouts.website.register-now') --}}
         <!-- ***** Register Now End (for guests ONLY!) ***** -->
 
         <!-- ***** Scroll Up Start ***** -->

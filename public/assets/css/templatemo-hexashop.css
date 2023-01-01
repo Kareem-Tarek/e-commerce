@@ -353,6 +353,10 @@ body {
 header
 ---------------------------------------------
 */
+.scroll-to-section i{
+    padding-right: 2% ;
+    font-size: 130%;
+}
 
 .background-header {
   border-bottom: none !important;
@@ -689,6 +693,27 @@ header
   color: #aaa;
 }
 
+.cart-icon-header {
+    padding-top: 0.25%;
+}
+.cart-icon-header i {
+    font-size: 120%;
+}
+.submenu-icon {
+    font-size: 130%;
+    padding-right: 2%;
+}
+.submenu-star-icon{
+    font-size: 120%;
+    padding-right: 2%;
+}
+.guest-uniqid {
+    padding-top: 0.7%;
+}
+.guest-uniqid span{
+    font-size: 13px;
+    color: #8197ac;
+}
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
     padding-left: 12px;
@@ -809,7 +834,87 @@ header
     font-size: 12px !important;
   }
 }
+/*
+---------------------------------------------
+Search Bar
+---------------------------------------------
+*/
+    @media only screen and (min-width:350px) and (max-width:505px) {
+    .search-box{width: 75%;}
+    }
 
+    @media only screen and (min-width:505px) and (max-width:768px) {
+    .search-box{width: 75%;}
+    }
+
+    @media (max-width:900px){
+        .search-container{
+            margin-top: 40px !important;
+        }
+
+    }
+    @media (max-width:760px){
+        .search-container{
+            margin-top: 15% !important;
+        }
+    }
+    @media (max-width:500px){
+        .search-container{
+            margin-top: 28% !important;
+            margin-left: 20px !important;
+        }
+    }
+    @media (max-width:582px){
+        .search-container{
+            margin-left: 20px !important;
+        }
+    }
+    .search-box-btn{background-color: black; border-radius: 5px;}
+
+    .search-box-btn:hover{background-color: rgb(255, 255, 255); transition: all 0.35s ease-in-out;}
+
+    .search-box-btn-icon{color: snow;}
+
+    .search-box-btn:hover .search-box-btn-icon{color: black; transition: all 0.35s ease-in-out;}
+
+    .ancord-item{color: black;}
+
+    .dropdown{padding-right: 50px; margin-top: 3%;}
+
+    .percent-icon{color: snow; background-color: black; padding-right: 5px; padding-left: 5px; padding-top: 2.5px; padding-bottom: 2.5px; border-radius: 12px;}
+
+    .dropdown .check-discount:hover .percent-icon{color: black; background-color: rgb(255, 255, 255); transition: all 0.45s linear;}
+
+    .dropdown .check-discount:not(:hover) .percent-icon{color: snow; background-color: black; transition: all 0.45s linear;}
+
+    .dropdown-menu{border: 1px solid black;}
+
+    .dropdown .dropdown-menu{padding-left: 4%;}
+
+    .dropdown a:hover {color: #0083FF; transition: all 0.30s ease-in-out;}
+
+    .dropdown a:not(:hover) {transition: all 0.30s ease-in-out;}
+
+    .dropdown a, .dropdown .dropdown-menu li a {color: black;}
+
+    .dropdown .dropdown-menu li a:hover {
+        color: #0083FF; transition: all 0.30s ease-in-out;
+    }
+    .dropdown .dropdown-menu li a:not(:hover) {
+        color: black; transition: all 0.30s ease-in-out;
+    }
+    .check-discounts{
+        background-color: rgba(220, 219, 219, 0.35); padding: 3% 8%; border-radius: 5px;
+    }
+    .check-discounts .check-discount {
+        color:#383e36;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        transition:all 0.30s ease-in-out
+    }
+    .badge-pill {
+        font-size: 70%;
+    }
 
 /*
 ---------------------------------------------
