@@ -46,6 +46,7 @@
             - Admins (CRUD)
             - Moderators (CR)
         - Users.
+            - Note: Admins couldn't edit or delete in the other admins data. But they could update their own selves (profile) and also all the other users (but except the other admins) from the dashboard.
             - Admins (CRUD)
             - Moderators (CR)
         - Amins & Moderators (RD) for carts.
