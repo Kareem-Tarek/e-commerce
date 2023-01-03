@@ -187,7 +187,7 @@ Route::group([
     Route::get('/contact-info-submitted', [ContactController::class, 'contact_success_view'])->name('contact_info_submitted');
 });
 Route::post('/contact-submit' , [ContactController::class, 'submit_contact_form']);
-Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
+Route::get('/company/contact-us', [ContactController::class, 'index'])->name('contact');
 Route::get('/contact-guest' , [ContactController::class, 'contactGuest'])->middleware('only_guests')->name('contact-guest');
 /////////////////////////------------------------- end website route. -------------------------/////////////////////////
 

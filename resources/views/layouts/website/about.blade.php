@@ -8,11 +8,7 @@
 @endsection
 
 @section('content')
-<style>
-    .inline-item{display: inline;}
-  </style>
-  
-<div style="margin-top: -10%;">
+<div class="about-container">
         <!-- ***** Main Banner Area Start ***** -->
         <div class="page-heading about-page-heading" id="top">
             <div class="container">
@@ -125,24 +121,15 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <img src="/assets/images/our-amazing-team/kareem.png" style="border-radius: 8px;">
+                                <img src="/assets/images/our-amazing-team/kareem.png" class="our-amazing-team-kareem-img">
                             </div>
-                            {{-- <div class="down-content" style="background-color: red;">
-                                <h4>Kareem Tarek</h4>
-                                <span>Founder &amp; CEO</span>
-                                <p>Kareem Tarek is business magnate and investor. He is the founder, CEO &amp; Web Developer of AA.</p>
-                                <p>
-                                    He started his life career in business and then shifted to IT career and used both careers 
-                                    for his advantage to make his own online business company (AA).
-                                </p>
-                            </div> --}}
                         </div>
                     </div>
 
                     <div class="col-lg-12 mt-1">
-                        <div class="text-center" style="">
-                            <h4 style="font-weight: bold;">Kareem Tarek</h4>
-                            <span style="color: rgb(166, 165, 165);">Founder &amp; CEO</span>
+                        <div class="text-center">
+                            <h4 class="font-weight-bold">Kareem Tarek</h4>
+                            <span class="founder-ceo-text">Founder &amp; CEO</span>
                             <p>Kareem Tarek is business magnate and investor. He is the founder, CEO &amp; Web Developer of AA.</p>
                             <p>
                                 He started his life career in business and then shifted to IT career and used both careers 

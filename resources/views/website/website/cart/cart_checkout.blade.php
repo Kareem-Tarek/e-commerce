@@ -32,7 +32,7 @@
 @endif
 
 <div class="mt-5">
-    <table border="1" cellpadding="5" style="text-align: center; margin-left:auto; margin-right:auto; width: 55%;">
+    <table border="1" cellpadding="5" class="table-responsive" style="text-align: center; margin-left:auto; margin-right:auto; width: 55%;">
             <thead>
                 <tr>
                     {{-- <th>#</th> --}}

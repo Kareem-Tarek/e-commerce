@@ -62,7 +62,7 @@
     </div>
 @endif
 
-<table border="1" cellpadding="5" class="table-search-results" style="text-align: center; margin-left:auto; margin-right:auto; margin-top:3%; width: 80%;">
+<table border="1" cellpadding="5" class="table-search-results table-responsive" style="text-align: center; margin-left:auto; margin-right:auto; margin-top:3%; width: 80%;">
     <thead>
         <tr style="padding: 5%;">
             <th scope = "col">#</th>
