@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-6">
                             <ul>
-                                <li>Store Location:<br><span>Al Maadi, Amit, Egypt</span></li>
+                                <li>Store Location:<br><span>Makram Ebeid, Nasr City, Egypt</span></li>
                                 <li>Phone:<br><span>+20 0100 000 0111</span></li>
                                 <li>Office Location:<br><span>Cairo, Egypt</span></li>
                             </ul>
@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <ul>
-                                    <li>Store Location:<br><span>Al Maadi, Amit, Egypt</span></li>
+                                    <li>Store Location:<br><span>Makram Ebeid, Nasr City, Egypt</span></li>
                                     <li>Phone:<br><span>+20 0100 000 0111</span></li>
                                     <li>Office Location:<br><span>Cairo, Egypt</span></li>
                                 </ul>

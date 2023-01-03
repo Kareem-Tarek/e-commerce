@@ -9,13 +9,13 @@
 
 @section('content')
 
-{{-- <div class="logo" style="width: 30%;">
-  <img src="/assets/images/Anywhere-Anytime(1).png" alt="AA.png">
-</div> --}}
+<div class="logo text-center">
+  <img src="/assets/images/Anywhere-Anytime(1).png" width="250" alt="AA.png">
+</div>
 
 <div class="row mission-vision-statement">
     <div class="col-sm-6">
-      <div class="card">
+      <div class="border">
         <div class="card-body mt-1">
           <div class="text-center pb-2"><img src="https://img.icons8.com/external-filled-outline-perfect-kalash/64/000000/external-Mission-investment-filled-outline-perfect-kalash.png"/></div>
           <h5 class="card-title text-center pb-1">Mission</h5>
@@ -26,8 +26,9 @@
         </div>
       </div>
     </div>
+
     <div class="col-sm-6">
-      <div class="card">
+      <div class="border">
         <div class="card-body mt-1">
           <div class="text-center pb-2"><img src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-vision-ui-and-ux-xnimrodx-lineal-gradient-xnimrodx.png"/></div>
           <h5 class="card-title text-center pb-1">Vision</h5>
@@ -42,24 +43,18 @@
 
   
   <style>
-    .mission-vision-statement{padding-top: 6%; padding-bottom: 8%;}
-    .card{margin-left: 8%; margin-right: 8%; height: 120%;}
+    @media (max-width: 576px) {
+      .mission-vision-statement{
+        margin-top: 15%;
+      }
+      .border{
+        margin-top: 4%;
+      }
+    }
+    .mission-vision-statement{ padding-bottom: 8%;}
+    .border{width: 80%; margin-left: auto; margin-right: auto;}
     .card-title{color: #0083FF; font-weight: bold;}
-    /* .card-body{position: relative;} */
-    /* .card-item{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;} */
-
-    /* .card:hover {background-color: black; color: snow; transition: 0.5s all ease-in-out;} */
   </style>
-
-  {{-- <script>
-    let card = document.querySelectorAll('.card');
-    let card_text = document.querySelectorAll('.card-text');
-
-    card.addEventListener("mouseover" , function(){
-      card.style.backgroundColor = 'black';
-      card_text.style.color = 'snow';
-    })
-  </script> --}}
 @endsection
 
 @section('scripts')

@@ -16,7 +16,7 @@
 @if($cartItems_count < 1) <!---- when the cart is empty for each user (customers ONLY!) then
                                 hide the table's heading because it is out of the loop already ---->
 <style>
-    table{display: none;}
+    table, .table-responsive{display: none;}
     .proceed-to-checkout-div{display: none;}
 </style>
 @endif
@@ -110,9 +110,9 @@
                         {{ method_field('patch') }}
                         {{-- <button class="btn btn-default button-submit-quantity">AJAX Submit</button> --}}
 
-                        <button type="button" class="button-minus" name="quantity_value_minus" style="background-color: /*#DC3545*/ black; border-radius: 15px;" onmouseover="this.style.backgroundColor='#C82333'" onmouseout="this.style.backgroundColor='black'"><i class="fa-solid fa-minus" style="color: snow;"></i></button>
-                            <input type="number" class="quantity_value" name="new_quantity" value="{{ $cartItem->quantity }}" min="0" style="width: 20%;">
-                        <button  type="button" class="button-plus" name="quantity_value_plus" style="background-color: /*#28A745*/ black; border-radius: 15px;" onmouseover="this.style.backgroundColor='#218838'" onmouseout="this.style.backgroundColor='black'"><i class="fa-solid fa-plus" style="color: snow;"></i></button>
+                        {{-- <button type="button" class="button-minus" name="quantity_value_minus" style="background-color: /*#DC3545*/ black; border-radius: 15px;" onmouseover="this.style.backgroundColor='#C82333'" onmouseout="this.style.backgroundColor='black'"><i class="fa-solid fa-minus" style="color: snow;"></i></button> --}}
+                            <input type="number" class="quantity_value" name="new_quantity" value="{{ $cartItem->quantity }}" min="0" style="width: 100%;">
+                        {{-- <button  type="button" class="button-plus" name="quantity_value_plus" style="background-color: /*#28A745*/ black; border-radius: 15px;" onmouseover="this.style.backgroundColor='#218838'" onmouseout="this.style.backgroundColor='black'"><i class="fa-solid fa-plus" style="color: snow;"></i></button> --}}
                     </form>
                 </td>
 
@@ -217,7 +217,7 @@
 <script type="text/javascript">
 
 
-cons button_minus   = document.querySelector('.button-minus'),
+const button_minus   = document.querySelector('.button-minus'),
      quantity_value = document.querySelector('.quantity_value'),
      button_minus   = document.querySelector('.button-minus');
 
