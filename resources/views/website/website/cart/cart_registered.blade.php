@@ -118,7 +118,7 @@
 
                 @if($cartItem->discount > 0)
                     <td style="width: 9%; background-color: #f8ecf4;">
-                        <span style="color:rgb(155, 31, 151); font-weight: bold;">{{ $cartItem->discount * 100  }}% OFF</span>
+                        <span style="color:rgb(155, 31, 151); font-weight: bold;">{{ $cartItem->discount * 100 }}% OFF</span>
                     </td>
                 @elseif($cartItem->discount <= 0 || $cartItem->discount == null || $cartItem->discount == "")
                     <td style="width: 9%; background-color: #f2f1f1;">

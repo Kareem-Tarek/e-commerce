@@ -11,7 +11,6 @@
 
 @if($cartItems_count == 0)
 <style>
-    table{display: none;}
     .options-info-in-cart-checkout{display: none;}
 </style>
 @endif
