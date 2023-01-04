@@ -8,12 +8,6 @@
 @endsection
 
 @section('content')
-
-<style>
-    .hover-content{background-color: rgba(117, 117, 117, 0.4);}
-    .hover-content-for-product-items{padding: 2% 0%;}
-</style>
-
 <!-- ***** Search bar Start ***** -->
 @include('layouts.website.search-bar')
 <!-- ***** Search bar End ***** -->
@@ -297,7 +291,7 @@
 
                                         @if(Auth::guest())
                                             <div class="guest-operations">
-                                                <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
+                                                <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                 <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                             </div>
                                         @endif
@@ -331,11 +325,6 @@
 <hr>
 
 @include('layouts.website.social-media')
-
-<style>
-
-</style>
-
 @endsection
 
 @section('scripts')

@@ -263,7 +263,7 @@ body {
   background-color: rgba(65, 16, 240, 0.08) !important;
   color: #2a2a2a !important;
   border: 1px solid #2a2a2a !important;
-  padding: 7px 12px;
+  padding: 9px 25px;
   display: inline-block;
   font-weight: 500;
   transition: all .3s;
@@ -281,7 +281,7 @@ body {
   background-color: rgba(0, 255, 51, 0.08) !important;
   color: #2a2a2a !important;
   border: 1px solid #2a2a2a !important;
-  padding: 9px 25px;
+  padding: 9px 5px;
   display: inline-block;
   font-weight: 500;
   transition: all .3s;
@@ -293,6 +293,12 @@ body {
 }
 /* end  add favorite button (for customer & guest) */
 /* Home Page */
+.hover-content{
+    background-color: rgba(117, 117, 117, 0.4);
+}
+.hover-content-for-product-items{
+    padding: 2% 0%;
+}
 .supplier-add-new-product-div{
     background-image: linear-gradient(rgba(0, 106, 206, 0.9), rgba(0, 0, 0, 0.9), rgba(157, 66, 157, 0.9));
     padding: 4%;
@@ -382,14 +388,20 @@ body {
 .guest-operations {
     margin-top: 2%;
     margin-bottom: 3%;
-}
-.guest-cart-btn {
-    padding: 9px 25px;
+    width: 110%;
 }
 .sale-price {
     color:rgb(155, 31, 151) !important;
     font-weight: bold !important;
     display:inline-block !important;
+}
+@media (max-width :768px) {
+    .add-to-cart-btn {
+        padding: 8px 18px;
+    }
+    .add-to-favorites-btn {
+        padding: 8px 12px;
+    }
 }
 /* end Search and operations */
 /* Product Page */
@@ -414,22 +426,6 @@ body {
     color: snow;
     opacity: 0.70;
 }
-
-/* .item .thumb .single-product-ancor .product-img {
-  height: 450px;
-  width: 100%;
-  border: 2px solid black;
-}
-.thumb .single-product-ancor .new-text {
-  position: absolute;
-  top: 1px;
-  background: rgba(0, 69, 175, 0.65);
-  width:100%;
-  font-weight: bold;
-  text-align: center;
-  color: snow;
-  opacity: 0.70;
-} */
 /* End Product Page */
 .main-border-button a {
   font-size: 13px;
@@ -440,12 +436,10 @@ body {
   font-weight: 500;
   transition: all .3s;
 }
-
 .main-border-button a:hover {
   background-color: #fff;
   color: #2a2a2a;
 }
-
 .main-white-button a {
   font-size: 13px;
   color: #2a2a2a;

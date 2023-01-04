@@ -156,7 +156,7 @@
 
                                                     @if(Auth::guest())
                                                         <div class="guest-operations">
-                                                            <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
+                                                            <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
                                                     @endif
@@ -265,7 +265,7 @@
 
                                                     @if(Auth::guest())
                                                         <div class="guest-operations">
-                                                            <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
+                                                            <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
                                                     @endif
@@ -371,7 +371,7 @@
                                                     @endauth
                                                     @if(Auth::guest())
                                                         <div class="guest-operations">
-                                                            <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
+                                                            <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
                                                     @endif
@@ -478,7 +478,7 @@
 
                                                     @if(Auth::guest())
                                                         <div class="guest-operations">
-                                                            <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
+                                                            <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
                                                     @endif
