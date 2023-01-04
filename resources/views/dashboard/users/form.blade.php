@@ -87,7 +87,7 @@
     </div>
 
     <div class="form-group row">
-        <label class="form-label col-lg-3">Phone <span class="text-danger"></span></label>
+        <label class="form-label col-lg-3">Phone</label>
         <div class="col-lg-9">
             <input class="form-control @error('phone') is-invalid @enderror" value="{{Request::old('phone') ? Request::old('phone') : $model->phone}}" type="text" name="phone" placeholder="Enter user phone" autocomplete="off">
             @error('phone')
@@ -99,13 +99,12 @@
     </div>
 
     <div class="form-group row">
-        <label class="form-label col-lg-3">Gender <span class="text-danger"></span></label>
+        <label class="form-label col-lg-3">Gender</label>
         <div class="col-lg-9">
             <select name="gender" class="form-control select @error('gender') is-invalid @enderror" value="{{Request::old('gender') ? Request::old('gender') : $model->gender}}">
                 <option value="" disabled selected> ---------- Please select a gender ---------- </option>
                 <option value="male" {{ isset($model) && $model->gender == "male" ? 'selected'  : '' }}>Male</option>
                 <option value="female" {{ isset($model) && $model->gender == "female" ? 'selected'  : '' }}>Female</option>
-                <option value="unspecified" {{ isset($model) && $model->gender == "unspecified" ? 'selected'  : '' }}>Unspecified</option>
             </select>
             @error('gender')
             <span class="invalid-feedback" role="alert">

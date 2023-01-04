@@ -97,11 +97,11 @@
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <a href="{{ route('single_product_page' , $product->id) }}">
-                                                        <img src="{{ $product->image_name }}" alt="{{ $product->name }}">
+                                                    <a class="single-product-ancor" href="{{ route('single_product_page' , $product->id) }}">
+                                                        <img class="product-img" src="{{ $product->image_name }}" alt="{{ $product->name }}">
                                                         @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                                                         @if($data <= 7) <!---------- in days ---------->
-                                                            <span>
+                                                            <span class="new-text">
                                                                 <h3 class="font-weight-bold">NEW</h3>
                                                             </span>
                                                         @endif
