@@ -399,7 +399,7 @@ body {
 .hover-content-for-product-items{
     padding: 2% 0%;
 }
-/* .item .thumb a img {
+.item .thumb a img {
     height: 450px;
     width: 100%;
     border: 2px solid black;
@@ -413,9 +413,9 @@ body {
     text-align: center;
     color: snow;
     opacity: 0.70;
-} */
+}
 
-.item .thumb .single-product-ancor .product-img {
+/* .item .thumb .single-product-ancor .product-img {
   height: 450px;
   width: 100%;
   border: 2px solid black;
@@ -429,7 +429,7 @@ body {
   text-align: center;
   color: snow;
   opacity: 0.70;
-}
+} */
 /* End Product Page */
 .main-border-button a {
   font-size: 13px;
