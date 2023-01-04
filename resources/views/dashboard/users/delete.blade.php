@@ -66,7 +66,7 @@
                                         <td class="text-center">{{ucfirst($user->user_type)}}</td>
                                         <td class="text-center">
                                             @if($user->user_type == "customer" || $user->user_type == "admin" || $user->user_type == "moderator")
-                                                {{ucfirst($user->gender ?? 'unspecified')}}
+                                                {{ucfirst($user->gender ?? '—')}}
                                             @else
                                                 —
                                             @endif
