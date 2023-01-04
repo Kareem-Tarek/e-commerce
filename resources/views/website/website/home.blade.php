@@ -275,8 +275,7 @@
                                             <span>{{ $product->price }} EGP</span>
                                         @endif
                                         <div class="text-left text-info">
-                                            Total Ratings: {{ \App\Models\Rating::where('product_id', $product->id)->count() }}
-                                            —
+                                            (Total Ratings: {{ \App\Models\Rating::where('product_id', $product->id)->count() }})
                                             {{-- Average Rating: {{ \App\Models\Rating::where('product_id', $product->id)->select('id','rating_level')->get() ?? '' }} --}}
                                         </div>
                                         @auth
