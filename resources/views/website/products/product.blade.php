@@ -8,30 +8,6 @@
 @endsection
 
 @section('content')
-    <style>
-        .hover-content{
-            background-color: rgba(117, 117, 117, 0.4);
-        }
-        .hover-content-for-product-items{
-            padding: 2% 0%;
-        }
-        .thumb a img {
-            height: 450px;
-            width: 100%;
-            border: 2px solid black;
-        }
-        .thumb a span {
-            position: absolute;
-            top: 1px;
-            background: rgba(0, 69, 175, 0.65);
-            width:100%;
-            font-weight: bold;
-            text-align: center;
-            color: snow;
-            opacity: 0.70;
-        }
-    </style>
-
     <!-- ***** Search bar Start ***** -->
     @include('layouts.website.search-bar')
     <!-- ***** Search bar End ***** -->
@@ -85,15 +61,12 @@
     <div class="product-items">
                     <!-- ***** Men Area Starts ***** -->
                 <section class="section" id="men">
-
                     <div class="container">
-
                         @auth
                             @if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator" || auth()->user()->user_type == "supplier")
                                 <a href="{{route('products.create')}}" class="btn btn-dark float-right"  type="button" title="Add New Product">Add New Product</a>
                             @endif
                         @endauth
-
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="section-heading">
@@ -129,7 +102,7 @@
                                                         @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                                                         @if($data <= 7) <!---------- in days ---------->
                                                             <span>
-                                                                <h3 style="font-weight: bolder;">NEW</h3>
+                                                                <h3 class="font-weight-bold">NEW</h3>
                                                             </span>
                                                         @endif
                                                     </a>
@@ -182,7 +155,7 @@
                                                     @endauth
 
                                                     @if(Auth::guest())
-                                                        <div style="margin-top: 2%; margin-bottom: 2%;">
+                                                        <div class="guest-operations">
                                                             <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
@@ -208,12 +181,6 @@
                             <div class="col-lg-6">
                                 <div class="section-heading">
                                     <h2>Women's Latest</h2>
-                                    @if(session()->has('addRating_women_message'))
-                                        <div class="alert alert-success text-center" style="width: %; margin-top: 1%; margin-left: auto; margin-right: auto;">
-                                            <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
-                                            {{ session()->get('addRating_women_message') }}
-                                        </div>
-                                    @endif
                                     <span>Details to details is what makes AA different from the other themes.</span>
                                 </div>
                             </div>
@@ -245,7 +212,7 @@
                                                         @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                                                         @if($data <= 7) <!---------- in days ---------->
                                                             <span>
-                                                                <h3 style="font-weight: bolder;">NEW</h3>
+                                                                <h3 class="font-weight-bold">NEW</h3>
                                                             </span>
                                                         @endif
                                                     </a>
@@ -279,18 +246,11 @@
                                                         @endif
                                                     </h4>
                                                     @if($product->discount > 0)
-                                                    <span><del style="color: red;">{{ $product->price }} EGP</del> <label style="color: #000;">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span style="color:rgb(155, 31, 151); font-weight: bold; display:inline-block;">({{ $product->discount * 100 }}% OFF)</span></span>
+                                                    <span><del class="text-danger">{{ $product->price }} EGP</del> <label class="text-dark">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span class="sale-price">({{ $product->discount * 100 }}% OFF)</span></span>
                                                     @elseif($product->discount <= 0 || $product->discount == null || $product->discount == "")
                                                         <span>{{ $product->price }} EGP</span>
                                                     @endif
-                                                    {{-- <ul class="stars pr-1"><br>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul> --}}
-                                                    <div class="text-left" style="color:rgb(72, 125, 171);">
+                                                    <div class="text-left text-info">
                                                         (Total Ratings: {{ \App\Models\Rating::where('product_id', $product->id)->count() }})
                                                     </div>
                                                     @auth
@@ -304,8 +264,8 @@
                                                     @endauth
 
                                                     @if(Auth::guest())
-                                                        <div style="margin-top: 2%; margin-bottom: 2%;">
-                                                            <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}" style="padding: 9px 25px;">Add To Cart</a>
+                                                        <div class="guest-operations">
+                                                            <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
                                                     @endif
@@ -323,18 +283,11 @@
 
                 <!-- ***** Kids Area Starts ***** -->
                 <section class="section" id="kids">
-
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="section-heading">
                                     <h2>Kid's Latest</h2>
-                                    @if(session()->has('addRating_kids_message'))
-                                        <div class="alert alert-success text-center" style="width: %; margin-top: 1%; margin-left: auto; margin-right: auto;">
-                                            <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
-                                            {{ session()->get('addRating_kids_message') }}
-                                        </div>
-                                    @endif
                                     <span>Details to details is what makes AA different from the other themes.</span>
                                 </div>
                             </div>
@@ -362,16 +315,12 @@
                                                         </ul>
                                                     </div>
                                                     <a href="{{ route('single_product_page' , $product->id) }}">
-                                                        <img src="{{ $product->image_name }}" alt="{{ $product->name }}" style="height: 450px; width: 100%; border: 2px solid black;">
+                                                        <img src="{{ $product->image_name }}" alt="{{ $product->name }}">
                                                         @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                                                         @if($data <= 7) <!---------- in days ---------->
-                                                            <span style="position: absolute;  top: 1px; background: rgba(0, 69, 175, 0.65); width:100%; font-weight: bold; text-align: center; color: snow; opacity: 0.70;">
-                                                                <h3 style="font-weight: bolder;">NEW</h3>
+                                                            <span>
+                                                                <h3 class="font-weight-bold">NEW</h3>
                                                             </span>
-                                                        {{-- @else <!---------- any other condition which is => more than the given period in the prevoious condition ---------->
-                                                            <span style="position: absolute;  top: 1px; background: rgba(175, 105, 0, 0.65); width:100%; font-weight: bold; text-align: center; color: snow;">
-                                                                <h3 style="font-weight: bolder;">OLD</h3>
-                                                            </span> --}}
                                                         @endif
                                                     </a>
                                                 </div>
@@ -404,11 +353,11 @@
                                                         @endif
                                                     </h4>
                                                     @if($product->discount > 0)
-                                                        <span><del class="text-danger">{{ $product->price }} EGP</del> <label class="text-dark">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span style="color:rgb(155, 31, 151); font-weight: bold; display:inline-block;">({{ $product->discount * 100 }}% OFF)</span></span>
+                                                        <span><del class="text-danger">{{ $product->price }} EGP</del> <label class="text-dark">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span class="sale-price">({{ $product->discount * 100 }}% OFF)</span></span>
                                                     @elseif($product->discount <= 0 || $product->discount == null || $product->discount == "")
                                                         <span>{{ $product->price }} EGP</span>
                                                     @endif
-                                                    <div class="text-left" style="color:rgb(72, 125, 171);">
+                                                    <div class="text-left text-info">
                                                         (Total Ratings: {{ \App\Models\Rating::where('product_id', $product->id)->count() }})
                                                     </div>
                                                     @auth
@@ -420,10 +369,9 @@
                                                             @include('layouts.website.addFavorite-form')
                                                         @endif
                                                     @endauth
-
                                                     @if(Auth::guest())
-                                                        <div style="margin-top: 2%; margin-bottom: 2%;">
-                                                            <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}" style="padding: 9px 25px;">Add To Cart</a>
+                                                        <div class="guest-operations">
+                                                            <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
                                                     @endif
@@ -441,18 +389,11 @@
 
                 <!-- ***** Accessories Area Starts ***** -->
                 <section class="section" id="accessories">
-
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="section-heading">
                                     <h2>Accessories</h2>
-                                    @if(session()->has('addRating_accessories_message'))
-                                        <div class="alert alert-success text-center" style="width: %; margin-top: 1%; margin-left: auto; margin-right: auto;">
-                                            <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
-                                            {{ session()->get('addRating_accessories_message') }}
-                                        </div>
-                                    @endif
                                     <span>Some of the Accessories...</span>
                                 </div>
                             </div>
@@ -463,8 +404,8 @@
                             <div class="col-lg-12">
                                 <div class="kid-item-carousel">
                                     <div class="owl-kid-item owl-carousel">
-                                        @if(isset($some_accessories))
-                                            @foreach ( $some_accessories as $product )
+                                        @if(isset($accessories))
+                                            @foreach ( $accessories as $product )
                                             <div class="item">
                                                 <div class="thumb">
                                                     <div class="hover-content hover-content-for-product-items">
@@ -480,16 +421,12 @@
                                                         </ul>
                                                     </div>
                                                     <a href="{{ route('single_product_page' , $product->id) }}">
-                                                        <img src="{{ $product->image_name }}" alt="{{ $product->name }}" style="height: 450px; width: 100%; border: 2px solid black;">
+                                                        <img src="{{ $product->image_name }}" alt="{{ $product->name }}">
                                                         @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                                                         @if($data <= 7) <!---------- in days ---------->
-                                                            <span style="position: absolute;  top: 1px; background: rgba(0, 69, 175, 0.65); width:100%; font-weight: bold; text-align: center; color: snow; opacity: 0.70;">
-                                                                <h3 style="font-weight: bolder;">NEW</h3>
+                                                            <span>
+                                                                <h3 class="font-weight-bold">NEW</h3>
                                                             </span>
-                                                        {{-- @else <!---------- any other condition which is => more than the given period in the prevoious condition ---------->
-                                                            <span style="position: absolute;  top: 1px; background: rgba(175, 105, 0, 0.65); width:100%; font-weight: bold; text-align: center; color: snow;">
-                                                                <h3 style="font-weight: bolder;">OLD</h3>
-                                                            </span> --}}
                                                         @endif
                                                     </a>
                                                 </div>
@@ -522,18 +459,11 @@
                                                         @endif
                                                     </h4>
                                                     @if($product->discount > 0)
-                                                    <span><del style="color: red;">{{ $product->price }} EGP</del> <label style="color: #000;">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span style="color:rgb(155, 31, 151); font-weight: bold; display:inline-block;">({{ $product->discount * 100 }}% OFF)</span></span>
+                                                    <span><del class="text-danger">{{ $product->price }} EGP</del> <label class="text-black">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span class="sale-price">({{ $product->discount * 100 }}% OFF)</span></span>
                                                     @elseif($product->discount <= 0 || $product->discount == null || $product->discount == "")
                                                         <span>{{ $product->price }} EGP</span>
                                                     @endif
-                                                    {{-- <ul class="stars pr-1"><br>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul> --}}
-                                                    <div class="text-left" style="color:rgb(72, 125, 171);">
+                                                    <div class="text-left text-info">
                                                         (Total Ratings: {{ \App\Models\Rating::where('product_id', $product->id)->count() }})
                                                     </div>
                                                     @auth
@@ -547,8 +477,8 @@
                                                     @endauth
 
                                                     @if(Auth::guest())
-                                                        <div style="margin-top: 2%; margin-bottom: 2%;">
-                                                            <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}" style="padding: 9px 25px;">Add To Cart</a>
+                                                        <div class="guest-operations">
+                                                            <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                             <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                                         </div>
                                                     @endif
@@ -563,14 +493,9 @@
                     </div>
                 </section>
                 <!-- ***** Accessories Area Ends ***** -->
-
     </div>
-
     @include('layouts.website.social-media')
-
 @endsection
-
-
 @section('scripts')
 @endsection
 

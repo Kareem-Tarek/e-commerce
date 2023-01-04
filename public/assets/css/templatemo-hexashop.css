@@ -292,6 +292,43 @@ body {
   color: snow !important;
 }
 /* end  add favorite button (for customer & guest) */
+/* Home Page */
+.supplier-add-new-product-div{
+    background-image: linear-gradient(rgba(0, 106, 206, 0.9), rgba(0, 0, 0, 0.9), rgba(157, 66, 157, 0.9));
+    padding: 4%;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
+.supplier-add-new-product-button{
+    animation: anim_text_color 5s infinite;
+}
+
+@keyframes anim_text_color {
+    0% {color: #0045AF;}
+    25%{color: #3385ff;}
+    38% {color: snow;}
+    50%{color: #3385ff;}
+    60%{color: rgb(102, 88, 211);}
+    75% {color: snow;}
+    88%{color: #3385ff;}
+    94% {color: snow;}
+    100% {color: #0045AF;}
+}
+
+.admin-moderator-add-new-product-div{
+    background-image: linear-gradient(rgba(225, 225, 225, 0.9), rgba(0, 73, 141, 0.9), rgba(0, 0, 0, 0.9));
+    padding: 4%;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    color: snow;
+}
+
+.admin-moderator-user-type{
+    color:#4bdbff;
+    font-family: cursive;
+}
+/* End Home Page */
 /* start Search and operations */
 .curriculum-event-thumb a span h3 {
     font-weight: bolder;
@@ -355,6 +392,29 @@ body {
     display:inline-block !important;
 }
 /* end Search and operations */
+/* Product Page */
+.hover-content{
+    background-color: rgba(117, 117, 117, 0.4);
+}
+.hover-content-for-product-items{
+    padding: 2% 0%;
+}
+.item .thumb a img {
+    height: 450px;
+    width: 100%;
+    border: 2px solid black;
+}
+.thumb a span {
+    position: absolute;
+    top: 1px;
+    background: rgba(0, 69, 175, 0.65);
+    width:100%;
+    font-weight: bold;
+    text-align: center;
+    color: snow;
+    opacity: 0.70;
+}
+/* End Product Page */
 .main-border-button a {
   font-size: 13px;
   color: #fff;

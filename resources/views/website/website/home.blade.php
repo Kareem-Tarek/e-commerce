@@ -20,46 +20,46 @@
 
 @if(session()->has('addCart_message'))
     <div class="alert alert-success text-center session-message">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+        <button type="button" class="close text-danger" data-dismiss="alert">x</button>
         {{ session()->get('addCart_message') }}<a href="{{ route('cart-registered') }}"> Check your cart</a>.
     </div>
 @elseif(session()->has('exceeded_available_quantity_message'))
     <div class="alert alert-danger text-center session-message">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+        <button type="button" class="close" data-dismiss="alert">x</button>
         {{ session()->get('exceeded_available_quantity_message') }}
-    </div> 
+    </div>
 @elseif(session()->has('quantity_is_null_message'))
-    <div class="alert alert-danger text-center" style="width: 60%; margin-top: 5%; margin-bottom: -1.5%; margin-left: auto; margin-right: auto;">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+    <div class="alert alert-danger text-center session-message" >
+        <button type="button" class="close text-danger" data-dismiss="alert">x</button>
         {{ session()->get('quantity_is_null_message') }}
     </div>
 @elseif(session()->has('quantity_is_zero_message'))
-    <div class="alert alert-danger text-center" style="width: 60%; margin-top: 5%; margin-bottom: -1.5%; margin-left: auto; margin-right: auto;">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+    <div class="alert alert-danger text-center session-message" >
+        <button type="button" class="close text-danger" data-dismiss="alert">x</button>
         {{ session()->get('quantity_is_zero_message') }}
     </div>
 @elseif(session()->has('quantity_is_negative_message'))
-    <div class="alert alert-danger text-center" style="width: 60%; margin-top: 5%; margin-bottom: -1.5%; margin-left: auto; margin-right: auto;">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+    <div class="alert alert-danger text-center session-message" >
+        <button type="button" class="close text-danger" data-dismiss="alert">x</button>
         {{ session()->get('quantity_is_negative_message') }}
     </div>
 @endif
 
 @if(session()->has('addRating_message'))
-    <div class="alert alert-success text-center" style="width: 60%; margin-top: 5%; margin-bottom: -1.5%; margin-left: auto; margin-right: auto;">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+    <div class="alert alert-success text-center session-message">
+        <button type="button" class="close text-danger" data-dismiss="alert">x</button>
         {{ session()->get('addRating_message') }}
     </div>
 @endif
 
 @if(session()->has('addFavorite_message'))
-    <div class="alert alert-success text-center" style="width: 60%; margin-top: 5%; margin-bottom: -1.5%; margin-left: auto; margin-right: auto;">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+    <div class="alert alert-success text-center session-message">
+        <button type="button" class="close text-danger" data-dismiss="alert">x</button>
         {{ session()->get('addFavorite_message') }}<a href="{{ route('favorites-registered') }}"> Check your favorites</a>.
     </div>
 @elseif(session()->has('addFavorite_already_added_message'))
-    <div class="alert alert-danger text-center" style="width: 60%; margin-top: 5%; margin-bottom: -1.5%; margin-left: auto; margin-right: auto;">
-        <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
+    <div class="alert alert-danger text-center session-message">
+        <button type="button" class="close text-danger" data-dismiss="alert">x</button>
         {{ session()->get('addFavorite_already_added_message') }}
     </div>
 @endif
@@ -67,27 +67,27 @@
 @auth
     @if(auth()->user()->user_type == "supplier")
         <div class="supplier-add-new-product-div mt-5">
-            <h3 class="text-center" style="color: snow;">Don't waste time anymore! Go ahead and add any of the products that you provide from&nbsp;<i class="fa-regular fa-hand-point-right"></i>&nbsp;<a href="{{route('products.create')}}" class="supplier-add-new-product-button" style="" type="" title="Add New Product">here</a>.</h3>
+            <h3 class="text-center text-light">Don't waste time anymore! Go ahead and add any of the products that you provide from&nbsp;<i class="fa-regular fa-hand-point-right"></i>&nbsp;<a href="{{route('products.create')}}" class="supplier-add-new-product-button" type="" title="Add New Product">here</a>.</h3>
         </div>
     @elseif(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator")
         <div class="admin-moderator-add-new-product-div d-flex justify-content-center mt-5">
             <h4>
-                Hello 
+                Hello
                 @if(auth()->user()->gender == 'male' || auth()->user()->gender == 'Male')
                     Mr.
                 @elseif(auth()->user()->gender == 'female' || auth()->user()->gender == 'Female')
                     Mrs.
                 @elseif(auth()->user()->gender == null || auth()->user()->gender == "")
                     Mr./Mrs.
-                @endif 
-                @if(auth()->user()->user_type == "admin") 
+                @endif
+                @if(auth()->user()->user_type == "admin")
                     "<span class="admin-moderator-user-type">Admin</span>" {{-- {{ auth()->user()->user_type }} --}}
-                @else 
+                @else
                     "<span class="admin-moderator-user-type">Moderator</span>", {{-- {{ auth()->user()->user_type }} --}}
-                @endif 
-                you could add a new product from&nbsp;<a href="{{route('products.create')}}" class="" style="" type="" title="Add New Product">here</a>.
+                @endif
+                you could add a new product from&nbsp;<a href="{{route('products.create')}}" class="" type="" title="Add New Product">here</a>.
             </h4>
-        </div>     
+        </div>
     @endif
 @endauth
 
@@ -209,13 +209,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section-heading text-center">
-                        <h1 style="font-weight: bolder;">Here are some of our products...</h1>
-                        {{-- @if(session()->has('addRating_women_message'))
-                            <div class="alert alert-success text-center" style="width: %; margin-top: 5%; margin-left: auto; margin-right: auto;">
-                                <button type="button" class="close" data-dismiss="alert" style="color: rgb(173, 6, 6)">x</button>
-                                {{ session()->get('addRating_women_message') }}
-                            </div>
-                        @endif --}}
+                        <h1 class="font-weight-bolder">Here are some of our products...</h1>
                         <span>Details to details is what makes AA different from the other themes.</span>
                     </div>
                 </div>
@@ -244,16 +238,12 @@
                                             </ul>
                                         </div>
                                         <a href="{{ route('single_product_page' , [$product->id, $product->clothing_type, $product->name]) }}">
-                                            <img src="{{ $product->image_name }}" alt="{{ $product->name }}" style="height: 450px; width: 100%; border: 2px solid black;">
+                                            <img src="{{ $product->image_name }}" alt="{{ $product->name }}">
                                             @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                                             @if($data <= 7) <!---------- in days ---------->
-                                                <span style="position: absolute;  top: 1px; background: rgba(0, 69, 175, 0.65); width:100%; font-weight: bold; text-align: center; color: snow; opacity: 0.70;">
-                                                    <h3 style="font-weight: bolder;">NEW</h3>
+                                                <span>
+                                                    <h3 class="font-weight-bolder">NEW</h3>
                                                 </span>
-                                            {{-- @else <!---------- any other condition which is => more than the given period in the prevoious condition ---------->
-                                                <span style="position: absolute;  top: 1px; background: rgba(175, 105, 0, 0.65); width:100%; font-weight: bold; text-align: center; color: snow;">
-                                                    <h3 style="font-weight: bolder;">OLD</h3>
-                                                </span> --}}
                                             @endif
                                         </a>
                                     </div>
@@ -267,37 +257,30 @@
                                                         @if($product->available_quantity <= 10) Only @endif left in-stock)
                                                     </span>
                                                 @elseif(auth()->user()->user_type == "customer" && $product->available_quantity <= 10 && $product->available_quantity != 0)
-                                                    <span style="color: rgb(255, 106, 0);">({{ $product->available_quantity }} only left in-stock)</span>
+                                                    <span class="few-products">({{ $product->available_quantity }} only left in-stock)</span>
                                                 @elseif(auth()->user()->user_type == "customer" && $product->available_quantity == 0)
-                                                    <span style="color: red; ">(Out-of-stock)</span>
+                                                    <span class="out-of-stock">(Out-of-stock)</span>
                                                 @elseif(auth()->user()->user_type == "customer" && $product->available_quantity > 10)
-                                                    <span style="color: rgb(59, 188, 59); ">(In-stock)</span>
+                                                    <span class="in-stock">(In-stock)</span>
                                                 @endif
                                             @endauth
 
                                             @if(!auth()->user())
                                                 @if($product->available_quantity <= 10 && $product->available_quantity != 0)
-                                                    <span style="color: rgb(255, 106, 0);">({{ $product->available_quantity }} only left in-stock)</span>
+                                                    <span class="few-products">({{ $product->available_quantity }} only left in-stock)</span>
                                                 @elseif($product->available_quantity == 0)
-                                                    <span style="color: red; ">(Out-of-stock)</span>
+                                                    <span class="out-of-stock">(Out-of-stock)</span>
                                                 @elseif($product->available_quantity > 10)
-                                                    <span style="color: rgb(59, 188, 59); ">(In-stock)</span>
+                                                    <span class="in-stock">(In-stock)</span>
                                                 @endif
                                             @endif
                                         </h4>
                                         @if($product->discount > 0)
-                                            <span><del style="color: red;">{{ $product->price }} EGP</del> <label style="color: #000;">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span style="color:rgb(155, 31, 151); font-weight: bold; display:inline-block;">({{ $product->discount * 100  }}% OFF)</span></span>
+                                            <span><del class="text-danger">{{ $product->price }} EGP</del> <label class="text-dark">&RightArrow;</label> {{ $product->price - ($product->price * $product->discount) }} EGP <span class="sale-price" >({{ $product->discount * 100  }}% OFF)</span></span>
                                         @elseif($product->discount <= 0 || $product->discount == null || $product->discount == "")
                                             <span>{{ $product->price }} EGP</span>
                                         @endif
-                                        {{-- <ul class="stars pr-1"><br>
-                                            <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                            <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                            <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                            <li><i class="fa fa-star" style="color: orange; width:13%;"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul> --}}
-                                        <div class="text-left" style="color:rgb(72, 125, 171);">
+                                        <div class="text-left text-info">
                                             Total Ratings: {{ \App\Models\Rating::where('product_id', $product->id)->count() }}
                                             —
                                             {{-- Average Rating: {{ \App\Models\Rating::where('product_id', $product->id)->select('id','rating_level')->get() ?? '' }} --}}
@@ -313,8 +296,8 @@
                                         @endauth
 
                                         @if(Auth::guest())
-                                            <div style="margin-top: 2%; margin-bottom: 2%;">
-                                                <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}" style="padding: 9px 25px;">Add To Cart</a>
+                                            <div class="guest-operations">
+                                                <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                                 <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                             </div>
                                         @endif
@@ -350,41 +333,7 @@
 @include('layouts.website.social-media')
 
 <style>
-    .supplier-add-new-product-div{
-        background-image: linear-gradient(rgba(0, 106, 206, 0.9), rgba(0, 0, 0, 0.9), rgba(157, 66, 157, 0.9));
-        padding: 4%;
-        border-top: 4px solid black;
-        border-bottom: 4px solid black;
-    }
 
-    .supplier-add-new-product-button{
-        animation: anim_text_color 5s infinite;
-    }
-
-    @keyframes anim_text_color {
-        0% {color: #0045AF;}
-        25%{color: #3385ff;}
-        38% {color: snow;}
-        50%{color: #3385ff;}
-        60%{color: rgb(102, 88, 211);}
-        75% {color: snow;}
-        88%{color: #3385ff;}
-        94% {color: snow;}
-        100% {color: #0045AF;}
-    }
-
-    .admin-moderator-add-new-product-div{
-        background-image: linear-gradient(rgba(225, 225, 225, 0.9), rgba(0, 73, 141, 0.9), rgba(0, 0, 0, 0.9));
-        padding: 4%;
-        border-top: 4px solid black;
-        border-bottom: 4px solid black;
-        color: snow;
-    }
-
-    .admin-moderator-user-type{
-        color:#4bdbff; 
-        font-family: cursive;
-    }
 </style>
 
 @endsection
