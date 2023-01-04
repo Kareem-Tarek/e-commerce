@@ -13,48 +13,10 @@
         @else
             Results - {{ '"'.$search_text_input.'" ['.$products_result_count.']' }}
         @endif
-   @endif
+    @endif
 @endsection
 
 @section('content')
-<style>
-    .curriculum-event-thumb a span h3 {
-        font-weight: bolder;
-    }
-    .curriculum-event-thumb a img {
-        width: 180px;
-        height: 200px;
-        border: 2px solid black;
-    }
-    .product-results-section {
-        padding: 0% 2%;
-    }
-    .product-results-section .message-result{
-        text-align: center; margin-left: auto; margin-right: auto;  width: 40%;
-    }
-    .product-results-section .message-result span {
-        font-size: 110%; font-weight: bold;
-    }
-    .session-message button {
-        color: rgb(173, 6, 6);
-    }
-    .search-product {
-        display: flex;
-        justify-content: flex-start;
-        text-align: center;
-        flex-wrap: wrap;
-    }
-    .curriculum-event-thumb a span{
-        position: absolute;
-        background: rgba(0, 69, 175, 0.65);
-        width: 180px;
-        height: 35px;
-        font-weight: bold;
-        text-align: center;
-        color: snow; opacity: 0.70;
-    }
-
-</style>
 
 <!-- ***** Search bar Start ***** -->
 @include('layouts.website.search-bar')
@@ -162,28 +124,28 @@
                                                             @if($product->available_quantity <= 10) Only @endif left in-stock)
                                                         </span>
                                                     @elseif(auth()->user()->user_type == "customer" && $product->available_quantity <= 10 && $product->available_quantity != 0)
-                                                        <span style="color: rgb(255, 106, 0);">({{ $product->available_quantity }} only left in-stock)</span>
+                                                        <span class="few-products">({{ $product->available_quantity }} only left in-stock)</span>
                                                     @elseif(auth()->user()->user_type == "customer" && $product->available_quantity == 0)
-                                                        <span style="color: red; ">(Out-of-stock)</span>
+                                                        <span class="out-of-stock">(Out-of-stock)</span>
                                                     @elseif(auth()->user()->user_type == "customer" && $product->available_quantity > 10)
-                                                        <span style="color: rgb(59, 188, 59); ">(In-stock)</span>
+                                                        <span class="in-stock">(In-stock)</span>
                                                     @endif
                                                 @endauth
 
                                                 @if(!auth()->user())
                                                     @if($product->available_quantity <= 10 && $product->available_quantity != 0)
-                                                        <span style="color: rgb(255, 106, 0);">({{ $product->available_quantity }} only left in-stock)</span>
+                                                        <span class="few-products">({{ $product->available_quantity }} only left in-stock)</span>
                                                     @elseif($product->available_quantity == 0)
-                                                        <span style="color: red; ">(Out-of-stock)</span>
+                                                        <span class="out-of-stock">(Out-of-stock)</span>
                                                     @elseif($product->available_quantity > 10)
-                                                        <span style="color: rgb(59, 188, 59); ">(In-stock)</span>
+                                                        <span class="in-stock">(In-stock)</span>
                                                     @endif
                                                 @endif
                                             </div>
                                             <div class="c-red"><u>Title:</u><a href="{{ route('single_product_page' , $product->id) }}" class="product_item_title_in_card"> {{$product->name}}</a></div>
                                             @if($product->discount > 0)
-                                                <div class="c-red"><u>Original Price:</u> <del style="color: red;">{{$product->price}} EGP</del></div>
-                                                <div class="c-red"><u>Sale Price:</u> <span style="color: green;">{{$product->price - ($product->price * $product->discount) }} EGP</span> <span style="color:rgb(155, 31, 151); font-weight: bold;">({{ $product->discount * 100 }}% OFF)</span></div>
+                                                <div class="c-red"><u>Original Price:</u> <del class="text-danger">{{$product->price}} EGP</del></div>
+                                                <div class="c-red"><u>Sale Price:</u> <span class="text-success">{{$product->price - ($product->price * $product->discount) }} EGP</span> <span class="sale-price">({{ $product->discount * 100 }}% OFF)</span></div>
                                             @elseif($product->discount <= 0 || $product->discount == null || $product->discount == "")
                                                 <div class="c-red"><u>Price:</u> {{$product->price}} EGP</div>
                                             @endif
@@ -204,14 +166,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mt-2 mb-2" style="color:rgb(72, 125, 171);">
+                                <div class="mt-2 mb-2 text-info">
                                     (Total Ratings: {{ \App\Models\Rating::where('product_id', $product->id)->count() }})
                                 </div>
                                 @auth
                                     @if(auth()->user()->user_type == 'admin')
                                         @include('layouts.website.admin-product-control-website')
                                     @elseif(auth()->user()->user_type == 'customer')
-                                        <div style="width: 70%; margin-left: auto; margin-right: auto;">
+                                        <div class="customer-operations">
                                             @include('layouts.website.addCart-form')
                                             @include('layouts.website.addRating-form')
                                             @include('layouts.website.addFavorite-form')
@@ -220,8 +182,8 @@
                                 @endauth
 
                                 @if(Auth::guest())
-                                    <div style="margin-top: 2%; margin-bottom: 3%;">
-                                        <a class="add-to-cart-btn" href="{{ route('cart-unregistered') }}" style="padding: 9px 25px;">Add To Cart</a>
+                                    <div class="guest-operations">
+                                        <a class="add-to-cart-btn guest-cart-btn" href="{{ route('cart-unregistered') }}">Add To Cart</a>
                                         <a class="add-to-favorites-btn" href="{{ route('favorites-unregistered') }}">Add To Favorites</a>
                                     </div>
                                 @endif

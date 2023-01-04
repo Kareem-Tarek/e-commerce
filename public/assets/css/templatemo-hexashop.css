@@ -292,7 +292,69 @@ body {
   color: snow !important;
 }
 /* end  add favorite button (for customer & guest) */
-
+/* start Search and operations */
+.curriculum-event-thumb a span h3 {
+    font-weight: bolder;
+}
+.curriculum-event-thumb a img {
+    width: 180px;
+    height: 200px;
+    border: 2px solid black;
+}
+.product-results-section {
+    padding: 0% 2%;
+}
+.product-results-section .message-result{
+    text-align: center; margin-left: auto; margin-right: auto;  width: 40%;
+}
+.product-results-section .message-result span {
+    font-size: 110%; font-weight: bold;
+}
+.session-message button {
+    color: rgb(173, 6, 6);
+}
+.search-product {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.curriculum-event-thumb a span{
+    position: absolute;
+    background: rgba(0, 69, 175, 0.65);
+    width: 180px;
+    height: 35px;
+    font-weight: bold;
+    text-align: center;
+    color: snow; opacity: 0.70;
+}
+.few-products {
+    color: rgb(255, 106, 0) !important;
+}
+.out-of-stock {
+    color: red !important;
+}
+.in-stock {
+    color: rgb(59, 188, 59) !important;
+}
+.customer-operations {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.guest-operations {
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+.guest-cart-btn {
+    padding: 9px 25px;
+}
+.sale-price {
+    color:rgb(155, 31, 151) !important;
+    font-weight: bold !important;
+    display:inline-block !important;
+}
+/* end Search and operations */
 .main-border-button a {
   font-size: 13px;
   color: #fff;
