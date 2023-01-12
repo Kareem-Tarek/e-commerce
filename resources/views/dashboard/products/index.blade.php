@@ -32,7 +32,7 @@
                     <div class="card-block row">
                         <div class="col-sm-12 col-lg-12 col-xl-12">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered">
+                                <table class="table table-striped table-bordered @if($products->count() == 0) d-none @endif">
                                     <thead>
                                         <tr>
                                             <th  class="text-center">#</th>
@@ -109,8 +109,8 @@
                                     </tr>
 
                                     @empty
-                                        <div class="alert alert-secondary">
-                                            There are no data!
+                                        <div class="alert alert-secondary text-center">
+                                            <span class="h6">There are no products yet! <a href="{{ route('products.create') }}" class="fw-bold text-dark">Add products from here</a>.</span>
                                         </div>
                                     @endforelse
                                     </tbody>

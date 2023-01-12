@@ -29,7 +29,7 @@
     
 
     <nav>
-        <div class="main-navbar">
+        <div class="main-navbar mt-3">
             <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
             <div id="mainnav">
                 <ul class="nav-menu custom-scrollbar">

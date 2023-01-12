@@ -32,7 +32,7 @@
                     <div class="card-block row">
                         <div class="col-sm-12 col-lg-12 col-xl-12">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered">
+                                <table class="table table-striped table-bordered @if($categories->count() == 0) d-none @endif">
                                     <thead>
                                     <tr>
                                         <th scope="col" class="text-center">#</th>
@@ -70,8 +70,8 @@
                                     </tr>
 
                                     @empty
-                                        <div class="alert alert-secondary">
-                                            There are no data!
+                                        <div class="alert alert-secondary text-center">
+                                            <span class="h6">There are no categories yet! <a href="{{ route('categories.create') }}" class="fw-bold text-dark">Add categories from here</a>.</span>
                                         </div>
                                     @endforelse
                                     </tbody>
