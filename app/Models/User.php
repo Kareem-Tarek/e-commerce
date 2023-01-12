@@ -51,7 +51,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function product(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->HasMany(Product::class);
+        return $this->HasMany(Product::class);  // this relationship is implemented for "suppliers" ONLY! who owns products
     }
 
     public function cart(): \Illuminate\Database\Eloquent\Relations\hasOne

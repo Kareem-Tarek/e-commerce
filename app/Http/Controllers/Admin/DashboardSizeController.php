@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Size;
 use App\Models\Product;
 
-class SizeController extends Controller
+class DashboardSizeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +25,7 @@ class SizeController extends Controller
         // $products = Product::where('id', $id)->select('size_id');
         // $sizes    = Size::where('id', '=', $products)->get();
 
-        return view('dashboard.products.product-size', compact('products', 'sizes', 'product'));
+        return view('dashboard.products.products-sizes.index', compact('products', 'sizes', 'product'));
     }
 
     /**
@@ -31,9 +33,10 @@ class SizeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $product  = Product::find($id);
+        return view('dashboard.products.products-sizes.create', compact('product'));
     }
 
     /**
@@ -66,7 +69,8 @@ class SizeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model  = Product::find($id);
+        return view('dashboard.products.products-sizes.edit', compact('model'));
     }
 
     /**

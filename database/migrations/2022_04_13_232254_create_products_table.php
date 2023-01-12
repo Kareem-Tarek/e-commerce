@@ -14,19 +14,18 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            //$table->id();
+            $table->bigIncrements('id');
             $table->string('name');
             $table->longText('description')->nullable(); //
             $table->string('image');
             $table->integer('available_quantity'); // //this column is for admins, moderators & suppliers only!
-            // $table->integer('size_id')->nullable();
-            // $table->enum('size' , ['XS','S','M','L','XL','XXL','XXXL','XXXXL'])->nullable(); //
+            $table->integer('size_id')->nullable();
             $table->string('color')->nullable();
             $table->decimal('price');
             $table->integer('clothing_type')->unsigned()->nullable();
             $table->foreign('clothing_type')->references('id')->on('categories');
             $table->enum('is_accessory' , ['yes','no']);
-            // $table->boolean('is_accessory')->default(1)->nullable();
             $table->enum('product_category' , ['men','women','kids']);
             $table->decimal('discount')->default(0)->nullable();
             $table->string('brand_name')->nullable();

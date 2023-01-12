@@ -7,7 +7,6 @@ use App\Http\Controllers\Auth\LoginController;
 
 /*----------------------------- Start Website Controllers usage -----------------------------*/
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FavoriteController;
@@ -23,6 +22,7 @@ use App\Http\Controllers\MissionVisionController;
 /*----------------------------- Start Dashboard Controllers usage -----------------------------*/
 use App\Http\Controllers\Admin\DashboardHomeController;
 use App\Http\Controllers\Admin\DashboardProductController;
+use App\Http\Controllers\Admin\DashboardSizeController;
 use App\Http\Controllers\Admin\DashboardCategoryController;
 use App\Http\Controllers\Admin\DashboardCartController;
 use App\Http\Controllers\Admin\DashboardUserController;
@@ -207,7 +207,10 @@ Route::group([
         });
         /********************** Start products route. **********************/
         Route::resource('/products', DashboardProductController::class);
-        Route::get('/product/sizes/{id}/{name?}', [SizeController::class, 'index'])->name('products-sizes');
+        /****** Start products sizes routes. ******/
+        Route::get('/product/sizes/{id}/{name?}', [DashboardSizeController::class, 'index'])->name('products-sizes');
+        Route::get('/product/sizes/{id}/{name?}/create', [DashboardSizeController::class, 'create'])->name('products-sizes.create');
+        /****** End products sizes routes. ******/
         Route::get('/product/{id}/{clothing_type?}/{name?}', [DashboardProductController::class, 'single_product_page_dashboard'])->name('single_product_page_dashboard'); //single-product-page (dashboard)
         Route::get('/product/delete', [DashboardProductController::class, 'delete'])->name('products.delete');
         Route::get('/product/restore/{id}/', [DashboardProductController::class, 'restore'])->name('products.restore');

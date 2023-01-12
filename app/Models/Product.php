@@ -15,7 +15,7 @@ class Product extends Model
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->BelongsTo(User::class); // this relationship isn't implemented (it's for "suppliers" ONLY! who owns products)
+        return $this->BelongsTo(User::class);   // this relationship is implemented for "suppliers" ONLY! who owns products
     }
 
     public function cart(): \Illuminate\Database\Eloquent\Relations\BelongsTo
