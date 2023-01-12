@@ -12,7 +12,6 @@ use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\RatingController;
-// use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;

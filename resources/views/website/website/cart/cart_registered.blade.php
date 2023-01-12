@@ -94,11 +94,11 @@
                 <td>
                     @if($cartItem->is_accessory == 'no')
                         @if($cartItem->clothing_type == '1')
-                            {{ 'Formal' ?? '???'}}
+                            {{ 'Formal' ?? '—'}}
                         @elseif($cartItem->clothing_type == '2')
-                            {{ 'Casual' ?? '???'}}
+                            {{ 'Casual' ?? '—'}}
                         @else <!-- elseif($cartItem->clothing_type == '3') -->
-                            {{ 'Sports Wear' ?? '???'}}
+                            {{ 'Sports Wear' ?? '—'}}
                         @endif
                     @else <!-- elseif($cartItem->is_accessory == 'yes') -->
                         <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-empty-science-education-dreamstale-lineal-dreamstale.png"/>

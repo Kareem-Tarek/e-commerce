@@ -110,7 +110,7 @@
                                                 <h3>NEW</h3>
                                             </span>
                                         @endif
-                                        <img class="mt-2" src="{{$product->image_name}}" alt="{{$product->name}}">
+                                        <img class="mt-2" src="{{$product->image}}" alt="{{$product->name}}">
                                     </a>
                                 </div>
                                 <div class="curriculum-event-content d-flex justify-content-center">

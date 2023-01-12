@@ -65,7 +65,7 @@
                                         <td class="text-center">
                                             @if(strlen($cart->customer_phone) == 11)
                                                 {{ '(+20) '.$cart->customer_phone ?? '—' }} <!-- Egypt's country code (+20) -->
-                                                <span class="badge badge-info">Egypt</span>
+                                                <span class="badge badge-info">EG</span>
                                             @else
                                                 {{ $cart->customer_phone ?? '—' }}
                                             @endif
@@ -102,7 +102,7 @@
                                                 <span style="font-weight: bold;">{{$cart->quantity * $cart->price}}</span>
                                             @endif
                                         </td>
-                                        <td class="text-center">{{$product->update_user->name ?? '???'}}</td>
+                                        <td class="text-center">{{$product->update_user->name ?? '—'}}</td>
                                         <td class="text-center" title="{{$cart->created_at->format('Y-D-M h:m h:m A')}}">{{$cart->created_at->format('Y-D-M h:m A')}}</td>
                                         <td class="text-center" title="{{$cart->deleted_at->format('Y-D-M h:m h:m A')}}">{{$cart->deleted_at->format('Y-D-M h:m A')}}</td>
                                         @if(auth()->user()->user_type == "admin")

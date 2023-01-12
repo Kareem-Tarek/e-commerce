@@ -74,7 +74,7 @@
                                         <td class="text-center">
                                             @if(strlen($user->phone) == 11)
                                                 {{ '(+20) '.$user->phone ?? '—' }} <!-- Egypt's country code (+20) -->
-                                                <span class="badge badge-info">Egypt</span>
+                                                <span class="badge badge-info">EG</span>
                                             @else
                                                 {{ $user->phone ?? '—' }}
                                             @endif
@@ -87,8 +87,8 @@
                                             @endif
                                         </td>
                                         <td class="text-center" style="width: 18%;">{{$user->created_at->translatedFormat('d/m/Y - h:m A')}}</td>
-                                        <td class="text-center">{{$user->create_user->name ?? '??'}}</td>
-                                        <td class="text-center">{{$user->update_user->name ?? '??'}}</td>
+                                        <td class="text-center">{{$user->create_user->name ?? '—'}}</td>
+                                        <td class="text-center">{{$user->update_user->name ?? '—'}}</td>
                                         @if(auth()->user()->user_type == "admin")
                                             <td class="text-center">
                                                 {!! Form::open([

@@ -56,7 +56,7 @@
                                     <tr>
                                         <th scope="row" class="text-center">{{$loop->iteration}}</th>
                                         <td class="text-center">{{$product->name}}</td>
-                                        <td class="text-center font-secondary">{{$product->image_name}}</td>
+                                        <td class="text-center font-secondary">{{$product->image}}</td>
                                         <td>{{ $product->discount * 100 }}%</td>
                                         @if($product->discount > 0)
                                             <td class="text-center">
@@ -78,8 +78,8 @@
                                             </a>
                                         </td>
                                         <td class="text-center">{{$product->available_quantity}}</td>
-                                        <td class="text-center">{{$product->create_user->name ?? '???'}}</td>
-                                        <td class="text-center">{{$product->update_user->name ?? '???'}}</td>
+                                        <td class="text-center">{{$product->create_user->name ?? '—'}}</td>
+                                        <td class="text-center">{{$product->update_user->name ?? '—'}}</td>
                                         <td class="text-center" title="{{$product->created_at->format('Y-D-M h:m h:m A')}}">{{$product->created_at->format('Y-D-M h:m A')}}</td>
                                         <td class="text-center" title="{{$product->deleted_at->format('Y-D-M h:m h:m A')}}">{{$product->deleted_at->format('Y-D-M h:m A')}}</td>
                                         @if(auth()->user()->user_type == "admin")

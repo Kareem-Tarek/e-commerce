@@ -98,20 +98,27 @@ class DashboardUserController extends Controller
 
         $model = User::findOrFail($id);
 
-        if(auth()->user()->user_type == "admin" && $model->id == auth()->user()->id){ //the signed in admin could update his/her own info
+        // if(auth()->user()->user_type == "admin" && $model->id == auth()->user()->id){ //the signed in admin could update his/her own info
+        //     return view('dashboard.users.edit',compact('model'));
+        // }
+        // elseif(auth()->user()->user_type == "admin" && $model->user_type == "admin"){ //the signed in admin couldn't update the other admin(s) info, so take the signed in admin to the users index page
+        //     return redirect('/dashboard/users');
+        // }
+        // elseif(auth()->user()->user_type == "admin" && $model->user_type != "admin"){ //the signed in admin could update any other users' info except the other admin(s)
+        //     return view('dashboard.users.edit',compact('model'));
+        // }
+        // elseif(auth()->user()->user_type == "moderator"){ //the moderators are not allowed to do anything more than "adding" & "showing", so take them to the users index page
+        //     return redirect('/dashboard/users');
+        // }
+        // elseif(auth()->user()->user_type == "supplier"){ //the suppliers are allowed to access the dashboard but only for the products they own (from the front-end & back-end)!
+        //     return redirect('/dashboard');
+        // }
+
+        if($model->id == auth()->user()->id || (auth()->user()->user_type == "admin" && $model->user_type != "admin")){
             return view('dashboard.users.edit',compact('model'));
         }
-        elseif(auth()->user()->user_type == "admin" && $model->user_type == "admin"){ //the signed in admin couldn't update the other admin(s) info, so take the signed in admin to the users index page
-            return redirect('/dashboard/users');
-        }
-        elseif(auth()->user()->user_type == "admin" && $model->user_type != "admin"){ //the signed in admin could update any other users' info except the other admin(s)
-            return view('dashboard.users.edit',compact('model'));
-        }
-        elseif(auth()->user()->user_type == "moderator"){ //the moderators are not allowed to do anything more than "adding" & "showing", so take them to the users index page
-            return redirect('/dashboard/users');
-        }
-        elseif(auth()->user()->user_type == "supplier"){ //the suppliers are allowed to access the dashboard but only for the products they own (from the front-end & back-end)!
-            return redirect('/dashboard');
+        else{
+            return redirect()->back();
         }
     }
 

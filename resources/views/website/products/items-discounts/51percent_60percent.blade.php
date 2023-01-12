@@ -90,7 +90,7 @@
                                     <h3 style="font-weight: bolder;">NEW</h3>
                                 </span>
                             @endif
-                            <img class="mt-2" src="{{$product->image_name}}" alt="{{$product->name}}" style="width: 180px; height: 200px; border: 2px solid black;">
+                            <img class="mt-2" src="{{$product->image}}" alt="{{$product->name}}" style="width: 180px; height: 200px; border: 2px solid black;">
                         </a>
                     </div>
                     <div class="curriculum-event-content d-flex justify-content-center" >

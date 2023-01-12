@@ -40,7 +40,7 @@
                                         <th scope="col" class="text-center">Discount (%)</th>
                                         <th scope="col" class="text-center">Price (EGP)</th>
                                         <th scope="col" class="text-center">Quantity</th>
-                                        <th scope="col" class="text-center" style="background: linear-gradient(to top, #b4b18d 0%, #f8f8f8 100%);">Total Amount (EGP)</th>
+                                        <th scope="col" class="text-center" style="background: linear-gradient(to top, #7c7743 10%, #ffffff 140%);">Total Amount (EGP)</th>
                                         <th scope="col" class="text-center">Date of Creation</th>
                                         <th scope="col" class="text-center">Last Updated By</th>
                                         @if(auth()->user()->user_type == "admin")
@@ -57,7 +57,7 @@
                                         <td class="text-center">
                                             @if(strlen($cart->customer_phone) == 11)
                                                 {{ '(+20) '.$cart->customer_phone ?? '—' }} <!-- Egypt's country code (+20) -->
-                                                <span class="badge badge-info">Egypt</span>
+                                                <span class="badge badge-info">EG</span>
                                             @else
                                                 {{ $cart->customer_phone ?? '—' }}
                                             @endif
@@ -79,7 +79,15 @@
                                             </a>
                                         </td>
                                         <td class="text-center">{{ucfirst($cart->is_accessory)}}</td>
-                                        <td>{{ $cart->discount * 100 }}%</td>
+                                        <td class="text-center">
+                                            @if (($cart->discount * 100 ) == 0)
+                                                —
+                                            @else
+                                                <span class="fw-bold text-light bg-dark p-1 rounded">
+                                                    {{ $cart->discount * 100 }}%
+                                                </span>
+                                            @endif
+                                        </td>
                                         @if($cart->discount > 0)
                                             <td class="text-center">
                                                 <span class="font-danger"><del>{{$cart->price}}</del></span> <label class="font-secondary">&RightArrow;</label> <span style="color: rgb(9, 145, 9); font-weight: bold;">{{$cart->price - ($cart->price * $cart->discount)}}</span>
@@ -96,7 +104,7 @@
                                             @endif
                                         </td>
                                         <td class="text-center">{{$cart->created_at->translatedFormat('d/m/Y - h:m A')}}</td>
-                                        <td class="text-center">{{$cart->update_user->name ?? '???'}}</td>
+                                        <td class="text-center">{{$cart->update_user->name ?? '—'}}</td>
                                         @if(auth()->user()->user_type == "admin")
                                             <td class="text-center">
                                                 {!! Form::open([

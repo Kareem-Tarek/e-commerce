@@ -36,7 +36,7 @@ class FavoriteController extends Controller
             $favorite->product_id         = $product->id;
             $favorite->product_name       = $product->name;
             $favorite->available_quantity = $product->available_quantity;
-            $favorite->product_image      = $product->image_name;
+            $favorite->product_image      = $product->image;
             $favorite->is_accessory       = $product->is_accessory;
             $favorite->clothing_type      = $product->clothing_type;
             $favorite->product_category   = $product->product_category;

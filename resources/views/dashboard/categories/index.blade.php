@@ -53,8 +53,8 @@
                                         <td class="text-center">{{$category->name}}</td>
                                         <td class="text-center">{{$category->description}}</td>
                                         <td class="text-center">{{$category->created_at->translatedFormat('d/m/Y - h:m A')}}</td>
-                                        <td class="text-center">{{$category->create_user->name ?? '???'}}</td>
-                                        <td class="text-center">{{$category->update_user->name ?? '???'}}</td>
+                                        <td class="text-center">{{$category->create_user->name ?? '—'}}</td>
+                                        <td class="text-center">{{$category->update_user->name ?? '—'}}</td>
                                         @if(auth()->user()->user_type == "admin")
                                             <td class="text-center">
                                                 {!! Form::open([

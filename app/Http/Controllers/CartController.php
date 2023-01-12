@@ -63,7 +63,7 @@ class CartController extends Controller
             $cart->customer_email     = $user->email;
             $cart->customer_address   = $user->address;
             $cart->product_name       = $product->name;
-            $cart->product_image      = $product->image_name;
+            $cart->product_image      = $product->image;
             $cart->is_accessory       = $product->is_accessory;
             $cart->clothing_type      = $product->clothing_type;
             $cart->product_category   = $product->product_category;

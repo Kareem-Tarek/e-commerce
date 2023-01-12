@@ -3,7 +3,7 @@
     <div class="form-group row">
         <label class="form-label col-lg-3">Username <span class="text-danger">*</span></label>
         <div class="col-lg-9">
-            <input class="form-control @error('username') is-invalid @enderror" value="{{Request::old('username') ? Request::old('username') : $model->username}}" type="text" name="username" placeholder="Enter username" autocomplete="off">
+            <input class="form-control @error('username') is-invalid @enderror" value="{{Request::old('username') ? Request::old('username') : $model->username}}" type="text" name="username" placeholder="Enter username" required autocomplete="off">
             @error('username')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="form-group row">
-        <label class="form-label col-lg-3">Name <span class="text-danger"></span></label>
+        <label class="form-label col-lg-3">Name</label>
         <div class="col-lg-9">
             <input class="form-control @error('name') is-invalid @enderror" value="{{Request::old('name') ? Request::old('name') : $model->name}}" type="text" name="name" placeholder="Enter name" autocomplete="off">
             @error('name')
@@ -28,11 +28,11 @@
         <label class="form-label col-lg-3">Email <span class="text-danger">*</span></label>
         <div class="col-lg-9">
             @if(Route::is('users.create'))
-                <input class="form-control @error('email') is-invalid @enderror" value="{{Request::old('email') ? Request::old('email') : $model->email}}" type="text" name="email" placeholder="Enter user email" autocomplete="off">
+                <input class="form-control @error('email') is-invalid @enderror" value="{{Request::old('email') ? Request::old('email') : $model->email}}" type="text" name="email" placeholder="Enter user email" required autocomplete="off">
             @elseif(Route::is('users.edit') && $model->email == auth()->user()->email)
-                <input class="form-control @error('email') is-invalid @enderror" value="{{Request::old('email') ? Request::old('email') : $model->email}}" type="text" name="email" placeholder="Enter user email" autocomplete="off">
+                <input class="form-control @error('email') is-invalid @enderror" value="{{Request::old('email') ? Request::old('email') : $model->email}}" type="text" name="email" placeholder="Enter user email" required autocomplete="off">
             @elseif(Route::is('users.edit'))
-                <input disabled class="form-control @error('email') is-invalid @enderror" value="{{Request::old('email') ? Request::old('email') : $model->email}}" type="text" name="email" placeholder="Enter user email" autocomplete="off">
+                <input disabled class="form-control @error('email') is-invalid @enderror" value="{{Request::old('email') ? Request::old('email') : $model->email}}" type="text" name="email" placeholder="Enter user email" required autocomplete="off">
             @endif
             @error('email')
             <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
         <div class="form-group row">
             <label class="form-label col-lg-3">Password <span class="text-danger">*</span></label>
             <div class="col-lg-9">
-                <input class="form-control @error('password') is-invalid @enderror" value="{{Request::old('password') ? Request::old('password') : $model->password}}" type="password" name="password" placeholder="Enter user password" autocomplete="off">
+                <input class="form-control @error('password') is-invalid @enderror" value="{{Request::old('password') ? Request::old('password') : $model->password}}" type="password" name="password" placeholder="Enter user password" required autocomplete="off">
                 @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
         <div class="form-group row">
             <label class="form-label col-lg-3">Confirm Password <span class="text-danger">*</span></label>
             <div class="col-lg-9">
-                <input class="form-control @error('password') is-invalid @enderror" value="" type="password" name="confirm_password" placeholder="Enter user confirm password" autocomplete="off">
+                <input class="form-control @error('password') is-invalid @enderror" value="" type="password" name="confirm_password" placeholder="Enter user confirm password" required autocomplete="off">
                 @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -71,7 +71,7 @@
     <div class="form-group row">
         <label class="form-label col-lg-3">User Type <span class="text-danger">*</span></label>
         <div class="col-lg-9">
-            <select name="user_type" class="form-control select @error('user_type') is-invalid @enderror" value="{{Request::old('user_type') ? Request::old('user_type') : $model->user_type}}">
+            <select name="user_type" class="form-control select @error('user_type') is-invalid @enderror" value="{{Request::old('user_type') ? Request::old('user_type') : $model->user_type}}" required>
                 <option value="" disabled selected> ---------- Please select a user type ---------- </option>
                 <option value="customer" {{ isset($model) && $model->user_type == "customer" ? 'selected'  : '' }}>Customer</option>
                 <option value="supplier" {{ isset($model) && $model->user_type == "supplier" ? 'selected'  : '' }}>Supplier</option>

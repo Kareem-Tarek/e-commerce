@@ -44,7 +44,7 @@ class DashboardProductController extends Controller
         //     'name' => $input['name'],
         //     'slug' => $input['slug'],
         //     'description' => $input['description'],
-        //     'image_name' => $input['image_name'],
+        //     'image' => $input['image'],
         //     'price' => $input['price'],
         //     'sale_price' => $input['sale_price'],
         //     'clothing_type' => $input['clothing_type'],
@@ -55,7 +55,7 @@ class DashboardProductController extends Controller
         // $request->validate([
         //     'name'             => 'required',
         //     'description'      => 'required',
-        //     'image_name'       => 'required',
+        //     'image'       => 'required',
         //     'price'            => 'required',
         //     'clothing_type'    => 'required',
         //     'is_accesory'      => 'required',
@@ -65,18 +65,18 @@ class DashboardProductController extends Controller
         $products                      = new Product();
         $products->name                = $request->name;
         $products->description         = $request->description;
-        // if($request->hasFile('image_name')){
-        //     $file       = $request->file('image_name');
+        // if($request->hasFile('image')){
+        //     $file       = $request->file('image');
         //     $extension  = $file->getClientOriginalExtension();
         //     $filename   = time().'.'.$extenstion;
         //     $file->move('/assets/images/' , $filename);
-        //     $products->image_name = $filename;
+        //     $products->image = $filename;
         // }
         // else{
         //     return $request;
-        //     $products->image_name = '';
+        //     $products->image = '';
         // }
-        $products->image_name         = "/assets/images/".$request->image_name;
+        $products->image         = "/assets/images/".$request->image;
         $products->price              = $request->price;
         $products->discount           = $request->discount;
         // $products->size               = $request->size;
@@ -111,8 +111,8 @@ class DashboardProductController extends Controller
         $products->name               = $request->name;
         $products->description        = $request->description;
         ////////////////////////--------- START image's request ---------////////////////////////
-        if($request->hasFile("image_name")){
-            $products->image_name = "/assets/images/".$request->image_name;
+        if($request->hasFile("image")){
+            $products->image = "/assets/images/".$request->image;
         }
         ////////////////////////--------- END image's request ---------////////////////////////
         $products->price              = $request->price;

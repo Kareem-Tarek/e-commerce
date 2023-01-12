@@ -22,7 +22,7 @@ class ProductFactory extends Factory
     //         'name'=>$name,
     //         // 'slug'=> Str::slug($name),
     //         'description'=>$this->faker->text(100),
-    //         'image_name'=>$this->faker->imageUrl($width = 140 , $height = 300),
+    //         'image'=>$this->faker->imageUrl($width = 140 , $height = 300),
     //         'price'=>$price,
     //         // 'sale_price' =>$price - 50,
 

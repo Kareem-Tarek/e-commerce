@@ -327,14 +327,14 @@
                                                         <li>
                                                             <div class="icon"><i data-feather="map-pin"></i></div>
                                                             <div>
-                                                                <h5>{{$user->address ?? '???'}}</h5>
+                                                                <h5>{{$user->address ?? '—'}}</h5>
                                                                 <p>{{$user->city->name ?? 'city ??'}} - {{$user->governorate->name ?? 'governorate ??'}} - {{$user->country->name ?? 'country ??'}}</p>
                                                             </div>
                                                         </li>
                                                         <li>
                                                             <div class="icon"><i class="fa-solid fa-cake-candles" style="color: #2494FD;"></i></div>
                                                             <div>
-                                                                <h5>{{$user->dob ?? '???'}}</h5>
+                                                                <h5>{{$user->dob ?? '—'}}</h5>
                                                             </div>
                                                         </li>
                                                         <li>
@@ -349,7 +349,7 @@
                                                                 </div>
                                                             @endif
                                                             <div>
-                                                                <h5>{{$user->gender ?? '???'}}</h5>
+                                                                <h5>{{$user->gender ?? '—'}}</h5>
                                                             </div>
                                                         </li>
                                                     </ul>

@@ -232,7 +232,7 @@
                                             </ul>
                                         </div>
                                         <a href="{{ route('single_product_page' , [$product->id, $product->clothing_type, $product->name]) }}">
-                                            <img src="{{ $product->image_name }}" alt="{{ $product->name }}">
+                                            <img src="{{ $product->image }}" alt="{{ $product->name }}">
                                             @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                                             @if($data <= 7) <!---------- in days ---------->
                                                 <span>

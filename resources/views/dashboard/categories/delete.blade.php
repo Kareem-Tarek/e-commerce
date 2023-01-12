@@ -52,8 +52,8 @@
                                         <th scope="row" class="text-center">{{$loop->iteration}}</th>
                                         <td class="text-center">{{$category->name}}</td>
                                         <td class="text-center">{{$category->description}}</td>
-                                        <td class="text-center">{{$product->create_user->name ?? '???'}}</td>
-                                        <td class="text-center">{{$product->update_user->name ?? '???'}}</td>
+                                        <td class="text-center">{{$product->create_user->name ?? '—'}}</td>
+                                        <td class="text-center">{{$product->update_user->name ?? '—'}}</td>
                                         <td class="text-center" title="{{$category->created_at->format('Y-D-M h:m h:m A')}}">{{$category->created_at->format('Y-D-M h:m A')}}</td>
                                         <td class="text-center" title="{{$category->deleted_at->format('Y-D-M h:m h:m A')}}">{{$category->deleted_at->format('Y-D-M h:m A')}}</td>
                                         @if(auth()->user()->user_type == "admin")

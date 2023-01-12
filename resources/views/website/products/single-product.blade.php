@@ -81,11 +81,11 @@
                 <div class="row">
                     <div class="col-lg-8">
                     <div class="left-images">
-                        {{-- <img src="{{ $product->image_name }}" alt="{{ $product->name }}" style="width: 250px; height: 350px;">
-                        <img src="{{ $product->image_name }}" alt="{{ $product->name }}" style="width: 250px; height: 350px;"> --}}
+                        {{-- <img src="{{ $product->image }}" alt="{{ $product->name }}" style="width: 250px; height: 350px;">
+                        <img src="{{ $product->image }}" alt="{{ $product->name }}" style="width: 250px; height: 350px;"> --}}
                         
                         <div class="" style="margin-left: auto; margin-right: auto;">
-                            <img src="{{ $product->image_name }}" alt="{{ $product->name }}" style="width: 250px; height: 350px;">
+                            <img src="{{ $product->image }}" alt="{{ $product->name }}" style="width: 250px; height: 350px;">
                             @php $data = Carbon\Carbon::parse($product->created_at)->diffInDays(Carbon\Carbon::now()); @endphp
                             @if($data <= 7) <!---------- in days ---------->   
                                 <span style="position: absolute; left: 15px; background: rgba(0, 69, 175, 0.65); width: 250px; font-weight: bold; text-align: center; color: snow; opacity: 0.70;">
@@ -123,7 +123,7 @@
                                                     <div class="item">
                                                         <div class="thumb">
                                                             <a href="{{ route('single_product_page' , $productItem) }}">
-                                                                <img src="{{ $productItem->image_name }}" alt="{{ $productItem->name }}" style="width: 100%; height: 200px; border: 2px solid black;">
+                                                                <img src="{{ $productItem->image }}" alt="{{ $productItem->name }}" style="width: 100%; height: 200px; border: 2px solid black;">
                                                             </a>
                                                         </div>
                                                     </div>
