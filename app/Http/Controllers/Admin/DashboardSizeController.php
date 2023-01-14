@@ -18,13 +18,6 @@ class DashboardSizeController extends Controller
 
     public function index($id)
     {
-        // $sizes    = Size::where('id', $id)->first();
-        // $products = Product::where('size_id', $sizes)->get();
-        // $product  = Product::find($id);
-        
-        // $products = Product::where('id', $id)->select('size_id');
-        // $sizes    = Size::where('id', '=', $products)->get();
-
         $product                    = Product::find($id);
         $all_sizes_for_each_product = Size::where('product_id', $product->id)->paginate(5);
 

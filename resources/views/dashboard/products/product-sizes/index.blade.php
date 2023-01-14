@@ -50,7 +50,7 @@
                                     @forelse($all_sizes_for_each_product as $size)
                                     <tr>
                                         <th scope="row" class="text-center">{{$loop->iteration}}</th>
-                                        <td class="text-center">{{$size->size_value ?? 'NULL'}}</td>
+                                        <td class="text-center">{{$size->size_value}}</td>
                                         <td class="text-center">{{$size->created_at->translatedFormat('d/m/Y - h:m A')}}</td>
                                         <td class="text-center">{{$size->create_user->name ?? '—'}}</td>
                                         <td class="text-center">{{$size->update_user->name ?? '—'}}</td>
@@ -70,7 +70,7 @@
 
                                     @empty
                                         <div class="alert alert-secondary text-center">
-                                            <span class="h6">There are no sizes yet for this product! Go ahead and <a href="{{ route('product-sizes.create') }}">add some sizes</a> for it.</span>
+                                            <span class="h6">There are no sizes yet for this product! Go ahead and <a href="{{ route('product-sizes.create', [$product->id, $product->name]) }}" class="text-dark fw-bold">add some sizes</a> for it.</span>
                                         </div>
                                     @endforelse
                                     </tbody>
