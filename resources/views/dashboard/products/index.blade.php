@@ -92,7 +92,7 @@
                                         {{-- <td class="text-center"><a href="{{ route('categories.index') }}">{{$product->category->name ?? 'No Clothing Type'}}</a></td> --}}
                                         <td class="text-center">{{$product->available_quantity}}</td>
                                         <td class="text-center">
-                                            <a href="{{route('products-sizes.index', [$product->id, $product->name])}}" class="btn btn-dark btn-xs fw-bold" type="button" title="{{$product->name." (Sizes)"}}">Sizes</a>
+                                            <a href="{{route('product-sizes.index', [$product->id, $product->name])}}" class="btn btn-dark btn-xs fw-bold" type="button" title="{{$product->name." (Sizes)"}}">Sizes</a>
                                         </td>
                                         <td class="text-center" style="width: 18%;">{{$product->created_at->translatedFormat('d/m/Y - h:m A') /* date('d/M/y', strtotime($product->created_at)) */}}</td>
                                         <td class="text-center">{{$product->create_user->name ?? '—'}}</td>

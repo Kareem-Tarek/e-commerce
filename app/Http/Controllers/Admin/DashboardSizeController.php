@@ -28,7 +28,7 @@ class DashboardSizeController extends Controller
         $product                    = Product::find($id);
         $all_sizes_for_each_product = Size::where('product_id', $product->id)->paginate(5);
 
-        return view('dashboard.products.products-sizes.index', compact('product', 'all_sizes_for_each_product'));
+        return view('dashboard.products.product-sizes.index', compact('product', 'all_sizes_for_each_product'));
     }
 
     /**
@@ -39,7 +39,7 @@ class DashboardSizeController extends Controller
     public function create($id)
     {
         $product  = Product::find($id);
-        return view('dashboard.products.products-sizes.create', compact('product'));
+        return view('dashboard.products.product-sizes.create', compact('product'));
     }
 
     /**
@@ -57,7 +57,7 @@ class DashboardSizeController extends Controller
         //$product  = Product::find($id);
 
         // return $size->size_value.' is added.';
-        return redirect()->back();
+        return redirect()->route('product-sizes.index');
     }
 
     /**
@@ -79,8 +79,9 @@ class DashboardSizeController extends Controller
      */
     public function edit($id)
     {
-        $model  = Product::find($id);
-        return view('dashboard.products.products-sizes.edit', compact('model'));
+        $product = Product::find($id);
+        $size = Size::where('product_id', $product->id)->find($id);
+        return view('dashboard.products.product-sizes.edit', compact('product', 'size'));
     }
 
     /**
@@ -92,7 +93,11 @@ class DashboardSizeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $size = Size::find($id);
+        $size->size_value = $request->size_value;
+        $size->save();
+
+        return redirect()->route('product-sizes.index');
     }
 
     /**
@@ -103,6 +108,9 @@ class DashboardSizeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $size = Size::findOrFail($id);
+        //$size->delete_user_id = auth()->user()->id; 
+        $size->delete();
+        return redirect()->back();
     }
 }

@@ -12,7 +12,7 @@
         <li class="breadcrumb-item active">Products</li>
         <li class="breadcrumb-item active">{{ $product->name }} (Sizes)</li>
         @slot('bookmark')
-            <a href="{{route('products-sizes.create', [$product->id, $product->name])}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Sizes</a>
+            <a href="{{route('product-sizes.create', [$product->id, $product->name])}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Sizes</a>
         @endslot
     @endcomponent
 
@@ -57,12 +57,12 @@
                                         @if(auth()->user()->user_type == "admin")
                                             <td class="text-center">
                                                 {!! Form::open([
-                                                    'route' => ['products-sizes.destroy',$size->id],
+                                                    'route' => ['product-sizes.destroy',$size->id],
                                                     'method' => 'delete'
                                                 ])!!}
                                                 <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure that you want to delete Size ({{ $size->size_value }}) for product [{{ $product->name }}]?');" type="submit" title="{{'Delete'." ($size->size_value)"}}"><i class="fa-solid fa-trash"></i> Delete </button>
 
-                                                <a href="{{route('products-sizes.edit',$size->id)}}" class="btn btn-primary btn-xs" type="button" title="{{'Edit'." ($size->size_value)"}}"><li class="icon-pencil"></li> Edit</a>
+                                                <a href="{{route('product-sizes.edit',[$product->id, $product->name])}}" class="btn btn-primary btn-xs" type="button" title="{{'Edit'." ($size->size_value)"}}"><li class="icon-pencil"></li> Edit</a>
                                                 {!! Form::close() !!}
                                             </td>
                                         @endif
@@ -70,7 +70,7 @@
 
                                     @empty
                                         <div class="alert alert-secondary text-center">
-                                            <span class="h6">There are no sizes yet for this product! Go ahead and <a href="{{ route('products-sizes.create') }}">add some sizes</a> for it.</span>
+                                            <span class="h6">There are no sizes yet for this product! Go ahead and <a href="{{ route('product-sizes.create') }}">add some sizes</a> for it.</span>
                                         </div>
                                     @endforelse
                                     </tbody>

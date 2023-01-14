@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->integer('available_quantity'); // //this column is for admins, moderators & suppliers only!
             $table->integer('size_id')->nullable();
-            $table->string('color')->nullable();
+            // $table->string('color')->nullable();
             $table->decimal('price');
             $table->integer('clothing_type')->unsigned()->nullable();
             $table->foreign('clothing_type')->references('id')->on('categories');

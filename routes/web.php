@@ -210,12 +210,12 @@ Route::group([
         /****** Start products sizes routes. ******/
         Route::prefix('/product')->controller(DashboardSizeController::class)->group(function () {
             // Route::resource('sizes', DashboardSizeController::class);
-            Route::get('/sizes/{id}/{name?}', 'index')->name('products-sizes.index');
-            Route::get('/sizes/{id}/{name?}/create', 'create')->name('products-sizes.create');
-            Route::post('/sizes/{id}/{name?}', 'store')->name('products-sizes.store');
-            Route::get('/sizes/{id}/{name?}/edit', 'edit')->name('products-sizes.edit');
-            Route::put('/sizes/{id}/{name?}', 'update')->name('products-sizes.update');
-            Route::delete('/sizes/{id}/{name?}', 'destroy')->name('products-sizes.destroy');
+            Route::get('/sizes/{id}/{name?}', 'index')->name('product-sizes.index');
+            Route::get('/sizes/{id}/{name?}/create', 'create')->name('product-sizes.create');
+            Route::post('/sizes/{id}/{name?}', 'store')->name('product-sizes.store');
+            Route::get('/sizes/{id}/{name?}/edit', 'edit')->name('product-sizes.edit');
+            Route::patch('/sizes/{id}/{name?}', 'update')->name('product-sizes.update');
+            Route::delete('/sizes/{id}/{name?}', 'destroy')->name('product-sizes.destroy');
 
             // Route::get('books', [BookController::class, 'index'])->name('books.index');
             // Route::get('books/create', [BookController::class, 'create'])->name('books.create');
