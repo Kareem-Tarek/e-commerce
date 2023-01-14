@@ -14,9 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sizes', function (Blueprint $table) {
-            $table->id();
-            //$table->foreignId('product_id')->constrained()->cascadeOnDelete();            
+            //$table->id();
+            $table->bigIncrements('id');
             $table->enum('size_value' , ['XS','S','M','L','XL','XXL','XXXL','XXXXL']);
+            $table->string('product_id');
             //$table->integer('quantity'); 
             $table->timestamps();
             $table->softDeletes();

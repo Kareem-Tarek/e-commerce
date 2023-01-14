@@ -13,13 +13,13 @@
         <li class="breadcrumb-item active">{{ $product->name }} (Sizes)</li>
         <li class="breadcrumb-item active">Edit Sizes</li>
         @slot('bookmark')
-            <a href="{{route('products.create')}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Product</a>
+            <a href="{{route('products-sizes.create', [$product->id, $product->name])}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Size</a>
         @endslot
     @endcomponent
 
     @include('layouts.admin.partials.messages.message')
 
-    <form action="/*{{ /* route('sizes.update') */ '#' }}" method="POST">
+    <form action="/*{{ /* route('sizes.update', [$product->id, $product->name]) */ '#' }}" method="POST">
         @csrf
         @method('patch')
         @include('dashboard.products.products-sizes.form')

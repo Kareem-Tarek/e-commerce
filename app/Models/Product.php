@@ -40,7 +40,7 @@ class Product extends Model
 
     public function size(): \Illuminate\Database\Eloquent\Relations\hasMany
     {
-        return $this->hasMany(Size::class);
+        return $this->hasMany(Size::class, 'product_id', 'id');
     }
 
     public function create_user(): \Illuminate\Database\Eloquent\Relations\BelongsTo

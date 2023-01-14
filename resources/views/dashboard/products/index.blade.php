@@ -44,6 +44,7 @@
                                             <th scope="col" class="text-center">Category</th>
                                             <th scope="col" class="text-center">Clothing type</th>
                                             <th scope="col" class="text-center">Available Quantity</th>
+                                            <th scope="col" class="text-center">@if(auth()->user()->user_type == "admin") Manage @endif Sizes</th>
                                             <th scope="col" class="text-center">Date of Creation</th>
                                             <th scope="col" class="text-center">Added By</th>
                                             <th scope="col" class="text-center">Last Updated By</th>
@@ -90,6 +91,9 @@
                                         </td>
                                         {{-- <td class="text-center"><a href="{{ route('categories.index') }}">{{$product->category->name ?? 'No Clothing Type'}}</a></td> --}}
                                         <td class="text-center">{{$product->available_quantity}}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('products-sizes.index', [$product->id, $product->name])}}" class="btn btn-dark btn-xs fw-bold" type="button" title="{{$product->name." (Sizes)"}}">Sizes</a>
+                                        </td>
                                         <td class="text-center" style="width: 18%;">{{$product->created_at->translatedFormat('d/m/Y - h:m A') /* date('d/M/y', strtotime($product->created_at)) */}}</td>
                                         <td class="text-center">{{$product->create_user->name ?? '—'}}</td>
                                         <td class="text-center">{{$product->update_user->name ?? '—'}}</td>
@@ -102,7 +106,6 @@
                                                 <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure that you want to delete - {{ $product->name }}?');" type="submit" title="{{'Delete'." ($product->name)"}}"><i class="fa-solid fa-trash"></i> Delete </button>
 
                                                 <a href="{{route('products.edit', [$product->id, $product->name])}}" class="btn btn-primary btn-xs" type="button" title="{{'Edit'." ($product->name)"}}"><li class="icon-pencil"></li> Edit</a>
-                                                <a href="{{route('products-sizes', [$product->id, $product->name])}}" class="btn btn-dark btn-xs" type="button" title="{{$product->name." (Sizes)"}}">Sizes</a>
                                                 {!! Form::close() !!}
                                             </td>
                                         @endif

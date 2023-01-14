@@ -14,13 +14,13 @@
         <li class="breadcrumb-item active">{{ $product->name }} (Sizes)</li>
         <li class="breadcrumb-item active">Add Sizes</li>
         @slot('bookmark')
-            <a href="{{route('products.create')}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Product</a>
+            <a href="{{route('products-sizes.create', [$product->id, $product->name])}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Size</a>
         @endslot
     @endcomponent
 
     @include('layouts.admin.partials.messages.message')
 
-    <form action="/*{{ /* route('sizes.store') */ '#' }}" method="POST">
+    <form action="/*{{ route('products-sizes.store', [$product->id, $product->name]) }}" method="POST">
         @csrf
         @include('dashboard.products.products-sizes.form')
         <button class="btn btn-success mt-4 d-block me-auto" type="submit">Add</button>

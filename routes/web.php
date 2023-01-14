@@ -208,8 +208,23 @@ Route::group([
         /********************** Start products route. **********************/
         Route::resource('/products', DashboardProductController::class);
         /****** Start products sizes routes. ******/
-        Route::get('/product/sizes/{id}/{name?}', [DashboardSizeController::class, 'index'])->name('products-sizes');
-        Route::get('/product/sizes/{id}/{name?}/create', [DashboardSizeController::class, 'create'])->name('products-sizes.create');
+        Route::prefix('/product')->controller(DashboardSizeController::class)->group(function () {
+            // Route::resource('sizes', DashboardSizeController::class);
+            Route::get('/sizes/{id}/{name?}', 'index')->name('products-sizes.index');
+            Route::get('/sizes/{id}/{name?}/create', 'create')->name('products-sizes.create');
+            Route::post('/sizes/{id}/{name?}', 'store')->name('products-sizes.store');
+            Route::get('/sizes/{id}/{name?}/edit', 'edit')->name('products-sizes.edit');
+            Route::put('/sizes/{id}/{name?}', 'update')->name('products-sizes.update');
+            Route::delete('/sizes/{id}/{name?}', 'destroy')->name('products-sizes.destroy');
+
+            // Route::get('books', [BookController::class, 'index'])->name('books.index');
+            // Route::get('books/create', [BookController::class, 'create'])->name('books.create');
+            // Route::post('books', [BookController::class, 'store'])->name('books.store');
+            // Route::get('books/{book}', [BookController::class, 'show'])->name('books.show');
+            // Route::get('books/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
+            // Route::put('books/{book}', [BookController::class, 'update'])->name('books.update');
+            // Route::delete('books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
+        });
         /****** End products sizes routes. ******/
         Route::get('/product/{id}/{clothing_type?}/{name?}', [DashboardProductController::class, 'single_product_page_dashboard'])->name('single_product_page_dashboard'); //single-product-page (dashboard)
         Route::get('/product/delete', [DashboardProductController::class, 'delete'])->name('products.delete');
@@ -287,3 +302,4 @@ Route::group([
 //     Route::get('settings',[UserController::class,'settings'])->name('user.settings');
 
 // });
+

@@ -17,14 +17,76 @@
     @endcomponent
 
     @include('layouts.admin.partials.messages.message')
-    
-    {{-- @forelse ($sizes as $size)
-        {{ $size->size_value ?? 's'}}
-    @empty
-        <div class="alert alert-secondary text-center">
-            <span class="h6">There are no sizes yet for this product! Go ahead and sizes for it.</span>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+
+                        <h5>Show Sizes - <span class="b-b-success">{{App\Models\Size::where('product_id', $product->id)->count()}}</span></h5>
+                        <span>
+                            All sizes. If you want to create and add new sizes, 
+                            you have to click on the (Add New Sizes) button at 
+                            the top of the page from the right.
+                        </span>
+                    </div>
+                    <div class="card-block row">
+                        <div class="col-sm-12 col-lg-12 col-xl-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered @if($all_sizes_for_each_product->count() == 0) d-none @endif">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">#</th>
+                                        <th scope="col" class="text-center">Size</th>
+                                        <th scope="col" class="text-center">Date of Creation</th>
+                                        <th scope="col" class="text-center">Added By</th>
+                                        <th scope="col" class="text-center">Last Updated By</th>
+                                        @if(auth()->user()->user_type == "admin")
+                                            <th scope="col" class="text-center">Action</th>
+                                        @endif
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($all_sizes_for_each_product as $size)
+                                    <tr>
+                                        <th scope="row" class="text-center">{{$loop->iteration}}</th>
+                                        <td class="text-center">{{$size->size_value ?? 'NULL'}}</td>
+                                        <td class="text-center">{{$size->created_at->translatedFormat('d/m/Y - h:m A')}}</td>
+                                        <td class="text-center">{{$size->create_user->name ?? '—'}}</td>
+                                        <td class="text-center">{{$size->update_user->name ?? '—'}}</td>
+                                        @if(auth()->user()->user_type == "admin")
+                                            <td class="text-center">
+                                                {!! Form::open([
+                                                    'route' => ['products-sizes.destroy',$size->id],
+                                                    'method' => 'delete'
+                                                ])!!}
+                                                <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure that you want to delete Size ({{ $size->size_value }}) for product [{{ $product->name }}]?');" type="submit" title="{{'Delete'." ($size->size_value)"}}"><i class="fa-solid fa-trash"></i> Delete </button>
+
+                                                <a href="{{route('products-sizes.edit',$size->id)}}" class="btn btn-primary btn-xs" type="button" title="{{'Edit'." ($size->size_value)"}}"><li class="icon-pencil"></li> Edit</a>
+                                                {!! Form::close() !!}
+                                            </td>
+                                        @endif
+                                    </tr>
+
+                                    @empty
+                                        <div class="alert alert-secondary text-center">
+                                            <span class="h6">There are no sizes yet for this product! Go ahead and <a href="{{ route('products-sizes.create') }}">add some sizes</a> for it.</span>
+                                        </div>
+                                    @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="m-b-30" aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center pagination-primary">
+                        {!! $all_sizes_for_each_product->links('pagination::bootstrap-5') !!}
+                    </ul>
+                </nav>
+            </div>
         </div>
-    @endforelse --}}
+    </div>
 
     @push('scripts')
         <script src="{{asset('admin/js/bootstrap/popper.min.js')}}"></script>
