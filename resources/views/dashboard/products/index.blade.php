@@ -44,7 +44,7 @@
                                             <th scope="col" class="text-center">Category</th>
                                             <th scope="col" class="text-center">Clothing type</th>
                                             <th scope="col" class="text-center">Available Quantity</th>
-                                            <th scope="col" class="text-center">@if(auth()->user()->user_type == "admin") Manage @endif Sizes</th>
+                                            <th scope="col" class="text-center">@if(auth()->user()->user_type == "admin") Manage @endif Sizes <br> <span class="font-danger fw-bold f-12">(Under Construction!)</span></th>
                                             <th scope="col" class="text-center">Date of Creation</th>
                                             <th scope="col" class="text-center">Added By</th>
                                             <th scope="col" class="text-center">Last Updated By</th>

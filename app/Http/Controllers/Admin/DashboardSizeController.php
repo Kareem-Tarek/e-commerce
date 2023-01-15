@@ -21,7 +21,13 @@ class DashboardSizeController extends Controller
         $product                    = Product::find($id);
         $all_sizes_for_each_product = Size::where('product_id', $product->id)->paginate(5);
 
-        return view('dashboard.products.product-sizes.index', compact('product', 'all_sizes_for_each_product'));
+        if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
+            return view('dashboard.products.product-sizes.index', compact('product', 'all_sizes_for_each_product'));
+        }
+        elseif(auth()->user()->user_type == "supplier"){
+            return redirect()->route('dashboard');
+        }
+
     }
 
     /**
@@ -33,7 +39,13 @@ class DashboardSizeController extends Controller
     {
         $product = Product::find($id);
         $size    = Size::where('product_id', $product->id)->find($id);
-        return view('dashboard.products.product-sizes.create', compact('product', 'size'));
+
+        if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
+            return view('dashboard.products.product-sizes.create', compact('product', 'size'));
+        }
+        elseif(auth()->user()->user_type == "supplier"){
+            return redirect()->route('dashboard');
+        }
     }
 
     /**
@@ -75,7 +87,16 @@ class DashboardSizeController extends Controller
     {
         $product = Product::find($id);
         $size    = Size::where('product_id', $product->id)->find($id);
-        return view('dashboard.products.product-sizes.edit', compact('product', 'size'));
+
+        if(auth()->user()->user_type == "admin"){
+            return view('dashboard.products.product-sizes.edit', compact('product', 'size'));
+        }
+        elseif(auth()->user()->user_type == "moderator"){
+            return redirect('/dashboard/products');
+        }
+        elseif(auth()->user()->user_type == "supplier"){
+            return redirect('/dashboard');
+        }
     }
 
     /**
