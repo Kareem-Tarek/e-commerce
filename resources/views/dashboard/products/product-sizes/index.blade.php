@@ -37,6 +37,7 @@
                                     <thead>
                                     <tr>
                                         <th scope="col" class="text-center">#</th>
+                                        <th scope="col" class="text-center">ID</th>
                                         <th scope="col" class="text-center">Size</th>
                                         <th scope="col" class="text-center">Date of Creation</th>
                                         <th scope="col" class="text-center">Added By</th>
