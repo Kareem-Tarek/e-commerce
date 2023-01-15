@@ -10,7 +10,7 @@
         - Register form page.
         - Laravel socialite package: Signing In by creating an account in the website or by using a third-party app (OAuth) such as Facebook, Github or Google.
         - Users are allowed to sign in by using (email, username or phone number) and password.
-        - Users are allowed to show/hide (text/password) password by toggling a dot eye icon next to the password inputs in login & register forms.
+        - Users are allowed to show/hide (text/password) password by toggling a dot eye icon right next to the password inputs in login & register pages/forms.
         - Cart page + functionality.
         - Checkout page.
         - Favorites (Wishlist) page.
