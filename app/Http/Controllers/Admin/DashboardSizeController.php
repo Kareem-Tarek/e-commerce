@@ -31,8 +31,8 @@ class DashboardSizeController extends Controller
      */
     public function create($id)
     {
-        $product  = Product::find($id);
-        $size     = Size::where('product_id', $product->id)->find($id);
+        $product = Product::find($id);
+        $size    = Size::where('product_id', $product->id)->find($id);
         return view('dashboard.products.product-sizes.create', compact('product', 'size'));
     }
 
