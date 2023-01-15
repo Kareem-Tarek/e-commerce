@@ -32,7 +32,8 @@ class DashboardSizeController extends Controller
     public function create($id)
     {
         $product  = Product::find($id);
-        return view('dashboard.products.product-sizes.create', compact('product'));
+        $size     = Size::where('product_id', $product->id)->find($id);
+        return view('dashboard.products.product-sizes.create', compact('product', 'size'));
     }
 
     /**
@@ -41,16 +42,16 @@ class DashboardSizeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $size = new Size();
+        $size             = new Size();
         $size->size_value = $request->size_value;
+        $product_id       = Product::find($id);
+        $size->product_id = $product_id->id;
         $size->save();
 
-        //$product  = Product::find($id);
-
-        // return $size->size_value.' is added.';
-        return redirect()->route('product-sizes.index');
+        // return redirect()->route('products.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -73,7 +74,7 @@ class DashboardSizeController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        $size = Size::where('product_id', $product->id)->find($id);
+        $size    = Size::where('product_id', $product->id)->find($id);
         return view('dashboard.products.product-sizes.edit', compact('product', 'size'));
     }
 
@@ -86,11 +87,14 @@ class DashboardSizeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $size = Size::find($id);
+        $size             = Size::find($id);
         $size->size_value = $request->size_value;
+        $product_id       = Product::find($id);
+        // $product_id       = Product::where('size_id', $size->id)->find($id);
+        $size->product_id = $product_id->id;
         $size->save();
 
-        return redirect()->route('product-sizes.index');
+        return redirect()->route('products.index');
     }
 
     /**

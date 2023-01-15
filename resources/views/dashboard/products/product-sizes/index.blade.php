@@ -50,6 +50,7 @@
                                     @forelse($all_sizes_for_each_product as $size)
                                     <tr>
                                         <th scope="row" class="text-center">{{$loop->iteration}}</th>
+                                        <td class="text-center">{{$size->id}}</td>
                                         <td class="text-center">{{$size->size_value}}</td>
                                         <td class="text-center">{{$size->created_at->translatedFormat('d/m/Y - h:m A')}}</td>
                                         <td class="text-center">{{$size->create_user->name ?? '—'}}</td>
