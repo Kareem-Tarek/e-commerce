@@ -11,10 +11,10 @@
         - Laravel socialite package: Signing In by creating an account in the website or by using a third-party app (OAuth) such as Facebook, Github or Google.
         - Users are allowed to sign in by using (email, username or phone number) and password.
         - Users are allowed to show/hide (text/password) password by toggling a dot eye icon next to the password inputs in login & register forms.
-        - Cart page.
+        - Cart page + functionality.
         - Checkout page.
         - Favorites (Wishlist) page.
-        - Products rating.
+        - Products rating functionality.
         - Latest Items page.
         - Search functionality.
         - Mailtrap (SMTP server) tool, used for email testing.
@@ -26,8 +26,8 @@
             - Clothing type: Formal, Casual & Sports Wear.
             - Accessories: is accessory or not?.
         - Products availablity.
-        - Products discounts %.
-        - Discounts page.
+        - Products discounts % feature.
+        - Products discounts page.
         - Single Page Application (SPA) for all the products.
         - New badge for products that lasts for 7 days only for the new added products to the website.
         - Home page.
@@ -41,7 +41,7 @@
     #### Dashboard for Admins & Moderators (2nd template).
         - Home page (including some statistics & counters for specific things in the business such as the number of men products that have sales only).
         - Single Page Application (SPA) for all the products.
-        - The delete functionality is soft so anything will be deleted could also be restored "restore feature" + also there is permanent (force) delete feature.
+        - The delete functionality is soft so anything will be deleted could also be restored by "restore" feature + also there is permanent (force) delete feature if the user wants to force delete the data from both dashboard (front-end) & DB (back-end).
         - Products with all their different varieties.
             - Admins (CRUD)
             - Moderators (CR)
