@@ -100,7 +100,7 @@ Route::get('/change-password', [ResetPasswordController::class, 'index'])->name(
 
 /************************************************************ Start Products Routes ************************************************************/
 Route::get('/products', [ProductController::class, 'index'])->name('products'); //products-landing-page
-Route::get('/search' , [ProductController::class, 'search'])->name('search'); //product-results-landing-page (from the search 'query')
+Route::get('/search' , [ProductController::class, 'search'])->name('search-website'); //product-results-landing-page (from the search 'query')
 Route::get('/all-product-items', [ProductController::class, 'all_product_items'])->name('all_product_items'); //all-products-page (everything in general)
 Route::get('/all-clothes', [ProductController::class, 'clothes_all_filter'])->name('clothes_all_filter'); //all-clothes-page
 Route::get('/latest-items', [ProductController::class, 'latest_items'])->name('latest_items'); //latest-items-page
@@ -207,6 +207,9 @@ Route::group([
         });
         /********************** Start products route. **********************/
         Route::resource('/products', DashboardProductController::class);
+        /****** Start products search route. ******/
+        Route::get('/search' , [DashboardProductController::class, 'dashboardSearch'])->name('search-dashboard');
+        /****** End products search route. ******/
         /****** Start products sizes routes. ******/
         Route::prefix('/product')->controller(DashboardSizeController::class)->group(function () {
             // Route::resource('sizes', DashboardSizeController::class);

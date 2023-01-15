@@ -32,6 +32,17 @@ class DashboardProductController extends Controller
         return view('dashboard.products.single-product-dashboard' , compact('product'));
     }
 
+    public function dashboardSearch(Request $request)
+    {
+        $dashboard_search_text_input     = $request->dashboard_search_query;
+        $dashboard_products_result       = Product::where('name','LIKE',"%{$dashboard_search_text_input}%")->get();
+                                                    //->orWhere('brand_name','LIKE',"%{$dashboard_search_text_input}%")->get();
+        $dashboard_products_result_count = $dashboard_products_result->count();
+
+        return view('dashboard.products.products-search.search-dashboard', compact('dashboard_products_result' , 'dashboard_search_text_input' , 'dashboard_products_result_count'))
+            ->with('i' , ($request->input('page', 1) - 1) * 5);
+    }
+
     public function create()
     {
         return view('dashboard.products.create');

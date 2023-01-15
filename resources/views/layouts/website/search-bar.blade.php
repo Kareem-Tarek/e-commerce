@@ -1,7 +1,7 @@
 <div class="container search-container mt-4">
   <div class="row justify-content-center">
-      <form action="{{ url('/search') }}" method="GET">
-          <input class="search-box" type="text" placeholder="Search for items or brands..." name="search_query">
+      <form action="{{ route('search-website') }}" method="GET">
+          <input class="search-box" type="text" placeholder="Search for any product..." name="search_query">
           <button class="search-box-btn px-2" type="submit"><i class="fa fa-search search-box-btn-icon"></i></button>
       </form>
   </div>

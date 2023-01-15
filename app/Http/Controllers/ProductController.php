@@ -32,8 +32,8 @@ class ProductController extends Controller
         // $search_text_input     = $request->get('search_query'); //Laravel method (2)
         // $search_text_input     = $_GET['search_query']; // Native
 
-        $products_result = Product::where('name','LIKE',"%{$search_text_input}%")->get(); ////first way for the search functionality. The SQL statement that will check the entered query from the DB (used as a filteration for products in search by an entered query "$search_text")
-                                    // ->orWhere('discount','LIKE',"%{$search_text_input}%")->get();
+        $products_result = Product::where('name','LIKE',"%{$search_text_input}%") ////first way for the search functionality. The SQL statement that will check the entered query from the DB (used as a filteration for products in search by an entered query "$search_text")
+                                    ->orWhere('discount','LIKE',"%{$search_text_input}%")->get();
         // $products_result       = Product::when(!empty($search_text), function($query) use ($search_text){
         //     return $query->where('name', 'like', '%'.$search_text.'%');
         //     })->get(); //another second way for the search functionality on the entered query

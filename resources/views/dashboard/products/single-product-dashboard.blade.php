@@ -12,7 +12,8 @@
         @slot('breadcrumb_title')
             <h3 class="mt-4">Products</h3>
         @endslot
-        <li class="breadcrumb-item active">Products / <a href="{{route('single_product_page_dashboard', [$product->id, $product->name])}}">{{ $product->name }}</a></li>
+        <li class="breadcrumb-item active"><a href="{{route('products.index')}}">Products</a></li>
+        <li class="breadcrumb-item active">{{ $product->name }}</li>
         @slot('bookmark')
             <a href="{{route('products.create')}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Product</a>
         @endslot
