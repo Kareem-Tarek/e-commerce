@@ -57,7 +57,7 @@
                         <span>
                             If you want to create and add new products, 
                             you have to click on the (Add New Product) button at 
-                            the top of the page from the right.
+                            the top of the page.
                         </span>
                     </div>
                     <div class="card-block row">

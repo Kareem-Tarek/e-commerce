@@ -32,7 +32,7 @@
                         <span>
                             All users If you want to create and add new users, 
                             you have to click on the (Add New User) button at 
-                            the top of the page from the right.
+                            the top of the page.
                         </span>
                     </div>
                     <div class="card-block row">

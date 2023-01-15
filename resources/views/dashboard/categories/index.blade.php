@@ -26,7 +26,7 @@
                         <span>
                             All categories If you want to create and add new categories, 
                             you have to click on the (Add New Category) button at 
-                            the top of the page from the right.
+                            the top of the page.
                         </span>
                     </div>
                     <div class="card-block row">
