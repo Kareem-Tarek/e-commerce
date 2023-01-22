@@ -104,15 +104,16 @@
     </div>
 
     <div class="text-center mb-4 mt-5">
-        <a href="{{ route('products.edit', $product->id) }}" class="button-link-edit">Edit this product</a>
-        <a href="{{ route('products.destroy', $product->id) }}" class="button-link-delete">Delete this product</a>
-        {{-- {!! Form::open([
+        {{-- <a href="{{ route('products.destroy', $product->id) }}" class="button-link-delete">Delete this product</a> --}}
+        {!! Form::open([
             'route' => ['products.destroy',$product->id],
             'method' => 'delete'
         ])!!}
-        <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure that you want to delete - {{ $product->name }}?');" type="submit" title="{{'Delete'." ($product->name)"}}"><i class="fa-solid fa-trash"></i> Delete </button>
-        {!! Form::close() !!} --}}
-        <a href="{{ route('products.index') }}" class="button-link-back-to-products">Back To Products Page</a>
+        <a href="{{ route('products.edit', $product->id) }}" class="button-link-edit"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Edit this product</a>
+        <button class="button-link-delete" onclick="return confirm('Are you sure that you want to delete - {{ $product->name }}?');" type="submit" title="{{'Delete'." ($product->name)"}}"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete this product</button>
+        <a href="{{ route('products.index') }}" class="button-link-back-to-products"><i class="fa-solid fa-arrow-left-long"></i>&nbsp;&nbsp;Back To Products Page</a>
+        {!! Form::close() !!}
+        
     </div>
 <style>
     .button-link-edit{
@@ -136,7 +137,7 @@
         color: snow;
         font-size: 80%; 
         font-weight: bold; 
-        padding: 1%; 
+        padding: 0.85%; 
         padding-left: 2%;
         padding-right: 2%;
         border-radius: 3px;
