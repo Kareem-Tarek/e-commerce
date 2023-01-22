@@ -64,18 +64,18 @@
         <table class="table mb-4">
             <thead>
                 <tr>
-                    <th>Brand name</th>
-                    <th>Available Sizes</th>
+                    <th>Brand name (Supplier)</th>
+                    <th>Available quantity</th>
+                    <th>Available sizes</th>
                     <th>Available Colors</th>
-                    <th>Supplier</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td scope="row">iii</td>
-                    <td>aaa, hhh, jjj</td>
-                    <td>rrr, kkk, fff</td>
-                    <td>ccc</td>
+                    <td scope="row">{{ $product->brand_name ?? 'N/A' }}</td>
+                    <td>{{ $product->available_quantity ?? '' }}</td>
+                    <td>{{ $product->sizes ?? '—' }}</td>
+                    <td>{{ $product->colors ?? '—' }}</td>
                 </tr>
             </tbody>
         </table>
