@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Register
+    AA | Register
 @endsection
 
 @section('content')

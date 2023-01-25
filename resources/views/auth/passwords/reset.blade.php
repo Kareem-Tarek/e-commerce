@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Reset Password
+    AA | Reset Password
 @endsection
 
 @section('content')

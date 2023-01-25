@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Login
+    AA | Login
 @endsection
 
 @section('content')

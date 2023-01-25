@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Forgot Password
+    AA | Forgot Password
 @endsection
 
 @section('content')

@@ -1,6 +1,8 @@
 @extends('layouts.admin.master')
 
-@section('title') Settings @endsection
+@section('title')
+    AA | Settings 
+@endsection
 
 @section('content')
 

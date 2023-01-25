@@ -4,7 +4,7 @@
 @endsection
 
 @section('title')
-    Email Verification
+    AA | Email Verification
 @endsection
 
 @section('content')

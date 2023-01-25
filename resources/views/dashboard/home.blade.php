@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 @section('title')
-    Dashboard - Home
+    Dashboard Home
 @endsection
 
 @push('css')
