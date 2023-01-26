@@ -72,7 +72,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td scope="row">{{ $product->brand_name ?? 'N/A' }}</td>
+                    <td scope="row">{{ $product->user->name ?? $product->user->username }}</td>
                     <td>{{ $product->available_quantity ?? '' }}</td>
                     <td>{{ $product->sizes ?? '—' }}</td>
                     <td>{{ $product->colors ?? '—' }}</td>

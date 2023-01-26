@@ -92,7 +92,7 @@
                                         </td>
                                         {{-- <td class="text-center"><a href="{{ route('categories.index') }}">{{$product->category->name ?? 'No Clothing Type'}}</a></td> --}}
                                         <td class="text-center">{{$product->available_quantity}}</td>
-                                        <td class="text-center">{{$product->user->username ?? 'N/A'}}</td>
+                                        <td class="text-center">{{$product->user->name ?? $product->user->username}}</td>
                                         <td class="text-center">
                                             <a href="{{route('product-sizes.index', [$product->id, $product->name])}}" class="btn btn-dark btn-xs fw-bold" type="button" title="{{$product->name." (Sizes)"}}">Sizes</a>
                                         </td>

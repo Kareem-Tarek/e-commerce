@@ -93,6 +93,7 @@
                                                 <th scope="col" class="text-center">Category</th>
                                                 <th scope="col" class="text-center">Clothing type</th>
                                                 <th scope="col" class="text-center">Available Quantity</th>
+                                                <th scope="col" class="text-center">Brand Name (Supplier)</th>
                                                 <th scope="col" class="text-center">@if(auth()->user()->user_type == "admin") Manage @endif Sizes <br> <span class="font-danger fw-bold f-12">(Under Construction!)</span></th>
                                                 <th scope="col" class="text-center">Date of Creation</th>
                                                 <th scope="col" class="text-center">Added By</th>
@@ -141,6 +142,7 @@
                                                 </td>
                                                 {{-- <td class="text-center"><a href="{{ route('categories.index') }}">{{$product->category->name ?? 'No Clothing Type'}}</a></td> --}}
                                                 <td class="text-center">{{$product->available_quantity}}</td>
+                                                <td class="text-center">{{$product->user->name ?? $product->user->username}}</td>
                                                 <td class="text-center">
                                                     <a href="{{route('product-sizes.index', [$product->id, $product->name])}}" class="btn btn-dark btn-xs fw-bold" type="button" title="{{$product->name." (Sizes)"}}">Sizes</a>
                                                 </td>

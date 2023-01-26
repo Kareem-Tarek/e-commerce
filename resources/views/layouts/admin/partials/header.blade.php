@@ -10,7 +10,7 @@
                 <li>
                     <form class="form-inline search-form" action="{{ route('search-dashboard') }}" method="GET">
                         <div class="search-bg"><i class="fa fa-search"></i>
-                            <input class="form-control-plaintext" placeholder="Search for any product..." name="dashboard_search_query">
+                            <input class="form-control-plaintext" placeholder="Search for any product or brand name..." name="dashboard_search_query" size="100">
                         </div>
                     </form>
                     <span class="d-sm-none mobile-search search-bg"><i class="fa fa-search"></i></span>

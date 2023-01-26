@@ -35,8 +35,9 @@ class DashboardProductController extends Controller
     public function dashboardSearch(Request $request)
     {
         $dashboard_search_text_input     = $request->dashboard_search_query;
-        $dashboard_products_result       = Product::where('name','LIKE',"%{$dashboard_search_text_input}%")->get();
-                                                    //->orWhere('brand_name','LIKE',"%{$dashboard_search_text_input}%")->get();
+        $dashboard_products_result       = Product::where('name','LIKE',"%{$dashboard_search_text_input}%")
+                                                    ->orWhere('brand_name','LIKE',"%{$dashboard_search_text_input}%")->get();
+
         $dashboard_products_result_count = $dashboard_products_result->count();
 
         return view('dashboard.products.products-search.search-dashboard', compact('dashboard_products_result' , 'dashboard_search_text_input' , 'dashboard_products_result_count'))
