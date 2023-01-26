@@ -28,7 +28,7 @@ class CreateProductsTable extends Migration
             $table->enum('is_accessory' , ['yes','no']);
             $table->enum('product_category' , ['men','women','kids']);
             $table->decimal('discount')->default(0)->nullable();
-            // $table->string('brand_name');   // for supplier relationship (from users table)
+            $table->string('brand_name');   // for supplier relationship (from users table)
             $table->integer('create_user_id')->nullable();
             $table->integer('update_user_id')->nullable();
             $table->timestamps();

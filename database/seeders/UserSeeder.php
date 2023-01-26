@@ -79,13 +79,41 @@ class UserSeeder extends Seeder
             'email'             => 'supplier@gmail.com',
             'email_verified_at' => Carbon::now()->toDateTimeString(), // Also Carbon::now()->toDateTimeString() OR Carbon::now OR now()
             'password'          => '$2y$10$2Z8CF/lDpvDYYDIP28j7he3vHlKpFExarjbU04U7In8bjem9KlKdi', // password (is hashed): 123456789
-            // 'gender'            => '', // null, because there is no specific gender for supplier (vendor/business) account.
-            // 'dob'               => '', // null, because there is no DOB for supplier (vendor/business) account.
             'user_type'         => 'supplier',
             'address'           => 'Cairo, xxxx st. 23',
             'whatsapp'          => '01000000113',
             'facebook'          => 'https://www.facebook.com/Raymond/',
             'instagram'         => 'Raymond',
+        ]);
+
+        $user = User::create([ //ID = 5 (supplier)
+            'name'              => "Aesthetics",
+            'username'          => 'Aesthetics',
+            'phone'             => '01000000114',
+            'bio'               => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, eligendi? Itaque impedit minima aperiam alias, quidem quo inventore dolores, ex aut laudantium velit voluptas. Maxime, vel dolores? Laboriosam, illo. Saepe?',
+            'email'             => 'supplier2@gmail.com',
+            'email_verified_at' => Carbon::now()->toDateTimeString(), // Also Carbon::now()->toDateTimeString() OR Carbon::now OR now()
+            'password'          => '$2y$10$2Z8CF/lDpvDYYDIP28j7he3vHlKpFExarjbU04U7In8bjem9KlKdi', // password (is hashed): 123456789
+            'user_type'         => 'supplier',
+            'address'           => 'Cairo, xxxx st. 23',
+            'whatsapp'          => '01000000114',
+            'facebook'          => 'https://www.facebook.com/Aesthetics/',
+            'instagram'         => 'Aesthetics',
+        ]);
+
+        $user = User::create([ //ID = 6 (supplier)
+            'name'              => "Fashionholic",
+            'username'          => 'Fashionholic',
+            'phone'             => '01000000115',
+            'bio'               => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, eligendi? Itaque impedit minima aperiam alias, quidem quo inventore dolores, ex aut laudantium velit voluptas. Maxime, vel dolores? Laboriosam, illo. Saepe?',
+            'email'             => 'supplier3@gmail.com',
+            'email_verified_at' => Carbon::now()->toDateTimeString(), // Also Carbon::now()->toDateTimeString() OR Carbon::now OR now()
+            'password'          => '$2y$10$2Z8CF/lDpvDYYDIP28j7he3vHlKpFExarjbU04U7In8bjem9KlKdi', // password (is hashed): 123456789
+            'user_type'         => 'supplier',
+            'address'           => 'Cairo, xxxx st. 23',
+            'whatsapp'          => '01000000115',
+            'facebook'          => 'https://www.facebook.com/Fashionholic/',
+            'instagram'         => 'Fashionholic',
         ]);
 
     }

@@ -11,11 +11,27 @@ class Product extends Model
 {
     use HasApiTokens , HasFactory , SoftDeletes;
 
+    // protected $fillable = [
+    //     'name', 
+    //     'description', 
+    //     'image', 
+    //     'available_quantity',
+    //     'size_id', 
+    //     'price', 
+    //     'clothing_type',  
+    //     'is_accessory', 
+    //     'product_category', 
+    //     'discount', 
+    //     'brand_name',
+    //     'create_user_id',
+    //     'update_user_id',
+    // ];
+
     protected $guarded = [];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->BelongsTo(User::class);   // this relationship is implemented for "suppliers" ONLY! who owns products
+        return $this->BelongsTo(User::class, 'brand_name', 'id');   // this relationship is implemented for "suppliers" ONLY! who owns products
     }
 
     public function cart(): \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -27,7 +27,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.12,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
             
         ]);
 
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
             
         ]);
 
@@ -57,7 +57,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.15,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
             
         ]);
 
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.10,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 6,
             
         ]);
 
@@ -87,7 +87,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 6,
         ]);
 
         $product = Product::create([
@@ -101,7 +101,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.05,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
             
         ]);
 
@@ -116,7 +116,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.05,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
             
         ]);
         
@@ -131,7 +131,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.08,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
             
         ]);
 
@@ -146,7 +146,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.03,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
             
         ]);
 
@@ -161,7 +161,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
         ]);
 
         $product = Product::create([
@@ -175,7 +175,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
         ]);
 
         $product = Product::create([
@@ -189,7 +189,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 6,
         ]);
 
         $product = Product::create([
@@ -202,7 +202,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'yes',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
         ]);
 
         $product = Product::create([
@@ -215,7 +215,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'yes',
             'discount'           => 0.02,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
             
         ]);
 
@@ -229,7 +229,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'yes',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 6,
         ]);
 
         $product = Product::create([
@@ -243,7 +243,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.50,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
             
         ]);
 
@@ -258,7 +258,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.20,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
             
         ]);
 
@@ -273,7 +273,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
         ]);
 
         $product = Product::create([
@@ -287,7 +287,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0.05,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 5,
             
         ]);
 
@@ -302,7 +302,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 6,
         ]);
 
         $product = Product::create([
@@ -316,7 +316,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'no',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
         ]);
 
         $product = Product::create([
@@ -329,7 +329,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'yes',
             'discount'           => 0.30,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 6,
             
         ]);
 
@@ -343,7 +343,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'yes',
             'discount'           => 0.15,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
             
         ]);
 
@@ -357,7 +357,7 @@ class ProductSeeder extends Seeder
             'is_accessory'       => 'yes',
             'discount'           => 0,
             'create_user_id'     => 1,
-            // 'brand_name'         => 4,
+            'brand_name'         => 4,
         ]);
 
     }

@@ -25,6 +25,23 @@
     </div>
 
     <div class="form-group row">
+        <label class="form-label col-lg-3">Brand Name (Supplier) <span class="text-danger">*</span></label>
+        <div class="col-lg-9">
+            @inject('user','App\Models\User')
+            {!! Form::select('brand_name',$user->type('supplier')->pluck('name','id'),Request::old('brand_name') ? Request::old('brand_name') : $model->brand_name,[
+                'placeholder' => '---------- Please select a brand/supplier ----------',
+                'class'       => 'form-control select'. ( $errors->has('brand_name') ? ' is-invalid' : '' ),
+                'required'
+            ]) !!}
+            @error('brand_name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+    </div>
+
+    <div class="form-group row">
         <label class="form-label col-lg-3">Image <span class="text-danger">*</span></label>
         <div class="col-lg-9">
             <input class="form-control @error('image') is-invalid @enderror" value="{{ old('image',$model->image) }}" type="file" name="image" required autocomplete="off">
