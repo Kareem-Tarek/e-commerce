@@ -37,7 +37,7 @@ class DashboardProductController extends Controller
         return view('dashboard.products.single-product-dashboard' , compact('product'));
     }
 
-    public function dashboardSearch(Request $request, $id)
+    public function dashboardSearch(Request $request)
     {
         $dashboard_search_text_input     = $request->dashboard_search_query;
         if(auth()->user()->user_type == 'supplier'){
