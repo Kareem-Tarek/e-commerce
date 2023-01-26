@@ -21,7 +21,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Show deleted products - <span class="b-b-success">{{App\Models\Product::onlyTrashed()->count()}}</span></h5>
+                        <h5>Show deleted products - <span class="b-b-success">{{App\Models\Product::where('brand_name', auth()->user()->id)->onlyTrashed()->count()}}</span></h5>
                         <span>
                             All deleted products. If you want to create and add new sections, 
                             you must click the (Add New Product) button at the top of the page, 
@@ -42,11 +42,12 @@
                                         <th scope="col" class="text-center">Category</th>
                                         <th scope="col" class="text-center">Clothing Type</th>
                                         <th scope="col" class="text-center">Available Quantity</th>
+                                        <th scope="col" class="text-center">Brand Name (Supplier)</th>
                                         <th scope="col" class="text-center">Added By</th>
                                         <th scope="col" class="text-center">Last Updated By</th>
                                         <th scope="col" class="text-center">Date of Creation</th>
                                         <th scope="col" class="text-center">Date of Deletion</th>
-                                        @if(auth()->user()->user_type == "admin")
+                                        @if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "supplier")
                                             <th scope="col" class="text-center">Action</th>
                                         @endif
                                     </tr>
@@ -78,11 +79,12 @@
                                             </a>
                                         </td>
                                         <td class="text-center">{{$product->available_quantity}}</td>
+                                        <td class="text-center">{{$product->user->name ?? $product->user->username}}</td>
                                         <td class="text-center">{{$product->create_user->name ?? '—'}}</td>
                                         <td class="text-center">{{$product->update_user->name ?? '—'}}</td>
                                         <td class="text-center" title="{{$product->created_at->format('Y-D-M h:m h:m A')}}">{{$product->created_at->format('Y-D-M h:m A')}}</td>
                                         <td class="text-center" title="{{$product->deleted_at->format('Y-D-M h:m h:m A')}}">{{$product->deleted_at->format('Y-D-M h:m A')}}</td>
-                                        @if(auth()->user()->user_type == "admin")
+                                        @if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "supplier")
                                             <td class="text-center">
                                                 {!! Form::open([
                                                     'route' => ['products.forceDelete',$product->id],

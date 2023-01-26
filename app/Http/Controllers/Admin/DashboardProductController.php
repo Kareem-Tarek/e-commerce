@@ -12,12 +12,17 @@ class DashboardProductController extends Controller
 
     public function index()
     {
-        $products = Product::orderBy('created_at','asc')->paginate(30);
+        if(auth()->user()->user_type == 'supplier'){
+            $products = Product::where('brand_name', auth()->user()->id)->orderBy('created_at','asc')->paginate(30);
+        }
+        else{
+            $products = Product::orderBy('created_at','asc')->paginate(30);
+        }
 
         return view('dashboard.products.index',compact('products'));
     }
 
-    public function single_product_page_dashboard(int $id, $clothing_type = null, string $name = null) // SPA (Single Page Application)
+    public function single_product_page_dashboard($id, $clothing_type = null, string $name = null) // SPA (Single Page Application)
     {
         $product = Product::find($id); // OR $product = Product::findOrFail($id); //no need to use it because the error blade (404) is handled & customized manually "dashboard.products.productsErrors.404-product-page-not-found"
         if($product == null){
@@ -32,11 +37,17 @@ class DashboardProductController extends Controller
         return view('dashboard.products.single-product-dashboard' , compact('product'));
     }
 
-    public function dashboardSearch(Request $request)
+    public function dashboardSearch(Request $request, $id)
     {
         $dashboard_search_text_input     = $request->dashboard_search_query;
-        $dashboard_products_result       = Product::where('name','LIKE',"%{$dashboard_search_text_input}%")
+        if(auth()->user()->user_type == 'supplier'){
+            $dashboard_products_result = Product::where('name','LIKE',"%{$dashboard_search_text_input}%")
+                                                    ->orWhere('brand_name','LIKE',"%{$dashboard_search_text_input}%")->where('brand_name', auth()->user()->id)->get();
+        }
+        else{
+            $dashboard_products_result = Product::where('name','LIKE',"%{$dashboard_search_text_input}%")
                                                     ->orWhere('brand_name','LIKE',"%{$dashboard_search_text_input}%")->get();
+        }
 
         $dashboard_products_result_count = $dashboard_products_result->count();
 
@@ -77,6 +88,7 @@ class DashboardProductController extends Controller
         $products                      = new Product();
         $products->name                = $request->name;
         $products->description         = $request->description;
+        $products->brand_name          = $request->brand_name;
         // if($request->hasFile('image')){
         //     $file       = $request->file('image');
         //     $extension  = $file->getClientOriginalExtension();
@@ -122,6 +134,7 @@ class DashboardProductController extends Controller
         $products                     = Product::findOrFail($id);
         $products->name               = $request->name;
         $products->description        = $request->description;
+        $products->brand_name         = $request->brand_name;
         ////////////////////////--------- START image's request ---------////////////////////////
         if($request->hasFile("image")){
             $products->image = "/assets/images/".$request->image;
@@ -153,7 +166,12 @@ class DashboardProductController extends Controller
 
     public function delete()
     {
-        $products = Product::orderBy('created_at','asc')->onlyTrashed()->paginate(30);
+        if(auth()->user()->user_type == 'supplier'){
+            $products = Product::where('brand_name', auth()->user()->id)->orderBy('created_at','asc')->onlyTrashed()->paginate(30);
+        }
+        else{
+            $products = Product::orderBy('created_at','asc')->onlyTrashed()->paginate(30);
+        }
 
         if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
             return view('dashboard.products.delete',compact('products'));

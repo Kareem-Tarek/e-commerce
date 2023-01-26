@@ -11,23 +11,23 @@ class Product extends Model
 {
     use HasApiTokens , HasFactory , SoftDeletes;
 
-    // protected $fillable = [
-    //     'name', 
-    //     'description', 
-    //     'image', 
-    //     'available_quantity',
-    //     'size_id', 
-    //     'price', 
-    //     'clothing_type',  
-    //     'is_accessory', 
-    //     'product_category', 
-    //     'discount', 
-    //     'brand_name',
-    //     'create_user_id',
-    //     'update_user_id',
-    // ];
+    protected $fillable = [
+        'name', 
+        'description', 
+        'image', 
+        'available_quantity',
+        'size_id', 
+        'price', 
+        'clothing_type',  
+        'is_accessory', 
+        'product_category', 
+        'discount', 
+        'brand_name',
+        'create_user_id',
+        'update_user_id',
+    ];
 
-    protected $guarded = [];
+    // protected $guarded = [];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

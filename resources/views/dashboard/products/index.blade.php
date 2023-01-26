@@ -1,7 +1,11 @@
 @extends('layouts.admin.master')
 
 @section('title') 
-    All Products
+    @if(auth()->user()->user_type == "supplier")
+        All My Products
+    @else
+        All Products
+    @endif
 @endsection
 
 @section('content')
@@ -9,7 +13,13 @@
         @slot('breadcrumb_title')
             <h3 class="mt-4">Products</h3>
         @endslot
-        <li class="breadcrumb-item active">Products</li>
+        <li class="breadcrumb-item active">
+            @if(auth()->user()->user_type == "supplier")
+                My Products
+            @else
+                Products
+            @endif
+        </li>
         @slot('bookmark')
             <a href="{{route('products.create')}}" class="btn btn-pill btn-air-success btn-success-gradien" type="button" title="Add New Product">Add New Product</a>
         @endslot
@@ -22,7 +32,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                        <h5>Show Products - <span class="b-b-success">{{App\Models\Product::count()}}</span></h5>
+                        <h5>Show Products - <span class="b-b-success">{{App\Models\Product::where('brand_name', auth()->user()->id)->count()}}</span></h5>
                         <span>
                             All products If you want to create and add new products, 
                             you have to click on the (Add New Product) button at 
@@ -49,7 +59,7 @@
                                             <th scope="col" class="text-center">Date of Creation</th>
                                             <th scope="col" class="text-center">Added By</th>
                                             <th scope="col" class="text-center">Last Updated By</th>
-                                            @if(auth()->user()->user_type == "admin")
+                                            @if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "supplier")
                                                 <th scope="col" class="text-center">Action</th>
                                             @endif
                                         </tr>
@@ -99,7 +109,7 @@
                                         <td class="text-center" style="width: 18%;">{{$product->created_at->translatedFormat('d/m/Y - h:m A') /* date('d/M/y', strtotime($product->created_at)) */}}</td>
                                         <td class="text-center">{{$product->create_user->name ?? '—'}}</td>
                                         <td class="text-center">{{$product->update_user->name ?? '—'}}</td>
-                                        @if(auth()->user()->user_type == "admin")
+                                        @if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "supplier")
                                             <td class="text-center" style="width: 15%;">
                                                 {!! Form::open([
                                                     'route' => ['products.destroy',$product->id],

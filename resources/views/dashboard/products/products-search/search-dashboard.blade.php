@@ -98,7 +98,7 @@
                                                 <th scope="col" class="text-center">Date of Creation</th>
                                                 <th scope="col" class="text-center">Added By</th>
                                                 <th scope="col" class="text-center">Last Updated By</th>
-                                                @if(auth()->user()->user_type == "admin")
+                                                @if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "supplier")
                                                     <th scope="col" class="text-center">Action</th>
                                                 @endif
                                             </tr>
@@ -149,7 +149,7 @@
                                                 <td class="text-center" style="width: 18%;">{{$product->created_at->translatedFormat('d/m/Y - h:m A') /* date('d/M/y', strtotime($product->created_at)) */}}</td>
                                                 <td class="text-center">{{$product->create_user->name ?? '—'}}</td>
                                                 <td class="text-center">{{$product->update_user->name ?? '—'}}</td>
-                                                @if(auth()->user()->user_type == "admin")
+                                                @if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "supplier")
                                                     <td class="text-center" style="width: 15%;">
                                                         {!! Form::open([
                                                             'route' => ['products.destroy',$product->id],

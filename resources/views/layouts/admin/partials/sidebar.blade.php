@@ -205,7 +205,7 @@
                             </a>
                             <ul class="nav-submenu menu-content" style="">
                                 <li><a href="{{route('products.create')}}" class="{{route('products.create')}}">Create Product</a></li>
-                                <li><a href="{{ route('products.index') }}" class="{{ route('products.index') }}">All Products</a></li>
+                                <li><a href="{{ route('products.index') }}" class="{{ route('products.index') }}">All My Products</a></li>
                                 <li><a href="{{ route('products.delete') }}" class="{{ route('products.delete') }}" style="color: rgb(152, 6, 6);">Deleted Products</a></li>
                             </ul>
                         </li>
