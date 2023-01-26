@@ -28,11 +28,19 @@
         <label class="form-label col-lg-3">Brand Name (Supplier) <span class="text-danger">*</span></label>
         <div class="col-lg-9">
             @if(auth()->user()->user_type == "supplier")
-                <input class="form-control @error('brand_name') is-invalid @enderror" value="{{Request::old('brand_name') ? Request::old('brand_name') : $model->user->name ?? auth()->user()->id}}" type="text" name="brand_name" required disabled autocomplete="off">
+                {{-- <input class="form-control @error('brand_name') is-invalid @enderror" value="{{Request::old('brand_name') ? Request::old('brand_name') : $model->user->name ?? auth()->user()->id}}" type="text" name="brand_name" required disabled autocomplete="off"> --}}
+                @inject('user','App\Models\User')
+                {!! Form::select('brand_name',$user->type('supplier')->pluck('name','id'),Request::old('brand_name') ? Request::old('brand_name') : $model->brand_name,[
+                    'placeholder' => '---------- Please select a brand name/supplier ----------',
+                    'class'       => 'form-control select'. ( $errors->has('brand_name') ? ' is-invalid' : '' ),
+                    'required',
+                    'disabled',
+                    ( $model->brand_name == auth()->user()->id ? 'selected'  : '' )
+                ]) !!} 
             @else
                 @inject('user','App\Models\User')
                 {!! Form::select('brand_name',$user->type('supplier')->pluck('name','id'),Request::old('brand_name') ? Request::old('brand_name') : $model->brand_name,[
-                    'placeholder' => '---------- Please select a brand/supplier ----------',
+                    'placeholder' => '---------- Please select a brand name/supplier ----------',
                     'class'       => 'form-control select'. ( $errors->has('brand_name') ? ' is-invalid' : '' ),
                     'required'
                 ]) !!} 

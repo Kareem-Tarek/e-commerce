@@ -48,7 +48,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 footer-copyright">
-                        <p class="mb-0">Copyright {{date('Y')}}-{{date('y', strtotime('+1 year'))}} © viho All rights reserved.</p>
+                        <p class="mb-0">Copyright {{date('Y')}}-{{date('y', strtotime('+1 year'))}} © AA All rights reserved.</p>
                     </div>
                 </div>
             </div>
