@@ -88,7 +88,7 @@
         <tbody>
             <tr>
                 <th>{{ $loop->iteration}}</th>
-                <td><img src="{{$cartItem->product_image}}" alt="{{$cartItem->product_name}}" style="width: 110px; height: 130px; border: 1px solid black;"></td>
+                <td><a href="{{ route('single_product_page',[$cartItem->product_id, $cartItem->product_name]) }}"><img src="{{$cartItem->product_image}}" alt="{{$cartItem->product_name}}" style="width: 110px; height: 130px; border: 1px solid black;"></a></td>
                 <td style="width: 18%;">{{ $cartItem->product_name ?? 'Not Found' }}</td>
                 <td>{{ ucfirst($cartItem->product_category) }}</td>
                 <td>
