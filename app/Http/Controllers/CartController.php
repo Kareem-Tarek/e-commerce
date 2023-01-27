@@ -57,6 +57,7 @@ class CartController extends Controller
             $user                     = auth()->user(); // currently logged in user account which are customer ONLY!
             $product                  = Product::find($id); // find data from products table by id
             $cart                     = new Cart; // new data entry for the current entity (Cart)
+            $cart->cart_number        = 'AA1-23-'.substr(uniqid(),4,13);
             $cart->customer_username  = $user->username;
             $cart->customer_name      = $user->name;
             $cart->customer_phone     = $user->phone;

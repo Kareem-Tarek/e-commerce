@@ -27,7 +27,7 @@
                                     <thead>
                                     <tr>
                                         <th scope="col" class="text-center">#</th>
-                                        <th scope="col" class="text-center">Cart ID</th>
+                                        <th scope="col" class="text-center">Cart Number</th>
                                         <th scope="col" class="text-center">Customer Name</th>
                                         <th scope="col" class="text-center">Phone</th>
                                         <th scope="col" class="text-center">Email</th>
@@ -52,7 +52,7 @@
                                     @forelse($carts as $cart)
                                     <tr>
                                         <th scope="row" class="text-center">{{$loop->iteration}}</th>
-                                        <td class="text-center">{{$cart->id}}</td>
+                                        <td class="text-center">{{$cart->cart_number}}</td>
                                         <td class="text-center">{{$cart->customer_name}}</td>
                                         <td class="text-center">
                                             @if(strlen($cart->customer_phone) == 11)
