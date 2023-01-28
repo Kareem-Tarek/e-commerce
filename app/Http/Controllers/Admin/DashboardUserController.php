@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Product;
 
 class DashboardUserController extends Controller
 {
@@ -21,6 +22,67 @@ class DashboardUserController extends Controller
 
         if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
             return view('dashboard.users.index', compact('users'));
+        }
+        elseif(auth()->user()->user_type == "supplier"){
+            return redirect()->route('dashboard');
+        }
+    }
+
+    public function indexCustomers()
+    {
+        $customers = User::where('user_type','customer')->orderBy('created_at','asc')->paginate(30);
+
+        if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
+            return view('dashboard.users.user-types-indexes.index_customers', compact('customers'));
+        }
+        elseif(auth()->user()->user_type == "supplier"){
+            return redirect()->route('dashboard');
+        }
+    }
+    
+    public function indexSuppliers()
+    {
+        $suppliers = User::where('user_type','supplier')->orderBy('created_at','asc')->paginate(30);
+
+        if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
+            return view('dashboard.users.user-types-indexes.index_suppliers', compact('suppliers'));
+        }
+        elseif(auth()->user()->user_type == "supplier"){
+            return redirect()->route('dashboard');
+        }
+    }
+
+    // public function indexSuppliersProducts($id)
+    // {
+    //     $suppliers = User::where('user_type', 'supplier')->where('id', $id)->get();
+    //     $suppliers_products = Product::where('brand_name', $suppliers->id)->orderBy('created_at','asc')->paginate(30);
+
+    //     if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
+    //         return view('dashboard.users.user-types-indexes.index_suppliers', compact('suppliers_products'));
+    //     }
+    //     elseif(auth()->user()->user_type == "supplier"){
+    //         return redirect()->route('dashboard');
+    //     }
+    // }
+
+    public function indexAdmins()
+    {
+        $admins = User::where('user_type','admin')->orderBy('created_at','asc')->paginate(30);
+
+        if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
+            return view('dashboard.users.user-types-indexes.index_admins', compact('admins'));
+        }
+        elseif(auth()->user()->user_type == "supplier"){
+            return redirect()->route('dashboard');
+        }
+    }
+
+    public function indexModerators()
+    {
+        $moderators = User::where('user_type','moderator')->orderBy('created_at','asc')->paginate(30);
+
+        if(auth()->user()->user_type == "admin" || auth()->user()->user_type == "moderator"){
+            return view('dashboard.users.user-types-indexes.index_moderators', compact('moderators'));
         }
         elseif(auth()->user()->user_type == "supplier"){
             return redirect()->route('dashboard');

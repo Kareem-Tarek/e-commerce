@@ -199,6 +199,8 @@
 
                 </div>
             </div>
+            
+            <hr>
 
             <div class="col-xl-12 box-col-12 des-xl-100">
                 <div class="row">
@@ -245,6 +247,27 @@
         <!---------------------------------- Start User information ---------------------------------->
         <div class="row">
             <div style="text-align: center; padding-bottom: 3%; font-size: 180%; font-weight: bold;">Users Information</div>
+
+            {{-- <div class="col-xl-12 box-col-12 des-xl-100">
+                <div class="row">
+                    <div class="col-xl-12 col-md-6 col-sm-6 box-col-3 des-xl-25 rate-sec">
+                        <div class="card income-card">
+                            <div class="card-body text-center">
+                                <div class="round-box">
+                                    <i class="fa-solid fa-cart-shopping" style="font-size: 230%;"></i>
+                                </div>
+                                <h6>Carts</h6>
+                                <span class="number-count" style="font-size: 180%;">{{\App\Models\Cart::count()}}</span><br>
+                                <span class="no-select-line">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span>
+                                <a class="btn-arrow arrow-primary show-btn" href="{{ route('carts.index') }}" >
+                                Show
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
             <div class="col-xl-12 box-col-12 des-xl-100">
                 <div class="row" style="justify-content: space-evenly">
 
@@ -257,7 +280,7 @@
                                 <h6>All users</h6>
                                 <span class="number-count" style="font-size: 180%;">{{\App\Models\User::count()}}</span><br>
                                 <span class="no-select-line">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span>
-                                <a class="btn-arrow arrow-primary show-btn" href="" >
+                                <a class="btn-arrow arrow-primary show-btn" href="{{ route('users.index') }}">
                                 Show
                                 </a>
                             </div>
@@ -273,7 +296,7 @@
                                 <h6>Customers</h6>
                                 <span class="number-count" style="font-size: 180%;">{{\App\Models\User::where('user_type','customer')->count()}}</span><br>
                                 <span class="no-select-line">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span>
-                                <a class="btn-arrow arrow-primary show-btn" href="" >
+                                <a class="btn-arrow arrow-primary show-btn" href="{{ route('users.indexCustomers') }}">
                                 Show
                                 </a>
                             </div>
@@ -290,13 +313,12 @@
                                 <h6>Suppliers</h6>
                                 <span class="number-count" style="font-size: 180%;">{{\App\Models\User::where('user_type','supplier')->count()}}</span><br>
                                 <span class="no-select-line">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span>
-                                <a class="btn-arrow arrow-primary show-btn" href="" >
+                                <a class="btn-arrow arrow-primary show-btn" href="{{ route('users.indexSuppliers') }}">
                                 Show
                                 </a>
                             </div>
                         </div>
                     </div>
-
 
                     <div class="col-xl-2 col-md-6 col-sm-6 box-col-3 des-xl-25 rate-sec">
                         <div class="card income-card">
@@ -307,7 +329,7 @@
                                 <h6>Admins</h6>
                                 <span class="number-count" style="font-size: 180%;">{{\App\Models\User::where('user_type','admin')->count()}}</span><br>
                                 <span class="no-select-line">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span>
-                                <a class="btn-arrow arrow-primary show-btn" href="" >
+                                <a class="btn-arrow arrow-primary show-btn" href="{{ route('users.indexAdmins') }}">
                                 Show
                                 </a>
                             </div>
@@ -323,7 +345,7 @@
                                 <h6>Moderators</h6>
                                 <span class="number-count" style="font-size: 180%;">{{\App\Models\User::where('user_type','moderator')->count()}}</span><br>
                                 <span class="no-select-line">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span>
-                                <a class="btn-arrow arrow-primary show-btn" href="" >
+                                <a class="btn-arrow arrow-primary show-btn" href="{{ route('users.indexModerators') }}">
                                 Show
                                 </a>
                             </div>

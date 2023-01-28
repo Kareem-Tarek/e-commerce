@@ -246,6 +246,13 @@ Route::group([
         Route::get('/user/delete', [DashboardUserController::class, 'delete'])->name('users.delete');
         Route::get('/user/restore/{id}/', [DashboardUserController::class, 'restore'])->name('users.restore');
         Route::delete('/user/forceDelete/{id}/', [DashboardUserController::class, 'forceDelete'])->name('users.forceDelete');
+        /****** Start user types indexes routes. ******/
+        Route::get('/user/customers', [DashboardUserController::class, 'indexCustomers'])->name('users.indexCustomers');
+        Route::get('/user/suppliers', [DashboardUserController::class, 'indexSuppliers'])->name('users.indexSuppliers');
+        // Route::get('/user/suppliers/products/', [DashboardUserController::class, 'indexSuppliersProducts'])->name('users.indexSuppliersProducts');
+        Route::get('/user/admins', [DashboardUserController::class, 'indexAdmins'])->name('users.indexAdmins');
+        Route::get('/user/moderators', [DashboardUserController::class, 'indexModerators'])->name('users.indexModerators');
+        /****** End user types indexes routes. ******/
 
         Route::get('/profile', [DashboardProfileController::class, 'profile'])->name('profile');
         Route::get('/edit-profile', [DashboardProfileController::class, 'edit'])->name('edit-profile');
