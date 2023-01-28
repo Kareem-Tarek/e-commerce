@@ -27,7 +27,7 @@
         @endslot
     @endcomponent
 
-    <div class="text-cent pb-">
+    <div class="">
         <img src="{{ $product->image }}" alt="{{ $product->name.'img' }}" width="220" height="200" style="border-radius: 1px;"/><br>
         <span style="font-size: 200%; font-weight: bolder; color: black;">{{ $product->name }}</span>
         <h6 style="font-size: 100%;">
