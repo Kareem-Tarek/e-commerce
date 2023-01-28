@@ -79,7 +79,7 @@
                                         <td class="text-center font-secondary" style="font-weight: bold;">{{$supplier->username}}</td>
                                         <td class="text-center">{{$supplier->email}}</td>
                                         <td class="text-center">{{ucfirst($supplier->user_type)}}</td>
-                                        <td class="text-center"><a href="{{ route('users.indexSuppliersProducts') }}" class="fw-bold">Browse</a></td>
+                                        <td class="text-center"><a href="javascript:void(0);" class="fw-bold">Browse</a></td>
                                         <td class="text-center">
                                             @if(strlen($supplier->phone) == 11)
                                                 {{ '(+20) '.$supplier->phone ?? '—' }} <!-- Egypt's country code (+20) -->
